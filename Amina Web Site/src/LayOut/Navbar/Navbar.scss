@@ -1,0 +1,227 @@
+@mixin MyFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// @include MyFlex();
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+nav {
+  // background: red;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  .upBox {
+    background: #18407C;
+    text-align: center;
+
+    .menuBox {
+      display: none;
+    }
+
+    img {
+      max-width: 150px;
+    }
+  }
+
+  .downBox {
+    background: #edebeb;
+    @include MyFlex();
+    padding: 10px 0px;
+
+    // padding: 20px ;
+    ul {
+      display: flex;
+      list-style: none;
+      position: relative;
+      gap: 50px;
+      font-family: "Montserrat", sans-serif;
+
+      li {
+        font-size: 20px;
+        cursor: pointer;
+        padding: 6px 8px;
+        color: #181818;
+
+        &:hover .subMenu {
+          opacity: 1;
+          margin-top: 12px;
+          transition: 0.5s;
+          visibility: visible;
+        }
+
+        .subMenu {
+          background: blue;
+          width: 250px;
+          position: absolute;
+          line-height: 1.5;
+          //
+          transition: 0.3s;
+          opacity: 0;
+          visibility: hidden;
+          margin-top: 5px;
+          font-size: 15px;
+
+          .subMenuİnBox {
+            background: #fff;
+            display: flex;
+            align-items: center;
+
+            span {
+              background: #CCB892;
+              height: 2px;
+              width: 0px;
+              margin-right: 10px;
+              transition: 0.5s;
+            }
+
+            p {
+              padding: 6px 8px;
+              margin-left: -10px;
+              transition: 0.5s;
+
+              &:hover .secondSubmenu {
+                opacity: 1;
+                transition: 0.5s;
+                visibility: visible;
+              }
+            }
+
+            &:hover {
+              .span1 {
+                width: 15px;
+
+              }
+
+              .text1 {
+                color: #CCB892;
+
+              }
+            }
+          }
+
+
+
+
+
+          .secondSubmenu {
+            position: absolute;
+            left: 104%;
+            width: 250px;
+            transition: 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            top: 0;
+
+            .secondSubMenuInBox {
+              background: #fff;
+              display: flex;
+              align-items: center;
+              margin-left: -10px;
+
+              .text2 {
+                color: #181818;
+
+              }
+
+              &:hover {
+                .span2 {
+                  width: 15px;
+
+                }
+
+                .text2 {
+                  color: #CCB892;
+
+                }
+
+
+              }
+
+              .span2 {
+                background: #CCB892;
+                height: 2px;
+                width: 0px;
+                margin-right: 10px;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1145px) {
+  nav {
+    .upBox {
+      text-align: start;
+      display: flex;
+
+      .menuBox {
+        display: block;
+        font-size: 30px;
+        margin-top: 20px;
+        padding: 0px 10px;
+        cursor: pointer;
+        color: white;
+
+      }
+
+      img {
+        max-width: 100px;
+      }
+    }
+
+    .downBox {
+      display: none;
+    }
+
+    .respNavbar {
+      background: red;
+      width: 320px;
+      height: 100vh;
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      transform: translateX(-320px);
+      transition: 0.7s;
+
+      .closeBox {
+        font-size: 40px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: white;
+      }
+
+      .respUpBox {
+        background: #18407C;
+        height: 35%;
+        @include MyFlex();
+        img{
+          max-width: 250px;
+        }
+      }
+      .respDownBox{
+      background: yellow;
+      height: 100%;
+      }
+    }
+  }
+}
+
+.open {
+  transform: translateX(0px) !important;
+  transition: 0.7s;
+}
