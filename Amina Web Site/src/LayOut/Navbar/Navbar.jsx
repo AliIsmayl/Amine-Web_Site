@@ -4,6 +4,7 @@ import Logo from '../../Image/Amina-35.png'
 import { navbarData } from '../../utils/NavbarData'
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
+import RespNavbar from './RespNavbar/RespNavbar';
 
 function Navbar() {
   const [openNavbar, setopenNavbar] = useState(false)
@@ -81,13 +82,7 @@ function Navbar() {
         </div>
         <div className="respUpBox"><img src={Logo} alt="" /></div>
       <div className="respDownBox">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-        </ul>
+      <RespNavbar/>
       </div>
       </div>
       

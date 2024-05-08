@@ -160,7 +160,11 @@ nav {
       }
     }
   }
+  .respNavbar{
+    display: none;
+  }
 }
+
 
 @media only screen and (max-width: 1145px) {
   nav {
@@ -188,7 +192,7 @@ nav {
     }
 
     .respNavbar {
-      background: red;
+      background: #fff;
       width: 320px;
       height: 100vh;
       position: fixed;
@@ -196,6 +200,8 @@ nav {
       top: 0;
       transform: translateX(-320px);
       transition: 0.7s;
+      overflow: scroll;
+      display:block;
 
       .closeBox {
         font-size: 40px;
@@ -203,6 +209,7 @@ nav {
         top: 15px;
         right: 20px;
         color: white;
+        cursor: pointer;
       }
 
       .respUpBox {
@@ -214,7 +221,6 @@ nav {
         }
       }
       .respDownBox{
-      background: yellow;
       height: 100%;
       }
     }
