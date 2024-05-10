@@ -1,0 +1,30 @@
+.about-card{
+    .image{
+        img{
+        height: 280px;
+         object-fit: cover;
+         
+        }
+    }
+    .content{
+        background-color: #E8E8E8;
+        padding: 25px 10px;
+
+        h4{
+           
+            font-weight: normal;
+            font-size: 1.875rem;
+            
+           
+        }
+        .line{
+            background-color: #ccb892;
+                width: 2.1875rem;
+                height: 2px;  
+                margin: 20px 0;
+        }
+        p{
+            font-weight: 600;
+        }
+    }
+}
