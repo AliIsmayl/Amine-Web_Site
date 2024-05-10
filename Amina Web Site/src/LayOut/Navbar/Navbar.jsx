@@ -5,6 +5,7 @@ import { navbarData } from '../../utils/NavbarData'
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import RespNavbar from './RespNavbar/RespNavbar';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [openNavbar, setopenNavbar] = useState(false)
@@ -28,7 +29,7 @@ function Navbar() {
             navbarData.map((item, index) => {
               return (
                 <div key={index}>
-                  <li>{item.name}
+                  <li><Link to={`${item.path}`}>{item.name}</Link>
                     <div className="subMenu">
                       {
                         item?.childData ? <> {item?.childData?.map((item, index) => {

@@ -50,7 +50,7 @@ function Footer() {
             </div>
             <div className="downBox">
                 <div className="coptRightBox">Copyright by 2023. Bütün hüquqlar qorunur.</div>
-                <div className="pagesBox">Web Site creeted Af104 Group <a href=""><RiContactsBookFill /></a><a href=""><RiContactsBookLine /></a></div>
+                <div className="pagesBox">Web Site creeted Af104 Group <a href="https://www.instagram.com/ali.ismayil_/" target='_blank'><RiContactsBookFill /></a><a href="https://www.instagram.com/iszd.n/" target='_blank'><RiContactsBookLine /></a></div>
             </div>
         </footer>
     )

@@ -8,7 +8,7 @@ function Inform() {
             <div className="imageBox"> <img src={photo} alt="" /></div>
             <div className="textBox">
                 <p>27-28 yanvar tarixində Qazaq güləşi idman növü uzrə Azerbaycan yığma komandasının üzvləri</p>
-                <hr />
+                <div className="line"></div>
                 <button>Daha Ətraflı</button>
             </div>
         </div>
@@ -16,7 +16,7 @@ function Inform() {
             <div className="imageBox"> <img src={photo} alt="" /></div>
             <div className="textBox">
                 <p>27-28 yanvar tarixində Qazaq güləşi idman növü uzrə Azerbaycan yığma komandasının üzvləri</p>
-                <hr />
+                <div className="line"></div>
                 <button>Daha Ətraflı</button>
             </div>
         </div>
@@ -24,7 +24,7 @@ function Inform() {
             <div className="imageBox"> <img src={photo} alt="" /></div>
             <div className="textBox">
                 <p>27-28 yanvar tarixində Qazaq güləşi idman növü uzrə Azerbaycan yığma komandasının üzvləri</p>
-                <hr />
+                <div className="line"></div>
                 <button>Daha Ətraflı</button>
             </div>
         </div>
@@ -32,7 +32,7 @@ function Inform() {
             <div className="imageBox"> <img src={photo} alt="" /></div>
             <div className="textBox">
                 <p>27-28 yanvar tarixində Qazaq güləşi idman növü uzrə Azerbaycan yığma komandasının üzvləri</p>
-                <hr />
+                <div className="line"></div>
                 <button>Daha Ətraflı</button>
             </div>
         </div>

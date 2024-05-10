@@ -1,10 +1,10 @@
 export const navbarData = [
   {
-    path: "",
+    path: "/",
     name: "Ana Səhifə",
   },
   {
-    path: "",
+    path: "/about",
     name: "Haqqımızda",
     childData: [
       {

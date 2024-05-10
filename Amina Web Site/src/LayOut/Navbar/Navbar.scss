@@ -19,6 +19,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
+
   .upBox {
     background: #18407C;
     text-align: center;
@@ -73,7 +74,6 @@ nav {
           .subMenuİnBox {
             background: #fff;
             display: flex;
-            align-items: center;
 
             span {
               background: #CCB892;
@@ -81,13 +81,14 @@ nav {
               width: 0px;
               margin-right: 10px;
               transition: 0.5s;
+              margin-top: 15px;
+
             }
 
             p {
               padding: 6px 8px;
               margin-left: -10px;
               transition: 0.5s;
-
               &:hover .secondSubmenu {
                 opacity: 1;
                 transition: 0.5s;
@@ -159,7 +160,8 @@ nav {
       }
     }
   }
-  .respNavbar{
+
+  .respNavbar {
     display: none;
   }
 }
@@ -200,7 +202,7 @@ nav {
       transform: translateX(-320px);
       transition: 0.7s;
       overflow: scroll;
-      display:block;
+      display: block;
 
       .closeBox {
         font-size: 40px;
@@ -215,12 +217,14 @@ nav {
         background: #18407C;
         height: 35%;
         @include MyFlex();
-        img{
+
+        img {
           max-width: 250px;
         }
       }
-      .respDownBox{
-      height: 100%;
+
+      .respDownBox {
+        height: 100%;
       }
     }
   }
