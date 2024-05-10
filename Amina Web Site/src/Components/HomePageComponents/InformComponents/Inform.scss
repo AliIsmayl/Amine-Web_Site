@@ -1,0 +1,52 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+// @include MyFlex();
+#informComponent {
+    background: white;
+    @include MyFlex();
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px 10px;
+    .informCardBox {
+        background: #18407C;
+        width: 300px;
+        height: 500px;
+        .imageBox{
+            overflow: hidden;
+            height:40%;
+            img{
+                max-width: 100%;
+            }
+        }
+        .textBox{
+            height: 60%;
+            padding: 20px;
+            p{
+                font-size: 25px;
+                margin-bottom: 20px;
+                color: white;
+            }
+            hr{
+                width: 70px;
+                margin-bottom: 30px;
+            }
+            button{
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 30px;
+                transition: all 0.7s;
+                background-color: #CCB892;
+
+                &:hover{
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}

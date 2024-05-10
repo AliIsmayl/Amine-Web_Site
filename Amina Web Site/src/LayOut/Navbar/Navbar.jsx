@@ -43,9 +43,9 @@ function Navbar() {
                                       <>
                                         {item?.thridData?.map((item, index) => {
                                           return (
-                                            <div className='secondSubMenuInBox'>
+                                            <div className='secondSubMenuInBox' key={index}>
                                               <span className='span2'></span>
-                                              <p className='text2' key={index}>{item.name}</p>
+                                              <p className='text2' >{item.name}</p>
                                             </div>
                                           )
                                         })}
@@ -66,14 +66,6 @@ function Navbar() {
               )
             })
           }
-
-          {/* <li>Ana Səhifə</li>
-          <li>Haqqımızda</li>
-          <li>Milli komandalar</li>
-          <li>İdman növləri</li>
-          <li>Xəbər</li>
-          <li>Media</li>
-          <li>Əlaqə</li> */}
         </ul>
       </div>
       <div className={`respNavbar ${openNavbar ? "open" : ""}`}>

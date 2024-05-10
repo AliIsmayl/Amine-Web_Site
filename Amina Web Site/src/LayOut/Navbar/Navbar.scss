@@ -19,7 +19,6 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
-
   .upBox {
     background: #18407C;
     text-align: center;
@@ -34,7 +33,7 @@ nav {
   }
 
   .downBox {
-    background: #edebeb;
+    background: white;
     @include MyFlex();
     padding: 10px 0px;
 
