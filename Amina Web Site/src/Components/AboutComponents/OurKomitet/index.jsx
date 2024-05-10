@@ -2,11 +2,11 @@ import React from 'react'
 import "./index.scss"
 import AboutCard from '../../../component/AboutCard'
 
-const OurRehberlik = () => {
+const OurCommitet = () => {
   return (
     <div id='about-us'>
-<div className="tittle">
-  <h3>Rəhbərlik</h3>
+<div className="tittle-icra">
+  <h3>ICRAİYYƏ KOMİTƏSİ</h3>
 </div>
 <div className="container">
 <div className="row">
@@ -30,4 +30,4 @@ const OurRehberlik = () => {
   )
 }
 
-export default OurRehberlik
+export default OurCommitet

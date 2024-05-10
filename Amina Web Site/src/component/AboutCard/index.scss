@@ -1,9 +1,17 @@
 .about-card{
+    margin-bottom: 20px;
     .image{
         img{
+            cursor: pointer;
         height: 280px;
          object-fit: cover;
-         
+         width: 100%;
+         transition: all .6s;
+        }
+        overflow: hidden;
+        &:hover img{
+transform: scale(1.1);
+transition: all .6s;
         }
     }
     .content{
