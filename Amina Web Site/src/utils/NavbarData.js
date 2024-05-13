@@ -8,7 +8,7 @@ export const navbarData = [
     name: "Haqqımızda",
     childData: [
       {
-        path: "",
+        path: "/tariximiz",
         name: "Tariximiz",
         // thridData: [
         //   {
@@ -23,11 +23,11 @@ export const navbarData = [
         
       },
      {
-        path: "",
+        path: "/rehberlik",
         name: "Rəhbərlik",
      },
      {
-        path: "",
+        path: "/icraiyye-comitesi",
         name: "Icraiyyə komitəsi",
      }
     ],
@@ -169,7 +169,7 @@ export const navbarData = [
     ]
   },
   {
-    path: "",
+    path: "/contact",
     name: "Əlaqə",
   },
 ];

@@ -29,32 +29,34 @@ function Navbar() {
             navbarData.map((item, index) => {
               return (
                 <div key={index}>
-                  <li><Link to={`${item.path}`}>{item.name}</Link>
+                  <li><Link className='link' to={`${item.path}`}>{item.name}</Link>
                     <div className="subMenu">
                       {
                         item?.childData ? <> {item?.childData?.map((item, index) => {
                           return (
                             <div className='subMenuİnBox' key={index}>
                               <span className='span1'></span>
-                              <p className='text1'>{item.name}
+                              <Link to={`${item.path}`} className='link' >
+                                <p className='text1' >{item.name}
 
-                                <div className='secondSubmenu'>
-                                  {
-                                    item?.thridData ?
-                                      <>
-                                        {item?.thridData?.map((item, index) => {
-                                          return (
-                                            <div className='secondSubMenuInBox' key={index}>
-                                              <span className='span2'></span>
-                                              <p className='text2' >{item.name}</p>
-                                            </div>
-                                          )
-                                        })}
-                                      </>
-                                      : ""
-                                  }
-                                </div>
-                              </p>
+                                  <div className='secondSubmenu'>
+                                    {
+                                      item?.thridData ?
+                                        <>
+                                          {item?.thridData?.map((item, index) => {
+                                            return (
+                                              <div className='secondSubMenuInBox' key={index}>
+                                                <span className='span2'></span>
+                                                <p className='text2' >{item.name}</p>
+                                              </div>
+                                            )
+                                          })}
+                                        </>
+                                        : ""
+                                    }
+                                  </div>
+                                </p>
+                              </Link>
                             </div>
                           )
                         })}
@@ -74,11 +76,11 @@ function Navbar() {
           <IoMdClose />
         </div>
         <div className="respUpBox"><img src={Logo} alt="" /></div>
-      <div className="respDownBox">
-      <RespNavbar/>
+        <div className="respDownBox">
+          <RespNavbar />
+        </div>
       </div>
-      </div>
-      
+
     </nav>
   )
 }

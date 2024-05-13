@@ -16,14 +16,18 @@
 
     .informCardBox {
         background: #18407C;
+        border-radius: 5px;
         width: 300px;
         height: 500px;
+        overflow: hidden;
 
         .imageBox {
             overflow: hidden;
             height: 40%;
 
             img {
+        border-radius: 5px;
+
                 max-width: 100%;
             }
         }

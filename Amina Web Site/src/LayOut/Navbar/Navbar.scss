@@ -59,6 +59,11 @@ nav {
           visibility: visible;
         }
 
+        .link {
+          text-decoration: none;
+          color: #181818;
+        }
+
         .subMenu {
           background: blue;
           width: 250px;
@@ -89,6 +94,7 @@ nav {
               padding: 6px 8px;
               margin-left: -10px;
               transition: 0.5s;
+
               &:hover .secondSubmenu {
                 opacity: 1;
                 transition: 0.5s;
@@ -108,26 +114,20 @@ nav {
               }
             }
           }
-
-
-
-
-
           .secondSubmenu {
             position: absolute;
             left: 104%;
             width: 250px;
             transition: 0.3s;
-            opacity: 0;
+            opacity: 0; 
             visibility: hidden;
             top: 0;
 
             .secondSubMenuInBox {
               background: #fff;
               display: flex;
-              align-items: center;
+              // align-items: center;
               margin-left: -10px;
-
               .text2 {
                 color: #181818;
 
