@@ -46,10 +46,16 @@ nav {
       gap: 50px;
       font-family: "Montserrat", sans-serif;
 
+      .pageText {
+        font-weight: 600;
+        // display: flex;
+        
+      }
+
       li {
         font-size: 20px;
         cursor: pointer;
-        padding: 6px 8px;
+        // padding: 6px 8px;
         color: #181818;
 
         &:hover .subMenu {
@@ -62,6 +68,13 @@ nav {
         .link {
           text-decoration: none;
           color: #181818;
+          @include MyFlex();
+          gap: 10px;  
+          span{
+            // background: rebeccapurple;
+            // height: 30px;
+            // width: 30px;
+          }
         }
 
         .subMenu {
@@ -114,12 +127,13 @@ nav {
               }
             }
           }
+
           .secondSubmenu {
             position: absolute;
             left: 104%;
             width: 250px;
             transition: 0.3s;
-            opacity: 0; 
+            opacity: 0;
             visibility: hidden;
             top: 0;
 
@@ -128,6 +142,7 @@ nav {
               display: flex;
               // align-items: center;
               margin-left: -10px;
+
               .text2 {
                 color: #181818;
 
@@ -165,9 +180,16 @@ nav {
     display: none;
   }
 }
+.active{
+  span{
+    background: #CCB892;
+    height: 2px;
+    width: 20px;
+  }
+}
 
 
-@media only screen and (max-width: 1145px) {
+@media only screen and (max-width: 1162px) {
   nav {
     .upBox {
       text-align: start;
