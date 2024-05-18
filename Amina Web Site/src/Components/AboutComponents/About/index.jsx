@@ -71,7 +71,7 @@ const About = () => {
             <li>Mas-reslinq (Yakutiya milli idmanı)</li>
             <li>Alış güləşi (Qırğız milli idmanı)</li>
           </ol>
-        </div>
+          </div>
       </div>
     </div>
   );
