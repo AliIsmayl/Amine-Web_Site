@@ -7,6 +7,7 @@ import AboutRehberlik from './Pages/AboutRehberlik';
 import AboutHistory from './Pages/AboutHistory';
 import AboutCommitet from './Pages/AboutCommitet';
 import Contact from './Pages/Contact';
+import AboutPage from './Pages/About';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage/>} /> 
           <Route path="/rehberlik" element={<AboutRehberlik/>} /> 
           <Route path="/tariximiz" element={<AboutHistory/>} /> 
+          <Route path="/haqqimizda" element={<AboutPage/>} /> 
           <Route path="/icraiyye-comitesi" element={<AboutCommitet/>} /> 
           <Route path="/contact" element={<Contact/>} /> 
         </Routes>
