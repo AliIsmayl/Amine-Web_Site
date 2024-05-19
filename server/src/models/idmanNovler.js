@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const IdmanNovleriSchema = new Schema({
     
-  name: {type:String,require:true,unique:true},   
-  tittle: {type:String,require:true},   
+  name: {type:String,unique:true},   
+  tittle: {type:String},   
   content: {type:String},   
   Alt:[
     {

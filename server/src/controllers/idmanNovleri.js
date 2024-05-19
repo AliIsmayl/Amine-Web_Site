@@ -23,27 +23,61 @@ export const getIdmanNovleri=async(req,res)=>{
     }
 }
 
-export const updateIdmanNovleri=async(req,res)=>{
+export const updateIdmanNovleri = async (req, res) => {
     try {
-        const {id}=req.params
-        const idmanNovleri=await IdmanNovleris.findByIdAndUpdate(id,req.body)
-        res.status(200).json("idman novu deyisdirildi")
+        const { id } = req.params;
+        const updatedData = req.body;
+
+        // Try updating the top-level document
+        let idmanNovleri = await IdmanNovleris.findByIdAndUpdate(id, updatedData, { new: true });
+
+        // If not found, try updating a subdocument within the Alt array
+        if (!idmanNovleri) {
+            idmanNovleri = await IdmanNovleris.findOneAndUpdate(
+                { 'Alt._id': id },
+                { $set: { 'Alt.$': updatedData } },
+                { new: true }
+            );
+        }
+
+        // If still not found, return 404
+        if (!idmanNovleri) {
+            return res.status(404).json({ message: "IdmanNovleri not found" });
+        }
+
+        res.status(200).json(idmanNovleri);
     } catch (error) {
-        res.status(500).json({messsage:error})
+        res.status(500).json({ message: error.message });
     }
-}
+};
 
 
-export const deleteIdmanNovleri=async(req,res)=>{
+export const deleteIdmanNovleri = async (req, res) => {
     try {
-        const {id}=req.params
-        const idmanNovleri=await IdmanNovleris.findByIdAndDelete(id)
-        res.status(200).json("deleted")
-    } catch (error) {
-        res.status(500).json({messsage:error})
-    }
-}
+        const { id } = req.params;
 
+        // Try deleting the top-level document
+        let idmanNovleri = await IdmanNovleris.findByIdAndDelete(id);
+
+        // If not found, try deleting a subdocument within the Alt array
+        if (!idmanNovleri) {
+            idmanNovleri = await IdmanNovleris.findOneAndUpdate(
+                { 'Alt._id': id },
+                { $pull: { Alt: { _id: id } } },
+                { new: true }
+            );
+        }
+
+        // If still not found, return 404
+        if (!idmanNovleri) {
+            return res.status(404).json({ message: "IdmanNovleri not found" });
+        }
+
+        res.status(200).json({ message: "IdmanNovleri deleted" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
 
 export const getByIdIdmanNovleri = async (req, res) => {
     try {

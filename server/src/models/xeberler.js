@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const XeberSchema = new Schema({
     
- image:{type:String,require:true},
-  tittle: {type:String,require:true},   
+ image:{type:String},
+  tittle: {type:String},   
   content: {type:String}   
 
 },{timestamps:true});

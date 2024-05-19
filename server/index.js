@@ -3,11 +3,13 @@ import cors from 'cors'
 import "dotenv/config"
 import mongoose from 'mongoose'
 import idmanNovleri from './src/routers/idmanNovleri.js'
+import Rehberlik from './src/routers/rehberlik.js'
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.use("/idmanNovleri",idmanNovleri)
+app.use("/rehberlik",Rehberlik)
 
 
 
