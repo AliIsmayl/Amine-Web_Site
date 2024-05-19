@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const RehberlikSchema = new Schema({
     
  image:{type:String},
-  name: {type:String},   
+  title: {type:String},   
   position: {type:String}   
 
 },{timestamps:true});
