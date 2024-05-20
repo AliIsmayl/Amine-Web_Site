@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const MesqciSchema = new Schema({
     
- image:{type:String,require:true},
-  name: {type:String,require:true},   
+ image:{type:String},
+ title: {type:String},   
   position: {type:String}   
 
 },{timestamps:true});

@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const VideoSchema = new Schema({
     
- video:{type:String,require:true}
+ video:{type:String}
     
 
 },{timestamps:true});
