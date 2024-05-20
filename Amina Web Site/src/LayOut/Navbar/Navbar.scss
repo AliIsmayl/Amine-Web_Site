@@ -21,7 +21,7 @@ nav {
   z-index: 3;
 
   .upBox {
-    background: #18407C;
+    background: rgb(24, 64, 124);
     text-align: center;
 
     .menuBox {
@@ -49,13 +49,95 @@ nav {
       .pageText {
         font-weight: 600;
         // display: flex;
-        
+        position: relative;
+        .subMenu {
+          background-color: white;
+          -webkit-box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
+          -moz-box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
+          box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
+          position: absolute;
+          width: 300px;
+          top: 20px;
+          opacity: 0;
+          transition: all 0.7s;
+          left: -30px;
+          visibility: hidden;
+          padding: 5px 0;
+
+          .pageLink {
+            text-decoration: none;
+          }
+
+          li {
+            font-size: 15px;
+            padding: 6px 8px 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            &:hover {
+              .altText {
+                display: block;
+              }
+            }
+
+            .altText {
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              top: 0;
+              right: -250px;
+              display: none;
+              width: 250px;
+              padding: 5px 0;
+
+              li {
+                padding: 6px;
+                width: 100%;
+                background: white;
+                -webkit-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
+                -moz-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
+                box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
+
+                &:first-child {
+                  -webkit-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
+                  -moz-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
+                  box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
+                }
+
+                span {
+                  width: 0;
+                  transition: all 0.7s;
+                }
+
+                &:hover {
+                  span {
+                    width: 20px;
+                  }
+                }
+              }
+            }
+
+            span {
+              background: #CCB892;
+              height: 3px;
+              width: 0px;
+              transition: all 0.7s;
+            }
+
+            &:hover {
+              span {
+                width: 20px;
+              }
+            }
+          }
+        }
+
       }
 
       li {
         font-size: 20px;
         cursor: pointer;
-        // padding: 6px 8px;
         color: #181818;
 
         &:hover .subMenu {
@@ -69,109 +151,110 @@ nav {
           text-decoration: none;
           color: #181818;
           @include MyFlex();
-          gap: 10px;  
-          span{
+          gap: 10px;
+
+          span {
             // background: rebeccapurple;
             // height: 30px;
             // width: 30px;
           }
         }
 
-        .subMenu {
-          background: blue;
-          width: 250px;
-          position: absolute;
-          line-height: 1.5;
-          //
-          transition: 0.3s;
-          opacity: 0;
-          visibility: hidden;
-          margin-top: 5px;
-          font-size: 15px;
+        // .subMenu {
+        //   background: blue;
+        //   width: 250px;
+        //   position: absolute;
+        //   line-height: 1.5;
+        //   //
+        //   transition: 0.3s;
+        //   opacity: 0;
+        //   visibility: hidden;
+        //   margin-top: 5px;
+        //   font-size: 15px;
 
-          .subMenuİnBox {
-            background: #fff;
-            display: flex;
+        //   .subMenuİnBox {
+        //     background: #fff;
+        //     display: flex;
 
-            span {
-              background: #CCB892;
-              height: 2px;
-              width: 0px;
-              margin-right: 10px;
-              transition: 0.5s;
-              margin-top: 15px;
+        //     span {
+        //       background: #CCB892;
+        //       height: 2px;
+        //       width: 0px;
+        //       margin-right: 10px;
+        //       transition: 0.5s;
+        //       margin-top: 15px;
 
-            }
+        //     }
 
-            p {
-              padding: 6px 8px;
-              margin-left: -10px;
-              transition: 0.5s;
+        //     p {
+        //       padding: 6px 8px;
+        //       margin-left: -10px;
+        //       transition: 0.5s;
 
-              &:hover .secondSubmenu {
-                opacity: 1;
-                transition: 0.5s;
-                visibility: visible;
-              }
-            }
+        //       &:hover .secondSubmenu {
+        //         opacity: 1;
+        //         transition: 0.5s;
+        //         visibility: visible;
+        //       }
+        //     }
 
-            &:hover {
-              .span1 {
-                width: 15px;
+        //     &:hover {
+        //       .span1 {
+        //         width: 15px;
 
-              }
+        //       }
 
-              .text1 {
-                color: #CCB892;
+        //       .text1 {
+        //         color: #CCB892;
 
-              }
-            }
-          }
+        //       }
+        //     }
+        //   }
 
-          .secondSubmenu {
-            position: absolute;
-            left: 104%;
-            width: 250px;
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            top: 0;
+        //   .secondSubmenu {
+        //     position: absolute;
+        //     left: 104%;
+        //     width: 250px;
+        //     transition: 0.3s;
+        //     opacity: 0;
+        //     visibility: hidden;
+        //     top: 0;
 
-            .secondSubMenuInBox {
-              background: #fff;
-              display: flex;
-              // align-items: center;
-              margin-left: -10px;
+        //     .secondSubMenuInBox {
+        //       background: #fff;
+        //       display: flex;
+        //       // align-items: center;
+        //       margin-left: -10px;
 
-              .text2 {
-                color: #181818;
+        //       .text2 {
+        //         color: #181818;
 
-              }
+        //       }
 
-              &:hover {
-                .span2 {
-                  width: 15px;
+        //       &:hover {
+        //         .span2 {
+        //           width: 15px;
 
-                }
+        //         }
 
-                .text2 {
-                  color: #CCB892;
+        //         .text2 {
+        //           color: #CCB892;
 
-                }
+        //         }
 
 
-              }
+        //       }
 
-              .span2 {
-                background: #CCB892;
-                height: 2px;
-                width: 0px;
-                margin-right: 10px;
-                transition: 0.5s;
-              }
-            }
-          }
-        }
+        //       .span2 {
+        //         background: #CCB892;
+        //         height: 2px;
+        //         width: 0px;
+        //         margin-right: 10px;
+        //         transition: 0.5s;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }
@@ -180,8 +263,9 @@ nav {
     display: none;
   }
 }
-.active{
-  span{
+
+.active {
+  span {
     background: #CCB892;
     height: 2px;
     width: 20px;

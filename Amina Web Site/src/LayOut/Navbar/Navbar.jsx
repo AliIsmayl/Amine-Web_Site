@@ -5,11 +5,18 @@ import { navbarData } from '../../utils/NavbarData'
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import RespNavbar from './RespNavbar/RespNavbar';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import axios from 'axios'
 
 function Navbar() {
   const [openNavbar, setopenNavbar] = useState(false)
   const [hiddenNavbar, sethiddenNavbar] = useState(true)
+  const [navbarText, setnavbarText] = useState([])
+
+  async function TextGetData() {
+    const res = await axios.get("http://localhost:5000/idmanNovleri")
+    setnavbarText(res.data)
+  }
 
   function handleOpenNavbar() {
     setopenNavbar(!openNavbar)
@@ -29,6 +36,11 @@ function Navbar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    TextGetData()
+  }, [])
+
 
   return (
     <nav>
@@ -53,7 +65,26 @@ function Navbar() {
             <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> Milli komandalar</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> İdman növləri</NavLink></li>
+            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> İdman növləri
+              <div className="subMenu">
+                {
+                  navbarText && navbarText.map((item) => (
+                    <Link className='pageLink' to={`/page/${item.name}`}>
+                      <li><span></span>{item.name}
+                        <ul className='altText'>
+                          {item.Alt.map((altItem) => (
+                            <Link className='pageLink' to={`/page/${altItem.name}`}>
+                              <li key={altItem.name}><span></span>{altItem.name}</li>
+                            </Link>
+                          ))}
+                        </ul>
+                      </li>
+                    </Link>
+
+                  ))
+                }
+              </div>
+            </NavLink></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/asdsad"}><span></span> Xəbər</NavLink></li>
@@ -64,6 +95,8 @@ function Navbar() {
           <div>
             <li className='pageText'><NavLink className='link' to={"/contact"}><span></span> Əlaqə</NavLink></li>
           </div>
+
+
           {/* {
             navbarData.map((item, index) => {
               return (

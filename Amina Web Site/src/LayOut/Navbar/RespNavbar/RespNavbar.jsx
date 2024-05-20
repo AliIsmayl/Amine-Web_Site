@@ -1,64 +1,98 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { navbarData } from '../../../utils/NavbarData'; // Navbar verilerini içeri aktarın
 import './RespNavbar.scss';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 function RespNavbar() {
-    const [openAccordionIndex, setOpenAccordionIndex] = useState(null);
-    const [openChildAccordionIndex, setOpenChildAccordionIndex] = useState(null);
+    const [openAccordionIndex, setOpenAccordionIndex] = useState(false);
+    const [openChildAccordionIndex, setOpenChildAccordionIndex] = useState(false);
+    const [navbarText, setnavbarText] = useState([])
 
-    const handleOpenAccordion = (index) => {
-        setOpenAccordionIndex(prevIndex => prevIndex === index ? null : index);
+    async function TextGetData() {
+        const res = await axios.get("http://localhost:5000/idmanNovleri")
+        setnavbarText(res.data)
+    }
+    const handleOpenAccordion = () => {
+        setOpenAccordionIndex(!openAccordionIndex)
+        // setOpenAccordionIndex(prevIndex => prevIndex === index ? null : index);
     };
 
-    const handleOpenChildAccordion = (index) => {
-        setOpenChildAccordionIndex(prevIndex => prevIndex === index ? null : index);
+    const handleOpenChildAccordion = () => {
+        setOpenChildAccordionIndex(!openChildAccordionIndex)
+        // setOpenChildAccordionIndex(prevIndex => prevIndex === index ? null : index);
     };
-
+    useEffect(() => {
+        TextGetData()
+    }, [])
     return (
         <ul className='accordion1'>
-            {navbarData.map((item, index) => (
-                <li className='accordionFirstLi' key={index}>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Ana Səhifə</p>
+                </li>
+            </Link>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Haqqımızda</p>
+                </li>
+            </Link>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Milli komandalar</p>
+                </li>
+            </Link>
+            <Link className='link' to={'sa'}>
+                <li className='accordionFirstLi' >
 
-                    <p className='text1' onClick={() => handleOpenAccordion(index)}>
+                    <p className='text1' onClick={handleOpenAccordion}>İdman növləri <span className='arrowBox' >
                         {
-                            item.childData ? <div className="arrowBox">
+                            openAccordionIndex ? <IoMdArrowDropup /> : <IoMdArrowDropdown />
+                        }
+                    </span></p>
+                    <ul className={`text2 ${openAccordionIndex ? 'openAccordion' : ''}`}>
+                        {navbarText.map((item, index) => (
+                            <li key={index}>
+                                <Link className='pageLink' to={`/page/${item.name}`}  onClick={handleOpenChildAccordion}>
+                                    {item.name}
+                                </Link>
+
                                 {
-                                    openAccordionIndex === index ? <RiArrowDropUpLine />
-                                        : <RiArrowDropDownLine />
+                                    item.Alt.length > 0 ? <IoMdArrowDropup /> : ""
                                 }
 
-
-                            </div> : ""
-                        }
-                        {item.name}</p>
-                    <ul className={`text2 ${openAccordionIndex === index ? 'openAccordion' : ''}`}>
-                        {item.childData?.map((childItem, childIndex) => (
-                            <li key={childIndex}>
-                                <p className='accardionText2' onClick={() => handleOpenChildAccordion(childIndex)}>
-                                    {
-                                        childItem.thridData ?
-                                            <div className="arrowBox">
-                                                {
-                                                    openChildAccordionIndex === childIndex ? <RiArrowDropUpLine />
-                                                        : <RiArrowDropDownLine />
-                                                }
-                                            </div> : ""
-                                    }
-                                    {childItem.name}</p>
-                                {childItem.thridData && (
-                                    <ul className={`thirdAccordion ${openChildAccordionIndex === childIndex ? 'openSecondAccordion' : ''}`}>
-                                        {childItem.thridData.map((thirdItem, thirdIndex) => (
-                                            <li key={thirdIndex}>{thirdItem.name}</li>
-                                        ))}
-                                    </ul>
-                                )}
+                                <ul className={`altText ${openChildAccordionIndex ? "openSecondAccordion" : ""}`}>
+                                    {item.Alt.map((altItem, index) =>
+                                        <li key={index}>
+                                            <Link className='pageLink' to={`/page/${altItem.name}`}>
+                                                {altItem.name}
+                                            </Link>
+                                        </li>)}
+                                </ul>
                             </li>
                         ))}
                     </ul>
                 </li>
-            ))}
+            </Link>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Xəbər</p>
+                </li>
+            </Link>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Media</p>
+                </li>
+            </Link>
+            <Link className='link' to={''}>
+                <li className='accordionFirstLi'>
+                    <p className='text1'>Əlaqə</p>
+                </li>
+            </Link>
         </ul>
     );
 }

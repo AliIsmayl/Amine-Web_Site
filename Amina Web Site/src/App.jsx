@@ -8,6 +8,7 @@ import AboutHistory from './Pages/AboutHistory';
 import AboutCommitet from './Pages/AboutCommitet';
 import Contact from './Pages/Contact';
 import AboutPage from './Pages/About';
+import DetailPage from './Pages/DetailPage/DetailPage';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/haqqimizda" element={<AboutPage/>} /> 
           <Route path="/icraiyye-comitesi" element={<AboutCommitet/>} /> 
           <Route path="/contact" element={<Contact/>} /> 
+          <Route path="/page/:name" element={<DetailPage/>} /> 
         </Routes>
         <Footer/>
       </BrowserRouter>
