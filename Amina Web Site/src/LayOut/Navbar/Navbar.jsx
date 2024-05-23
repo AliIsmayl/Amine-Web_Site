@@ -70,11 +70,11 @@ function Navbar() {
                 {
                   navbarText && navbarText.map((item) => (
                     <Link className='pageLink' to={`/page/${item.name}`}>
-                      <li><span></span>{item.name}
+                      <li><span></span>{item.tittle}
                         <ul className='altText'>
                           {item.Alt.map((altItem) => (
                             <Link className='pageLink' to={`/page/${altItem.name}`}>
-                              <li key={altItem.name}><span></span>{altItem.name}</li>
+                              <li key={altItem.name}><span></span>{altItem.tittle}</li>
                             </Link>
                           ))}
                         </ul>

@@ -10,6 +10,7 @@ import Hakim from './src/routers/hakim.js'
 import Komitet from './src/routers/komitet.js'
 import Xeberler from './src/routers/xeberler.js'
 import Foto from './src/routers/foto.js'
+import ContactRouter from './src/routers/contact.js'
 import Video from './src/routers/video.js'
 
 const app = express()
@@ -24,6 +25,7 @@ app.use("/komitet",Komitet)
 app.use("/xeberler",Xeberler)
 app.use("/foto",Foto)
 app.use("/video",Video)
+app.use("/contact",ContactRouter)
 
 
 
