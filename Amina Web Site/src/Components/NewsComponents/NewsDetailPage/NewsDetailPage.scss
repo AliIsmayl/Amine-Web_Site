@@ -7,12 +7,13 @@
 
 // @include MyFlex();
 .newsDetailPage {
-    background: red;
+    background: white;
     position: relative;
+    padding: 10px 0;
 
     .upBox {
         height: 500px;
-        background: green;
+        // background: green;
         display: flex;
         justify-content: end;
 
@@ -27,7 +28,7 @@
         }
 
         .textBox {
-            background: blue;
+            background: #18407C;
             position: absolute;
             top: 0;
             left: 0;
@@ -35,6 +36,7 @@
             flex-direction: column;
             padding: 40px 30px 40px 130px;
             border-radius: 0 0 50px 0;
+            color: #F3F3F3;
 
             .nothing {
                 display: flex;
@@ -44,7 +46,7 @@
                     width: 50px;
                     margin: 0px 10px 0 0;
                     margin-top: 12px;
-                    background: orange;
+                    background: #F3F3F3;
                 }
 
                 p {
@@ -96,6 +98,7 @@
         .upBox {
             min-height: 150vh;
             position: relative;
+
             .imageBox {
                 position: absolute;
                 bottom: 0;
@@ -108,10 +111,12 @@
                 width: 100%;
                 height: 500px;
                 @include MyFlex();
-                .nothing{
+
+                .nothing {
                     width: 100%;
                     margin-left: 2s0px;
                 }
+
                 h1 {
                     font-size: 45px;
                 }

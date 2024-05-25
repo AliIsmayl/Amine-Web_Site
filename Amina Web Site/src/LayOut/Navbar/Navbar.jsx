@@ -59,7 +59,19 @@ function Navbar() {
             <li className='pageText'><NavLink className='link' to={"/"}><span></span> Ana Səhifə</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/about"}><span></span> Haqqımızda</NavLink></li>
+            <li className='pageText'><NavLink className='link' to={"/about"}><span></span> Haqqımızda
+              <div className="subMenu">
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Tariximiz</li>
+                </Link>
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Rəhbərlik</li>
+                </Link>
+                <Link className='pageLink' to={''}>
+                  <li><span></span>İcraiyə Komitəsi</li>
+                </Link>
+              </div>
+            </NavLink></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> Milli komandalar</NavLink></li>

@@ -7,7 +7,6 @@
 
 // @include MyFlex();
 .newsPage {
-    background: red;
     padding: 30px;
     gap: 40px;
     flex-wrap: wrap;
@@ -38,7 +37,7 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                background: #F3F3F3;
+                background: #f3f3f390;
                 width: 200px;
                 height: 100px;
                 clip-path: polygon(100% 0, 0 0, 100% 100%);
