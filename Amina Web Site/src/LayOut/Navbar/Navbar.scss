@@ -50,6 +50,7 @@ nav {
         font-weight: 600;
         // display: flex;
         position: relative;
+
         .subMenu {
           background-color: white;
           -webkit-box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
@@ -74,6 +75,7 @@ nav {
             display: flex;
             align-items: center;
             gap: 3px;
+            position: relative;
 
             &:hover {
               .altText {
