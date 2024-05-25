@@ -1,0 +1,121 @@
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// @include MyFlex();
+.newsDetailPage {
+    background: red;
+    position: relative;
+
+    .upBox {
+        height: 500px;
+        background: green;
+        display: flex;
+        justify-content: end;
+
+        .imageBox {
+            height: 100%;
+            width: 900px;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .textBox {
+            background: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 30px 40px 130px;
+            border-radius: 0 0 50px 0;
+
+            .nothing {
+                display: flex;
+
+                span {
+                    height: 2px;
+                    width: 50px;
+                    margin: 0px 10px 0 0;
+                    margin-top: 12px;
+                    background: orange;
+                }
+
+                p {
+                    font-size: 19px;
+                }
+
+
+            }
+
+            h1 {
+                max-width: 500px;
+                font-size: 60px;
+                font-weight: 700;
+            }
+
+            .littleInform {
+                display: flex;
+                gap: 30px;
+
+                .littleBox {
+                    @include MyFlex();
+                    gap: 5px;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1096px) {
+    .newsDetailPage {
+        .upBox {
+            min-height: 150vh;
+            align-items: end;
+
+            .imageBox {
+                // width: 100%;
+                height: 500px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 641px) {
+    .newsDetailPage {
+        .upBox {
+            min-height: 150vh;
+            position: relative;
+            .imageBox {
+                position: absolute;
+                bottom: 0;
+
+
+            }
+
+            .textBox {
+                padding: 10px 10px 20px 10px;
+                width: 100%;
+                height: 500px;
+                @include MyFlex();
+                .nothing{
+                    width: 100%;
+                    margin-left: 2s0px;
+                }
+                h1 {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
