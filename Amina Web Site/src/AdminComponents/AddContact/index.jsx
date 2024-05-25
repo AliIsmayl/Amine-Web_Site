@@ -14,7 +14,7 @@ const AddContact = () => {
 
   return (
     <div className="adminpage">
-      <div className="return">
+      <div className="btn1 btn">
         <Link to="/admin/contact">Contact siyahısına bax</Link>
       </div>
       <div className="text-center margi">

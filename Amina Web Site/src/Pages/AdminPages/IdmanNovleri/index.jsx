@@ -7,6 +7,7 @@ import { Formik, Field, Form, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
+import { RiListSettingsLine } from "react-icons/ri";
 
 const IdmanNovleriAdmin = () => {
   const [data, setData] = useState([]);
@@ -85,13 +86,13 @@ const IdmanNovleriAdmin = () => {
           <div className="filterDD">
             <div className="addUser">
               <button className="btn">
-                <Link to="/admin/addIdmanNovleri">Add IdmanNovleri</Link>
+                <Link to="/admin/addIdmanNovleri"> İdman növü əlavə et</Link>
               </button>
             </div>
             <div className="filter">
               <input
                 type="search"
-                placeholder="Search by name..."
+                placeholder="Ada gore axtar"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -122,8 +123,8 @@ const IdmanNovleriAdmin = () => {
                   <tr>
                     <th>Tittle</th>
                     <th>Content</th>
-                    <th>Path</th>
-                    <th>Settings</th>
+                    <th>Yol</th>
+                    <th><RiListSettingsLine /></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -201,7 +202,7 @@ const IdmanNovleriAdmin = () => {
             <span className="close" onClick={() => setShowModal(false)}>
               &times;
             </span>
-            <h2>Edit</h2>
+            <h2>Düzəliş et</h2>
             <Formik
               initialValues={{
                 tittle: editedIdmanNovleri.tittle || "",
@@ -210,12 +211,12 @@ const IdmanNovleriAdmin = () => {
                 Alt: editedIdmanNovleri.Alt || [{ name: "", tittle: "", content: "" }],
               }}
               validationSchema={Yup.object({
-                tittle: Yup.string().required("Required"),
+                tittle: Yup.string().required("Xanani doldur"),
                 content: Yup.string(),
                 name: Yup.string(),
                 Alt: Yup.array().of(
                   Yup.object().shape({
-                    name: Yup.string(),
+                    name: Yup.string().required("Xanani doldur"),
                     tittle: Yup.string(),
                     content: Yup.string(),
                   })
@@ -227,6 +228,7 @@ const IdmanNovleriAdmin = () => {
             >
               {({ values }) => (
                 <Form>
+                   <h6>əsas məzmun  </h6>
                   <div className="inpp">
                     <Field name="tittle" type="text" placeholder="Tittle" />
                     <div className="red">
@@ -251,6 +253,7 @@ const IdmanNovleriAdmin = () => {
                   <FieldArray name="Alt">
                     {({ insert, remove, push }) => (
                       <div>
+                        <h6>alt məzmun  </h6>
                         {values.Alt.length > 0 &&
                           values.Alt.map((alt, index) => (
                             <div className="nested-form" key={index}>

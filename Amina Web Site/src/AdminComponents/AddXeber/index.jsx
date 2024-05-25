@@ -36,11 +36,11 @@ const AddXeberler = () => {
 
   return (
     <div className="adminpage">
-      <div className="return">
-        <Link to="/admin/xeberler">Xeberlər siyahısına bax</Link>
+      <div className="btn btn1">
+        <Link to="/admin/xeberler">Xəbər siyahısına bax</Link>
       </div>
       <div className="text-center margi">
-        <h2>Xeberler əlavə et</h2>
+        <h2>Xəbər əlavə et</h2>
       </div>
       <div className="formadd">
         <Formik

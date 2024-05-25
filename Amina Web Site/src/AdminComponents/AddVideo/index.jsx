@@ -31,7 +31,7 @@ const AddVideo = () => {
 
   return (
     <div className="adminpage">
-         <div className="return">
+         <div className="btn btn1">
             <Link to="/admin/Video">Video siyahısına bax</Link>
         </div>
        <div className="text-center margi">
