@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter , Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import Navbar from './LayOut/Navbar/Navbar';
 import Footer from './LayOut/Footer/Footer';
@@ -31,6 +31,8 @@ import XeberlerAdmin from './Pages/AdminPages/XeberlerPage';
 import AddXeberler from './AdminComponents/AddXeber';
 import ContactAdmin from './Pages/AdminPages/ContactPage';
 import AddContact from './AdminComponents/AddContact';
+import NewsCard from './Components/NewsComponents/NewsComponents';
+import NewsDetailPage from './Components/NewsComponents/NewsDetailPage/NewsDetailPage';
 
 function App() {
 
@@ -39,41 +41,43 @@ function App() {
       <BrowserRouter>
 
         <Routes>
-          <Route path='/' element={<MainLayout/>}>
-        
-          <Route path="/" element={<HomePage/>} /> 
-          <Route path="/rehberlik" element={<AboutRehberlik/>} /> 
-          <Route path="/tariximiz" element={<AboutHistory/>} /> 
-          <Route path="/haqqimizda" element={<AboutPage/>} /> 
-          <Route path="/icraiyye-comitesi" element={<AboutCommitet/>} /> 
-          <Route path="/contact" element={<Contact/>} /> 
-          <Route path="/page/:name" element={<DetailPage/>} /> 
-         </Route> 
-         <Route path='/admin' element={<LayoutAdmin/>}>
-         <Route path="/admin/idmancilar" element={<IdmanciAdmin/>} /> 
-         <Route path="/admin/mesqci" element={<MesqciAdmin/>} /> 
-         <Route path="/admin/idmanNovleri" element={<IdmanNovleriAdmin/>} /> 
-         <Route path="/admin/hakim" element={<HakimAdmin/>} /> 
-         <Route path="/admin/rehberlik" element={<RehberlikAdmin/>} /> 
-         <Route path="/admin/komitet" element={<KomitetAdmin/>} /> 
-         <Route path="/admin/foto" element={<FotoAdmin/>} /> 
-         <Route path="/admin/video" element={<VideoAdmin/>} /> 
-         <Route path="/admin/xeberler" element={<XeberlerAdmin/>} /> 
-         <Route path="/admin/contact" element={<ContactAdmin/>} /> 
-         <Route path="/admin/addRehberlik" element={<AddRehberlik/>} /> 
-         <Route path="/admin/addKomitet" element={<AddKomitet/>} /> 
-         <Route path="/admin/addFoto" element={<AddFoto/>} /> 
-         <Route path="/admin/addVideo" element={<AddVideo/>} /> 
-         <Route path="/admin/addIdmanNovleri" element={<AddIdmanNovleri/>} /> 
-         <Route path="/admin/addMesqci" element={<AddMesqci/>} /> 
-         <Route path="/admin/addIdmanci" element={<AddIdmanci/>} /> 
-         <Route path="/admin/addHakim" element={<AddHakim/>} /> 
-         <Route path="/admin/addXeberler" element={<AddXeberler/>} /> 
-         <Route path="/admin/addContact" element={<AddContact/>} /> 
-         
-  
-         </Route>
-         </Routes>
+          <Route path='/' element={<MainLayout />}>
+
+            <Route path="/" element={<HomePage />} />
+            <Route path="/rehberlik" element={<AboutRehberlik />} />
+            <Route path="/tariximiz" element={<AboutHistory />} />
+            <Route path="/haqqimizda" element={<AboutPage />} />
+            <Route path="/icraiyye-comitesi" element={<AboutCommitet />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/page/:name" element={<DetailPage />} />
+            <Route path="/news" element={<NewsCard />} />
+            <Route path="/news/detail" element={<NewsDetailPage />} />
+          </Route>
+          <Route path='/admin' element={<LayoutAdmin />}>
+            <Route path="/admin/idmancilar" element={<IdmanciAdmin />} />
+            <Route path="/admin/mesqci" element={<MesqciAdmin />} />
+            <Route path="/admin/idmanNovleri" element={<IdmanNovleriAdmin />} />
+            <Route path="/admin/hakim" element={<HakimAdmin />} />
+            <Route path="/admin/rehberlik" element={<RehberlikAdmin />} />
+            <Route path="/admin/komitet" element={<KomitetAdmin />} />
+            <Route path="/admin/foto" element={<FotoAdmin />} />
+            <Route path="/admin/video" element={<VideoAdmin />} />
+            <Route path="/admin/xeberler" element={<XeberlerAdmin />} />
+            <Route path="/admin/contact" element={<ContactAdmin />} />
+            <Route path="/admin/addRehberlik" element={<AddRehberlik />} />
+            <Route path="/admin/addKomitet" element={<AddKomitet />} />
+            <Route path="/admin/addFoto" element={<AddFoto />} />
+            <Route path="/admin/addVideo" element={<AddVideo />} />
+            <Route path="/admin/addIdmanNovleri" element={<AddIdmanNovleri />} />
+            <Route path="/admin/addMesqci" element={<AddMesqci />} />
+            <Route path="/admin/addIdmanci" element={<AddIdmanci />} />
+            <Route path="/admin/addHakim" element={<AddHakim />} />
+            <Route path="/admin/addXeberler" element={<AddXeberler />} />
+            <Route path="/admin/addContact" element={<AddContact />} />
+
+
+          </Route>
+        </Routes>
 
       </BrowserRouter>
     </>
