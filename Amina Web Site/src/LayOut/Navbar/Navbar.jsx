@@ -74,7 +74,18 @@ function Navbar() {
             </NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> Milli komandalar</NavLink></li>
+            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> Milli komandalar
+              <div className="subMenu">
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Məşqçilər</li>
+                </Link>
+                <Link className='pageLink' to={''}>
+                  <li><span></span>İdmançılar</li>
+                </Link>
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Hakimlər</li>
+                </Link>
+              </div></NavLink></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> İdman növləri
@@ -102,57 +113,19 @@ function Navbar() {
             <li className='pageText'><NavLink className='link' to={"/asdsad"}><span></span> Xəbər</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asd"}><span></span> Media</NavLink></li>
+            <li className='pageText'><NavLink className='link' to={"/asd"}><span></span> Media
+              <div className="subMenu">
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Foto</li>
+                </Link>
+                <Link className='pageLink' to={''}>
+                  <li><span></span>Video</li>
+                </Link>
+              </div></NavLink></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/contact"}><span></span> Əlaqə</NavLink></li>
           </div>
-
-
-          {/* {
-            navbarData.map((item, index) => {
-              return (
-                <div key={index}>
-                  <li><Link className='link' to={`${item.path}`}>{item.name}</Link>
-                    <div className="subMenu">
-                      {
-                        item?.childData ? <> {item?.childData?.map((item, index) => {
-                          return (
-                            <div className='subMenuİnBox' key={index}>
-                              <span className='span1'></span>
-                              <Link to={`${item.path}`} className='link' >
-                                <p className='text1' >{item.name}
-
-                                  <div className='secondSubmenu'>
-                                    {
-                                      item?.thridData ?
-                                        <>
-                                          {item?.thridData?.map((item, index) => {
-                                            return (
-                                              <div className='secondSubMenuInBox' key={index}>
-                                                <span className='span2'></span>
-                                                <p className='text2' >{item.name}</p>
-                                              </div>
-                                            )
-                                          })}
-                                        </>
-                                        : ""
-                                    }
-                                  </div>
-                                </p>
-                              </Link>
-                            </div>
-                          )
-                        })}
-                        </> : ""
-                      }
-                    </div>
-                  </li>
-
-                </div>
-              )
-            })
-          } */}
         </ul>
       </div>
       <div className={`respNavbar ${openNavbar ? "open" : ""}`}>
