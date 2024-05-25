@@ -1,7 +1,25 @@
 
-
+.sport-name{
+  text-transform: lowercase;
+  &::first-letter{
+    text-transform: uppercase;
+  }
+}
+.nested-form{
+.btn{
+  margin: 0px 0px 20px;
+  color: #2d3c46 ;
+  font-weight: 500;
+}
+}
 .adminpage {
   padding-left: 200px;
+.content-p{
+  height: 100px;
+  overflow-y: scroll;
+  max-width: 600px;
+
+}
   .btn1 {
     background-color: #1D2327;
     color: white;
@@ -113,7 +131,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  h6{
+    font-size: 20px;
+    padding: 10px 0;
+    &::first-letter{
+      text-transform: uppercase;
+    }
+    
+  }
   h2 {
     font-size: 20px;
     text-align: center;

@@ -136,9 +136,9 @@ const XeberlerAdmin = () => {
                           <td><img src={item.image2} alt="" /></td>
                           <td><img src={item.image3} alt="" /></td>
                           <td><img src={item.image4} alt="" /></td>
-                          <td>{item.title}</td>
-                          <td>{item.name}</td>
-                          <td>{item.content}</td>
+                          <td><p className="content-p">{item.title}</p></td>
+                          <td><p className="content-p">{item.name}</p></td>
+                          <td> <p className="content-p">{item.content}</p></td>
                           <td>
                             <button onClick={() => openModal(item._id)} className="btn">
                               <AiOutlineDelete />

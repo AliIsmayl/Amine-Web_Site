@@ -58,7 +58,7 @@ const IdmanNovleriAdmin = () => {
 
   async function editIdmanNovleri(id, values) {
     await axios.put(`http://localhost:5000/idmanNovleri/${id}`, values);
-    toast.success("Successfully edited!");
+    toast.success("Dəyişildi!");
     setShowModal(false);
     getData();
   }
@@ -148,8 +148,8 @@ const IdmanNovleriAdmin = () => {
                       .map((IdmanNovleri) => (
                         <React.Fragment key={IdmanNovleri._id}>
                           <tr >
-                            <td >{IdmanNovleri.tittle}</td>
-                            <td >{IdmanNovleri.content}</td>
+                            <td className="sport-name">{IdmanNovleri.tittle}</td>
+                            <td > <p className="content-p">{IdmanNovleri.content}</p></td>
                             <td>{IdmanNovleri.name}</td>
                             <td>
                               <button
@@ -179,8 +179,8 @@ const IdmanNovleriAdmin = () => {
                           {expandedRows[IdmanNovleri._id] &&
                             IdmanNovleri.Alt.map((alt, index) => (
                               <tr  key={`${IdmanNovleri._id}-${index}`}>
-                                <td className="pl-10">-- {alt.tittle}</td>
-                                <td>{alt.content}</td>
+                                <td  className="pl-10 sport-name">-- {alt.tittle}</td>
+                                <td><p className="content-p">{alt.content}</p></td>
                                 <td>{alt.name}</td>
                                 <td></td>
                               </tr>
@@ -250,23 +250,14 @@ const IdmanNovleriAdmin = () => {
                     </div>
                   </div>
 
-                  <FieldArray name="Alt">
+                  <FieldArray  name="Alt">
                     {({ insert, remove, push }) => (
                       <div>
-                        <h6>alt məzmun  </h6>
+                        <h6 className="alt-h">alt məzmun  </h6>
                         {values.Alt.length > 0 &&
                           values.Alt.map((alt, index) => (
                             <div className="nested-form" key={index}>
-                              <div className="inpp">
-                                <Field
-                                  name={`Alt.${index}.name`}
-                                  type="text"
-                                  placeholder="Alt Name"
-                                />
-                                <div className="red">
-                                  <ErrorMessage name={`Alt.${index}.name`} />
-                                </div>
-                              </div>
+                              
                               <div className="inpp">
                                 <Field
                                   name={`Alt.${index}.tittle`}
@@ -287,12 +278,22 @@ const IdmanNovleriAdmin = () => {
                                   <ErrorMessage name={`Alt.${index}.content`} />
                                 </div>
                               </div>
+                              <div className="inpp">
+                                <Field
+                                  name={`Alt.${index}.name`}
+                                  type="text"
+                                  placeholder="Alt Name"
+                                />
+                                <div className="red">
+                                  <ErrorMessage name={`Alt.${index}.name`} />
+                                </div>
+                              </div>
                               <button
                                 type="button"
                                 className="btn"
                                 onClick={() => remove(index)}
                               >
-                                Remove Alt
+                                 Alt məzmunu sil
                               </button>
                             </div>
                           ))}
@@ -301,7 +302,7 @@ const IdmanNovleriAdmin = () => {
                           className="btn"
                           onClick={() => push({ name: "", tittle: "", content: "" })}
                         >
-                          Add Alt
+                           Alt məzmun əlavə et
                         </button>
                       </div>
                     )}
