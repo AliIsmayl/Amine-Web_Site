@@ -7,6 +7,8 @@ import AboutRehberlik from './Pages/AboutRehberlik';
 import AboutHistory from './Pages/AboutHistory';
 import AboutCommitet from './Pages/AboutCommitet';
 import Contact from './Pages/Contact';
+import NewsCard from './Components/NewsComponents/NewsCard/NewsCard';
+import NewsDetailPage from './Components/NewsComponents/NewsCard/NewsDetailPage/NewsDetailPage';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/tariximiz" element={<AboutHistory/>} /> 
           <Route path="/icraiyye-comitesi" element={<AboutCommitet/>} /> 
           <Route path="/contact" element={<Contact/>} /> 
+          <Route path="/detail" element={<NewsCard/>} /> 
+          <Route path="/yoxla" element={<NewsDetailPage/>} /> 
         </Routes>
         <Footer/>
       </BrowserRouter>
