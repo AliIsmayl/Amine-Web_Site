@@ -12,6 +12,7 @@ import Xeberler from './src/routers/xeberler.js'
 import Foto from './src/routers/foto.js'
 import ContactRouter from './src/routers/contact.js'
 import Video from './src/routers/video.js'
+import MedalRouter from './src/routers/medal.js'
 
 const app = express()
 app.use(cors())
@@ -26,6 +27,7 @@ app.use("/xeberler",Xeberler)
 app.use("/foto",Foto)
 app.use("/video",Video)
 app.use("/contact",ContactRouter)
+app.use("/medal",MedalRouter)
 
 
 

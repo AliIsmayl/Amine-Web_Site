@@ -57,10 +57,10 @@ const AddXeberler = () => {
             title: Yup.string().required("Required"),
             name: Yup.string().required("Required"),
             content: Yup.string(),
-            image1: Yup.mixed(),
-            image2: Yup.mixed(),
-            image3: Yup.mixed(),
-            image4: Yup.mixed(),
+            image1: Yup.mixed().notRequired(),
+            image2: Yup.mixed().notRequired(),
+            image3: Yup.mixed().notRequired(),
+            image4: Yup.mixed().notRequired() ,
           })}
           onSubmit={(values, { resetForm }) => {
             addXeberler(values);

@@ -7,6 +7,7 @@ import { MdInsertEmoticon } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineSpa } from "react-icons/md";
+import { LiaMedalSolid } from "react-icons/lia";
 import { AiOutlineComment } from "react-icons/ai";
 import { PiNewspaperClipping } from "react-icons/pi";
 import { MdSportsKabaddi } from "react-icons/md";
@@ -59,6 +60,9 @@ const NavAdmin = () => {
     </li>
     <li>
         <NavLink to="/admin/foto"><FaRegImages />Şəkillər</NavLink>
+    </li>
+    <li>
+        <NavLink to="/admin/medal"><LiaMedalSolid />Medallar</NavLink>
     </li>
     <li>
         <NavLink to="/admin/contact"><TiContacts />Contact</NavLink>

@@ -33,6 +33,8 @@ import ContactAdmin from './Pages/AdminPages/ContactPage';
 import AddContact from './AdminComponents/AddContact';
 import NewsCard from './Components/NewsComponents/NewsComponents';
 import NewsDetailPage from './Components/NewsComponents/NewsDetailPage/NewsDetailPage';
+import AddMedal from './AdminComponents/AddMedal';
+import MedalAdmin from './Pages/AdminPages/MedalPage';
 
 function App() {
 
@@ -64,6 +66,8 @@ function App() {
             <Route path="/admin/video" element={<VideoAdmin />} />
             <Route path="/admin/xeberler" element={<XeberlerAdmin />} />
             <Route path="/admin/contact" element={<ContactAdmin />} />
+            <Route path="/admin/medal" element={<MedalAdmin />} />
+            <Route path="/admin/addMedal" element={<AddMedal />} />
             <Route path="/admin/addRehberlik" element={<AddRehberlik />} />
             <Route path="/admin/addKomitet" element={<AddKomitet />} />
             <Route path="/admin/addFoto" element={<AddFoto />} />
