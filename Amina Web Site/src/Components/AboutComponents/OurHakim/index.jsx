@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import "./index.scss"
 import AboutCard from '../../../component/AboutCard'
 import axios from 'axios'
+import NotMean from '../../NotMean/NotMean'
 
-const OurCommitet = () => {
+const OurHakim = () => {
 
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("http://localhost:5000/komitet")
+    const res = await axios.get("http://localhost:5000/hakim")
     setData(res.data)
   }
   useEffect(() => {
@@ -17,16 +18,18 @@ const OurCommitet = () => {
 
 
   return (
-    <div id='about-us'>
+    <>
+    <NotMean/>
+        <div id='about-us'>
       <div className="tittle-icra">
-        <h3>ICRAİYYƏ KOMİTƏSİ</h3>
+        <h3>Hakimlər</h3>
       </div>
       <div className="container">
         <div className="row">
           {
             data && data.map(item =>
               <div className='col-lg-3 col-md-4 col-12'>
-                <AboutCard {...item} />
+                <AboutCard style={"var"} {...item} />
               </div>
             )
           }
@@ -35,9 +38,11 @@ const OurCommitet = () => {
         </div>
       </div>
     </div>
+    </>
+
 
 
   )
 }
 
-export default OurCommitet
+export default OurHakim

@@ -76,13 +76,13 @@ function Navbar() {
           <div>
             <li className='pageText'><p className='link' to={"#"}><span></span> Milli komandalar
               <div className="subMenu">
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/mesqciler'}>
                   <li><span></span>Məşqçilər</li>
                 </Link>
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/idmancilar'}>
                   <li><span></span>İdmançılar</li>
                 </Link>
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/hakimler'}>
                   <li><span></span>Hakimlər</li>
                 </Link>
               </div></p></li>

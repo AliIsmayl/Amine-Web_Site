@@ -37,6 +37,9 @@ import AddMedal from './AdminComponents/AddMedal';
 import MedalAdmin from './Pages/AdminPages/MedalPage';
 import PhotoSection from './Components/MediaComponents/PhotoSection/PhotoSection';
 import VideoSection from './Components/MediaComponents/VideoSection/VideoSection';
+import OurHakim from './Components/AboutComponents/OurHakim';
+import OurMesqci from './Components/AboutComponents/OurMesqci';
+import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 
 function App() {
 
@@ -53,6 +56,9 @@ function App() {
             <Route path="/haqqimizda" element={<AboutPage />} />
             <Route path="/icraiyye-comitesi" element={<AboutCommitet />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/idmancilar" element={<Ourİdmaci />} />
+            <Route path="/hakimler" element={<OurHakim />} />
+            <Route path="/mesqciler" element={<OurMesqci />} />
             <Route path="/page/:name" element={<DetailPage />} />
             <Route path="/news" element={<NewsCard />} />
             <Route path="/news/:name" element={<NewsDetailPage />} />

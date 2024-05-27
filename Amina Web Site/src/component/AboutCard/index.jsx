@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./index.scss"
-const AboutCard = () => {
+import axios from 'axios'
+
+const AboutCard = (product, style) => {
+
   return (
-    <div className='about-card'>
-      <div className="image">
-        <img src="https://amina-azif.az/wp-content/uploads/2023/05/2b374c0e-2f78-4b3c-a24c-3d4effd3f919-480x480-1.jpg" alt="" />
+    <div className='about-card'
+
+    >
+
+      <div className="image"
+
+      >
+        <img src={product.image} alt=""
+          style={{ height: `${style ? "370px" : ""}` }}
+        />
       </div>
       <div className="content">
-        <h4>Prezident -
-Kazım Qurbanov</h4>
-<div className='line'></div>
-<p>
-Kazım Xanlar oğlu Qurbanov
-</p>
+        <h4>{product.title}</h4>
+        <div className='line'></div>
+        <p>
+          {product.position}
+        </p>
       </div>
     </div>
   )

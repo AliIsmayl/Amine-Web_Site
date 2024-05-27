@@ -80,17 +80,32 @@ header {
 
     .swiper-button-next:after,
     .swiper-rtl .swiper-button-prev:after {
-        content: 'next';
-        margin-top: -400px;
-        color: #18407C;
+        content: "next";
+        margin-top: -00px;
+        color: white;
+        font-size: 15px;
+        background-color: #CCB892;
+        padding: 10px;
+        border-radius: 50%;
+        height: 30px;
+        width: 40px;
+        @include MyFlex();
     }
+
+
 
     .swiper-button-prev:after,
     .swiper-rtl .swiper-button-next:after {
-        margin-top: -400px;
-        content: 'prev';
+        margin-top: -00px;
+        content: "prev";
         color: white;
-
+        font-size: 15px;
+        background-color: #CCB892;
+        padding: 10px;
+        border-radius: 50%;
+        height: 30px;
+        width: 40px;
+        @include MyFlex();
     }
 }
 
