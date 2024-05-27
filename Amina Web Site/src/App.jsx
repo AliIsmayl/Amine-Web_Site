@@ -33,13 +33,10 @@ import ContactAdmin from './Pages/AdminPages/ContactPage';
 import AddContact from './AdminComponents/AddContact';
 import NewsCard from './Components/NewsComponents/NewsComponents';
 import NewsDetailPage from './Components/NewsComponents/NewsDetailPage/NewsDetailPage';
-<<<<<<< HEAD
 import AddMedal from './AdminComponents/AddMedal';
 import MedalAdmin from './Pages/AdminPages/MedalPage';
-=======
 import PhotoSection from './Components/MediaComponents/PhotoSection/PhotoSection';
 import VideoSection from './Components/MediaComponents/VideoSection/VideoSection';
->>>>>>> aliNewBranch
 
 function App() {
 
