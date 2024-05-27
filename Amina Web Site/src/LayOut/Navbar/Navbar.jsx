@@ -21,6 +21,7 @@ function Navbar() {
   function handleOpenNavbar() {
     setopenNavbar(!openNavbar)
   }
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -30,17 +31,22 @@ function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const mediaQuery = window.matchMedia('(min-width: 321px)');
+
+    if (mediaQuery.matches) {
+      window.addEventListener('scroll', handleScroll);
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (mediaQuery.matches) {
+        window.removeEventListener('scroll', handleScroll);
+      }
     };
   }, []);
 
   useEffect(() => {
     TextGetData()
   }, [])
-
 
   return (
     <nav>
@@ -92,18 +98,17 @@ function Navbar() {
               <div className="subMenu">
                 {
                   navbarText && navbarText.map((item) => (
-                    <Link className='pageLink' to={`/page/${item.name}`}>
+                    <Link className='pageLink' to={`/page/${item.name}`} key={item.name}>
                       <li><span></span>{item.tittle}
                         <ul className='altText'>
                           {item.Alt.map((altItem) => (
-                            <Link className='pageLink' to={`/page/${altItem.name}`}>
+                            <Link className='pageLink' to={`/page/${altItem.name}`} key={altItem.name}>
                               <li key={altItem.name}><span></span>{altItem.tittle}</li>
                             </Link>
                           ))}
                         </ul>
                       </li>
                     </Link>
-
                   ))
                 }
               </div>
@@ -113,12 +118,12 @@ function Navbar() {
             <li className='pageText'><NavLink className='link' to={"/news"}><span></span> Xəbər</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><p className='link' to={"/asd"}><span></span> Media
+            <li className='pageText'><p className='link' ><span></span> Media
               <div className="subMenu">
                 <Link className='pageLink' to={'/photo'}>
                   <li><span></span>Foto</li>
                 </Link>
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/video'}>
                   <li><span></span>Video</li>
                 </Link>
               </div></p></li>
@@ -137,7 +142,6 @@ function Navbar() {
           <RespNavbar />
         </div>
       </div>
-
     </nav>
   )
 }

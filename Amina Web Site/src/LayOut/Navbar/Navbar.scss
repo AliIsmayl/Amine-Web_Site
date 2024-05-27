@@ -19,6 +19,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
+
   .upBox {
     background: rgb(24, 64, 124);
     text-align: center;
@@ -33,22 +34,27 @@ nav {
   }
 
   .downBox {
-    background: white;
     @include MyFlex();
-    padding: 10px 0px;
-
+    // padding: 10px 0px;
+background: white;
     // padding: 20px ;
     ul {
       display: flex;
       list-style: none;
       position: relative;
       gap: 50px;
+      @include MyFlex();
       font-family: "Montserrat", sans-serif;
+      margin-bottom: 0px;
 
       .pageText {
         font-weight: 600;
         // display: flex;
         position: relative;
+
+        p {
+          padding: 17px 0 0 0;
+        }
 
         .subMenu {
           background-color: white;
@@ -57,7 +63,7 @@ nav {
           box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
           position: absolute;
           width: 300px;
-          top: 20px;
+          top: 30px;
           opacity: 0;
           transition: all 0.7s;
           left: -30px;
@@ -75,6 +81,8 @@ nav {
             align-items: center;
             gap: 3px;
             position: relative;
+
+
 
             &:hover {
               .altText {
@@ -99,12 +107,6 @@ nav {
                 -webkit-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
                 -moz-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
                 box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
-
-                &:first-child {
-                  -webkit-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                  -moz-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                  box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                }
 
                 span {
                   width: 0;
