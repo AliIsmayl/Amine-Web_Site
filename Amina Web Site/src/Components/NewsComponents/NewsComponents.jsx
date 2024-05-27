@@ -3,6 +3,7 @@ import './NewsComponents.scss'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import NotMean from '../NotMean/NotMean';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 function NewsCard() {
     const [NewsCart, setNewsCart] = useState([])
@@ -20,7 +21,7 @@ function NewsCard() {
             <div className='newsPage'>
                 {
                     NewsCart && NewsCart.map((item, index) => (
-                        <div className="newsCard">
+                        <div className="newsCard" key={index}>
                             <div className="imageBox">
                                 <img src={item.image} alt="" />
                                 <div className="timeBox">
@@ -37,7 +38,9 @@ function NewsCard() {
                                 </div>
                                 <h1>{item.title}</h1>
                                 <h6>{item.content}</h6>
-                                <h3>Read More <MdKeyboardArrowRight /></h3>
+                                <Link className='link' to={`${item.name}`}>
+                                    <h3>Read More <MdKeyboardArrowRight /></h3>
+                                </Link>
                             </div>
                         </div>
                     ))
