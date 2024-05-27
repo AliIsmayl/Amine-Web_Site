@@ -74,7 +74,7 @@ function Navbar() {
             </NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> Milli komandalar
+            <li className='pageText'><p className='link' to={"#"}><span></span> Milli komandalar
               <div className="subMenu">
                 <Link className='pageLink' to={''}>
                   <li><span></span>Məşqçilər</li>
@@ -85,10 +85,10 @@ function Navbar() {
                 <Link className='pageLink' to={''}>
                   <li><span></span>Hakimlər</li>
                 </Link>
-              </div></NavLink></li>
+              </div></p></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asdsa"}><span></span> İdman növləri
+            <li className='pageText'><p className='link' ><span></span> İdman növləri
               <div className="subMenu">
                 {
                   navbarText && navbarText.map((item) => (
@@ -107,21 +107,21 @@ function Navbar() {
                   ))
                 }
               </div>
-            </NavLink></li>
+            </p></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/news"}><span></span> Xəbər</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asd"}><span></span> Media
+            <li className='pageText'><p className='link' to={"/asd"}><span></span> Media
               <div className="subMenu">
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/photo'}>
                   <li><span></span>Foto</li>
                 </Link>
                 <Link className='pageLink' to={''}>
                   <li><span></span>Video</li>
                 </Link>
-              </div></NavLink></li>
+              </div></p></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/contact"}><span></span> Əlaqə</NavLink></li>

@@ -33,6 +33,8 @@ import ContactAdmin from './Pages/AdminPages/ContactPage';
 import AddContact from './AdminComponents/AddContact';
 import NewsCard from './Components/NewsComponents/NewsComponents';
 import NewsDetailPage from './Components/NewsComponents/NewsDetailPage/NewsDetailPage';
+import PhotoSection from './Components/MediaComponents/PhotoSection/PhotoSection';
+import VideoSection from './Components/MediaComponents/VideoSection/VideoSection';
 
 function App() {
 
@@ -51,7 +53,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/page/:name" element={<DetailPage />} />
             <Route path="/news" element={<NewsCard />} />
-            <Route path="/news/detail" element={<NewsDetailPage />} />
+            <Route path="/news/:name" element={<NewsDetailPage />} />
+            <Route path="/photo" element={<PhotoSection />} />
+            <Route path="/video" element={<VideoSection />} />
           </Route>
           <Route path='/admin' element={<LayoutAdmin />}>
             <Route path="/admin/idmancilar" element={<IdmanciAdmin />} />

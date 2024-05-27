@@ -27,11 +27,12 @@ header {
             border: 1px solid white;
 
             .leftBox {
+
                 padding: 40px;
                 width: 50%;
                 background-color: #18407C;
                 display: flex;
-                align-items: end;
+                align-items: start;
                 flex-direction: column;
                 color: #CCB892;
 
@@ -47,7 +48,12 @@ header {
                     padding: 10px 15px;
                     border-radius: 30px;
                     cursor: pointer;
+                    display: inline-block;
+                    width: 200px;
                     transition: all 0.7s;
+                    background-color: #CCB892;
+                    border: 1px solid #CCB892;
+                    outline: none;
 
                     &:hover {
                         transform: translateY(-5px);
