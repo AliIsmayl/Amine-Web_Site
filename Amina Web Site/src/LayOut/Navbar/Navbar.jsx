@@ -61,13 +61,13 @@ function Navbar() {
           <div>
             <li className='pageText'><NavLink className='link' to={"/about"}><span></span> Haqqımızda
               <div className="subMenu">
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/tariximiz'}>
                   <li><span></span>Tariximiz</li>
                 </Link>
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/rehberlik'}>
                   <li><span></span>Rəhbərlik</li>
                 </Link>
-                <Link className='pageLink' to={''}>
+                <Link className='pageLink' to={'/icraiyye-comitesi'}>
                   <li><span></span>İcraiyə Komitəsi</li>
                 </Link>
               </div>

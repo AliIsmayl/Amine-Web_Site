@@ -27,7 +27,6 @@ function RespNavbar() {
     const handleSecondOpenAccordion = () => {
         setOpenSecondAccordionIndex(!openSecondAccordionIndex)
         setOpenAccordionIndex(false)
-        // setOpenSecondAccordionIndex(false)
         setOpenThirdAccordionIndex(false)
         setOpenLastAccordionIndex(false)
 
@@ -36,7 +35,6 @@ function RespNavbar() {
         setOpenThirdAccordionIndex(!openThirdAccordionIndex)
         setOpenAccordionIndex(false)
         setOpenSecondAccordionIndex(false)
-        // setOpenThirdAccordionIndex(false)
         setOpenLastAccordionIndex(false)
 
     };
@@ -45,7 +43,6 @@ function RespNavbar() {
         setOpenAccordionIndex(false)
         setOpenSecondAccordionIndex(false)
         setOpenThirdAccordionIndex(false)
-        // setOpenLastAccordionIndex(false)
 
     };
 
@@ -72,17 +69,17 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openSecondAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/tariximiz`} >
                                 Tariximiz
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/tariximiz`} >
                                 Rəhbərlik
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/tariximiz`} >
                                 İcraiyyə Komitəsi
                             </Link>
                         </li>
