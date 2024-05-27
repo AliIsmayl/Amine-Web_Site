@@ -59,7 +59,7 @@ function Navbar() {
             <li className='pageText'><NavLink className='link' to={"/"}><span></span> Ana Səhifə</NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/about"}><span></span> Haqqımızda
+            <li className='pageText'><NavLink className='link' to={"/haqqimizda"}><span></span> Haqqımızda
               <div className="subMenu">
                 <Link className='pageLink' to={'/tariximiz'}>
                   <li><span></span>Tariximiz</li>
@@ -110,7 +110,7 @@ function Navbar() {
             </NavLink></li>
           </div>
           <div>
-            <li className='pageText'><NavLink className='link' to={"/asdsad"}><span></span> Xəbər</NavLink></li>
+            <li className='pageText'><NavLink className='link' to={"/news"}><span></span> Xəbər</NavLink></li>
           </div>
           <div>
             <li className='pageText'><NavLink className='link' to={"/asd"}><span></span> Media
