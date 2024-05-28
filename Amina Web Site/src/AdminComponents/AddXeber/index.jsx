@@ -36,11 +36,11 @@ const AddXeberler = () => {
 
   return (
     <div className="adminpage">
-      <div className="return">
-        <Link to="/admin/xeberler">Xeberlər siyahısına bax</Link>
+      <div className="btn btn1">
+        <Link to="/admin/xeberler">Xəbər siyahısına bax</Link>
       </div>
       <div className="text-center margi">
-        <h2>Xeberler əlavə et</h2>
+        <h2>Xəbər əlavə et</h2>
       </div>
       <div className="formadd">
         <Formik
@@ -57,10 +57,10 @@ const AddXeberler = () => {
             title: Yup.string().required("Required"),
             name: Yup.string().required("Required"),
             content: Yup.string(),
-            image1: Yup.mixed(),
-            image2: Yup.mixed(),
-            image3: Yup.mixed(),
-            image4: Yup.mixed(),
+            image1: Yup.mixed().notRequired(),
+            image2: Yup.mixed().notRequired(),
+            image3: Yup.mixed().notRequired(),
+            image4: Yup.mixed().notRequired() ,
           })}
           onSubmit={(values, { resetForm }) => {
             addXeberler(values);

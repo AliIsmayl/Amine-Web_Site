@@ -99,11 +99,11 @@ const RehberlikAdmin = () => {
               <div className="overflow-x-auto">
                 <table className="table">
                   <thead>
+
                     <tr>
-                      {/* <th>id</th> */}
                       <th>şəkil</th>
+                      <th>pozisiya</th>
                       <th>ad</th>
-                      <th>idman növü</th>
 
                       <th><RiListSettingsLine /></th>
                     </tr>
@@ -114,7 +114,7 @@ const RehberlikAdmin = () => {
                     ) : (
                       data &&
                       data
-                      .filter(x=>x.title.toLowerCase().includes(search.toLowerCase()))
+                      .filter(x=>x.position.toLowerCase().includes(search.toLowerCase()))
     .sort((a,b)=>{
         if (property && property.asc===true) {
             return a[property.name]<b[property.name] ? -1 : (a[property.name]<b[property.name] ? 1 : 0)
@@ -128,14 +128,12 @@ const RehberlikAdmin = () => {
     })
                       .map((item) => (
                         <tr key={item._id}>
-                          {/* <td>{item._id}</td> */}
                           <td><img src={item.image} alt="" /></td>
                           <td>{item.title}</td>
                           <td>{item.position}</td>
 
                           <td>
                             <button
-                              // onClick={() => deleteRehberlik(item._id)}
                               onClick={()=>openModal(item._id)}
                               className="btn"
                             >
@@ -189,14 +187,14 @@ const RehberlikAdmin = () => {
                 {({ setFieldValue }) => (
                   <Form>
                     <div className="inpp">
-                      <Field name="title" type="text" placeholder="title" />
+                      <Field name="title" type="text" placeholder="pozisiya" />
                       <div className="red">
                         <ErrorMessage name="title" />
                       </div>
                     </div>
 
                     <div className="inpp">
-                      <Field name="position" type="text" placeholder="position" />
+                      <Field name="position" type="text" placeholder="ad" />
                       <div className="red">
                         <ErrorMessage name="position" />
                       </div>

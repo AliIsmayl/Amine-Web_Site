@@ -16,13 +16,13 @@ function DetailPage() {
         getDetail()
     }, [name])
     return (
-       <>
-        <NotMean/>
-        <div className='detailPage'>
-            <div className="upBox">{detail.tittle ? parse(detail.tittle) : detail.tittle}</div>
-            <div className="downBox">{detail.content ? parse(detail.content) : detail.content}</div>
-        </div>
-       </>
+        <>
+            <NotMean />
+            <div className='detailPage'>
+                <div className="upBox">{detail.tittle ? parse(detail.tittle) : detail.tittle}</div>
+                <div className="downBox">{detail.content ? parse(detail.content) : detail.content}</div>
+            </div>
+        </>
     )
 }
 

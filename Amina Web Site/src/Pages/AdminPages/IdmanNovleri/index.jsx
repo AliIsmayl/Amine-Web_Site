@@ -7,6 +7,7 @@ import { Formik, Field, Form, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
+import { RiListSettingsLine } from "react-icons/ri";
 
 const IdmanNovleriAdmin = () => {
   const [data, setData] = useState([]);
@@ -57,7 +58,7 @@ const IdmanNovleriAdmin = () => {
 
   async function editIdmanNovleri(id, values) {
     await axios.put(`http://localhost:5000/idmanNovleri/${id}`, values);
-    toast.success("Successfully edited!");
+    toast.success("Dəyişildi!");
     setShowModal(false);
     getData();
   }
@@ -85,13 +86,13 @@ const IdmanNovleriAdmin = () => {
           <div className="filterDD">
             <div className="addUser">
               <button className="btn">
-                <Link to="/admin/addIdmanNovleri">Add IdmanNovleri</Link>
+                <Link to="/admin/addIdmanNovleri"> İdman növü əlavə et</Link>
               </button>
             </div>
             <div className="filter">
               <input
                 type="search"
-                placeholder="Search by name..."
+                placeholder="Ada gore axtar"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -122,8 +123,8 @@ const IdmanNovleriAdmin = () => {
                   <tr>
                     <th>Tittle</th>
                     <th>Content</th>
-                    <th>Path</th>
-                    <th>Settings</th>
+                    <th>Yol</th>
+                    <th><RiListSettingsLine /></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -147,8 +148,8 @@ const IdmanNovleriAdmin = () => {
                       .map((IdmanNovleri) => (
                         <React.Fragment key={IdmanNovleri._id}>
                           <tr >
-                            <td >{IdmanNovleri.tittle}</td>
-                            <td >{IdmanNovleri.content}</td>
+                            <td className="sport-name">{IdmanNovleri.tittle}</td>
+                            <td > <p className="content-p">{IdmanNovleri.content}</p></td>
                             <td>{IdmanNovleri.name}</td>
                             <td>
                               <button
@@ -178,8 +179,8 @@ const IdmanNovleriAdmin = () => {
                           {expandedRows[IdmanNovleri._id] &&
                             IdmanNovleri.Alt.map((alt, index) => (
                               <tr  key={`${IdmanNovleri._id}-${index}`}>
-                                <td className="pl-10">-- {alt.tittle}</td>
-                                <td>{alt.content}</td>
+                                <td  className="pl-10 sport-name">-- {alt.tittle}</td>
+                                <td><p className="content-p">{alt.content}</p></td>
                                 <td>{alt.name}</td>
                                 <td></td>
                               </tr>
@@ -201,7 +202,7 @@ const IdmanNovleriAdmin = () => {
             <span className="close" onClick={() => setShowModal(false)}>
               &times;
             </span>
-            <h2>Edit</h2>
+            <h2>Düzəliş et</h2>
             <Formik
               initialValues={{
                 tittle: editedIdmanNovleri.tittle || "",
@@ -210,12 +211,12 @@ const IdmanNovleriAdmin = () => {
                 Alt: editedIdmanNovleri.Alt || [{ name: "", tittle: "", content: "" }],
               }}
               validationSchema={Yup.object({
-                tittle: Yup.string().required("Required"),
+                tittle: Yup.string().required("Xanani doldur"),
                 content: Yup.string(),
                 name: Yup.string(),
                 Alt: Yup.array().of(
                   Yup.object().shape({
-                    name: Yup.string(),
+                    name: Yup.string().required("Xanani doldur"),
                     tittle: Yup.string(),
                     content: Yup.string(),
                   })
@@ -227,6 +228,7 @@ const IdmanNovleriAdmin = () => {
             >
               {({ values }) => (
                 <Form>
+                   <h6>əsas məzmun  </h6>
                   <div className="inpp">
                     <Field name="tittle" type="text" placeholder="Tittle" />
                     <div className="red">
@@ -248,22 +250,14 @@ const IdmanNovleriAdmin = () => {
                     </div>
                   </div>
 
-                  <FieldArray name="Alt">
+                  <FieldArray  name="Alt">
                     {({ insert, remove, push }) => (
                       <div>
+                        <h6 className="alt-h">alt məzmun  </h6>
                         {values.Alt.length > 0 &&
                           values.Alt.map((alt, index) => (
                             <div className="nested-form" key={index}>
-                              <div className="inpp">
-                                <Field
-                                  name={`Alt.${index}.name`}
-                                  type="text"
-                                  placeholder="Alt Name"
-                                />
-                                <div className="red">
-                                  <ErrorMessage name={`Alt.${index}.name`} />
-                                </div>
-                              </div>
+                              
                               <div className="inpp">
                                 <Field
                                   name={`Alt.${index}.tittle`}
@@ -284,12 +278,22 @@ const IdmanNovleriAdmin = () => {
                                   <ErrorMessage name={`Alt.${index}.content`} />
                                 </div>
                               </div>
+                              <div className="inpp">
+                                <Field
+                                  name={`Alt.${index}.name`}
+                                  type="text"
+                                  placeholder="Alt Name"
+                                />
+                                <div className="red">
+                                  <ErrorMessage name={`Alt.${index}.name`} />
+                                </div>
+                              </div>
                               <button
                                 type="button"
                                 className="btn"
                                 onClick={() => remove(index)}
                               >
-                                Remove Alt
+                                 Alt məzmunu sil
                               </button>
                             </div>
                           ))}
@@ -298,7 +302,7 @@ const IdmanNovleriAdmin = () => {
                           className="btn"
                           onClick={() => push({ name: "", tittle: "", content: "" })}
                         >
-                          Add Alt
+                           Alt məzmun əlavə et
                         </button>
                       </div>
                     )}

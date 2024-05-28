@@ -34,22 +34,28 @@ nav {
   }
 
   .downBox {
-    background: white;
     @include MyFlex();
-    padding: 10px 0px;
-
+    // padding: 10px 0px;
+background: white;
     // padding: 20px ;
     ul {
       display: flex;
       list-style: none;
       position: relative;
       gap: 50px;
+      @include MyFlex();
       font-family: "Montserrat", sans-serif;
+      margin-bottom: 0px;
 
       .pageText {
         font-weight: 600;
         // display: flex;
         position: relative;
+
+        p {
+          padding: 17px 0 0 0;
+        }
+
         .subMenu {
           background-color: white;
           -webkit-box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
@@ -57,7 +63,7 @@ nav {
           box-shadow: -4px 12px 53px -12px rgba(24, 64, 124, 0.75);
           position: absolute;
           width: 300px;
-          top: 20px;
+          top: 30px;
           opacity: 0;
           transition: all 0.7s;
           left: -30px;
@@ -74,6 +80,9 @@ nav {
             display: flex;
             align-items: center;
             gap: 3px;
+            position: relative;
+
+
 
             &:hover {
               .altText {
@@ -98,12 +107,6 @@ nav {
                 -webkit-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
                 -moz-box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
                 box-shadow: 32px 4px 26px -14px rgba(24, 64, 124, 0.75);
-
-                &:first-child {
-                  -webkit-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                  -moz-box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                  box-shadow: 25px -25px 41px -14px rgba(24, 64, 124, 0.75);
-                }
 
                 span {
                   width: 0;
@@ -152,109 +155,8 @@ nav {
           color: #181818;
           @include MyFlex();
           gap: 10px;
-
-          span {
-            // background: rebeccapurple;
-            // height: 30px;
-            // width: 30px;
-          }
         }
 
-        // .subMenu {
-        //   background: blue;
-        //   width: 250px;
-        //   position: absolute;
-        //   line-height: 1.5;
-        //   //
-        //   transition: 0.3s;
-        //   opacity: 0;
-        //   visibility: hidden;
-        //   margin-top: 5px;
-        //   font-size: 15px;
-
-        //   .subMenuİnBox {
-        //     background: #fff;
-        //     display: flex;
-
-        //     span {
-        //       background: #CCB892;
-        //       height: 2px;
-        //       width: 0px;
-        //       margin-right: 10px;
-        //       transition: 0.5s;
-        //       margin-top: 15px;
-
-        //     }
-
-        //     p {
-        //       padding: 6px 8px;
-        //       margin-left: -10px;
-        //       transition: 0.5s;
-
-        //       &:hover .secondSubmenu {
-        //         opacity: 1;
-        //         transition: 0.5s;
-        //         visibility: visible;
-        //       }
-        //     }
-
-        //     &:hover {
-        //       .span1 {
-        //         width: 15px;
-
-        //       }
-
-        //       .text1 {
-        //         color: #CCB892;
-
-        //       }
-        //     }
-        //   }
-
-        //   .secondSubmenu {
-        //     position: absolute;
-        //     left: 104%;
-        //     width: 250px;
-        //     transition: 0.3s;
-        //     opacity: 0;
-        //     visibility: hidden;
-        //     top: 0;
-
-        //     .secondSubMenuInBox {
-        //       background: #fff;
-        //       display: flex;
-        //       // align-items: center;
-        //       margin-left: -10px;
-
-        //       .text2 {
-        //         color: #181818;
-
-        //       }
-
-        //       &:hover {
-        //         .span2 {
-        //           width: 15px;
-
-        //         }
-
-        //         .text2 {
-        //           color: #CCB892;
-
-        //         }
-
-
-        //       }
-
-        //       .span2 {
-        //         background: #CCB892;
-        //         height: 2px;
-        //         width: 0px;
-        //         margin-right: 10px;
-        //         transition: 0.5s;
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
   }

@@ -1,39 +1,50 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Medal.scss'
+import axios from 'axios'
 
 function Medal() {
     const [count, setCount] = useState(0);
     const containerRef = useRef(null);
+    const [medal, setmedal] = useState([])
+
+    async function getMedal() {
+        const res = await axios.get("http://localhost:5000/medal")
+        setmedal(res.data)
+    }
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (count < 85) {
-                setCount(prevCount => prevCount + 1);
-            } else {
-                clearInterval(interval);
-            }
-        }, 1); // Saniyede bir arttır
+        getMedal()
+    }, [])
 
-        return () => clearInterval(interval);
-    }, [count]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         if (count < 85) {
+    //             setCount(prevCount => prevCount + 1);
+    //         } else {
+    //             clearInterval(interval);
+    //         }
+    //     }, 1); // Saniyede bir arttır
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const rect = containerRef.current.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                if (isVisible) {
-                    setCount(0); // Sayacı sıfırla ve yeniden başlat
-                }
-            }
-        };
+    //     return () => clearInterval(interval);
+    // }, [count]);
 
-        window.addEventListener('scroll', handleScroll);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (containerRef.current) {
+    //             const rect = containerRef.current.getBoundingClientRect();
+    //             const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+    //             if (isVisible) {
+    //                 setCount(0); // Sayacı sıfırla ve yeniden başlat
+    //             }
+    //         }
+    //     };
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
     return (
         <section id='medalComponent'>
             <div className="upBox">
@@ -48,28 +59,32 @@ function Medal() {
                     <p><span>Azərbaycan yığma komandasının</span> müxtəlif yaş qrupları üzrə beynalxalq turnirlərdə qazandığı medallar sayı</p>
                 </div>
             </div>
-            <div className="downBox" ref={containerRef}>
-                <div className="medalCartBox">
-                    <p>{count}</p>
-                    <div className="line"></div>
-                    <span>Qizil</span>
-                </div>
-                <div className="medalCartBox">
-                    <p>{count}</p>
-                    <div className="line"></div>
-                    <span>Qizil</span>
-                </div>
-                <div className="medalCartBox">
-                    <p>{count}</p>
-                    <div className="line"></div>
-                    <span>Qizil</span>
-                </div>
-                <div className="medalCartBox">
-                    <p>{count}</p>
-                    <div className="line"></div>
-                    <span>Qizil</span>
-                </div>
-            </div>
+            {
+                medal && medal.map((item, index) => (
+                    <div className="downBox" ref={containerRef}>
+                        <div className="medalCartBox">
+                            <p>{item.qold}</p>
+                            <div className="line"></div>
+                            <span>Qizil</span>
+                        </div>
+                        <div className="medalCartBox">
+                            <p>{item.silver}</p>
+                            <div className="line"></div>
+                            <span>Gümüş</span>
+                        </div>
+                        <div className="medalCartBox">
+                            <p>{item.bronz}</p>
+                            <div className="line"></div>
+                            <span>Bürünc</span>
+                        </div>
+                        <div className="medalCartBox">
+                        <p>{item.qold + item.silver + item.bronz}</p>
+                            <div className="line"></div>
+                            <span>Hamısı</span>
+                        </div>
+                    </div>
+                ))
+            }
         </section>
     )
 }

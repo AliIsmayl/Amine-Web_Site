@@ -31,7 +31,7 @@ const AddFoto = () => {
 
   return (
     <div className="adminpage">
-         <div className="return">
+         <div className="btn btn1">
             <Link to="/admin/foto">Foto siyahısına bax</Link>
         </div>
        <div className="text-center margi">

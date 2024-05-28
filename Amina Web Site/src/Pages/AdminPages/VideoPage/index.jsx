@@ -98,7 +98,7 @@ const VideoAdmin = () => {
         <div className="userpage">
           <div className="filterDD">
             <div className="addUser">
-              <button className='btn'><Link to="/admin/addVideo"> Add Video</Link></button>
+              <button className='btn'><Link to="/admin/addVideo">  Video əlavə et</Link></button>
             </div>
           </div>
 

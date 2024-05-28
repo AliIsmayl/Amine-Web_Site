@@ -20,8 +20,8 @@ const AddIdmanNovleri = () => {
 
   return (
     <div className="adminpage">
-       <div className="return">
-            <Link to="/admin/idmanNovleri">Idman novlerinin siyahısına bax</Link>
+       <div className="btn btn1">
+            <Link to="/admin/idmanNovleri">İdman növlərinin siyahısına bax</Link>
         </div>
       <div className="text-center margi">
         <h2>Idman Növü əlavə et</h2>
@@ -107,7 +107,7 @@ const AddIdmanNovleri = () => {
                   className='btn'
                   onClick={() => setShowAltFields(true)}
                 >
-                  Alt kategoriya elave et
+                  Alt kategoriya əlave et
                 </button>
               )}
 <div className="div">

@@ -6,8 +6,8 @@ import NotMean from '../Components/NotMean/NotMean';
 const AboutRehberlik = () => {
   return (
     <>
-<NotMean/>
-     <OurRehberlik/> 
+      <NotMean />
+      <OurRehberlik />
     </>
   )
 }

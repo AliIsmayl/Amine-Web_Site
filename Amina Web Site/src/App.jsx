@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter , Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import Navbar from './LayOut/Navbar/Navbar';
 import Footer from './LayOut/Footer/Footer';
@@ -31,6 +31,15 @@ import XeberlerAdmin from './Pages/AdminPages/XeberlerPage';
 import AddXeberler from './AdminComponents/AddXeber';
 import ContactAdmin from './Pages/AdminPages/ContactPage';
 import AddContact from './AdminComponents/AddContact';
+import NewsCard from './Components/NewsComponents/NewsComponents';
+import NewsDetailPage from './Components/NewsComponents/NewsDetailPage/NewsDetailPage';
+import AddMedal from './AdminComponents/AddMedal';
+import MedalAdmin from './Pages/AdminPages/MedalPage';
+import PhotoSection from './Components/MediaComponents/PhotoSection/PhotoSection';
+import VideoSection from './Components/MediaComponents/VideoSection/VideoSection';
+import OurHakim from './Components/AboutComponents/OurHakim';
+import OurMesqci from './Components/AboutComponents/OurMesqci';
+import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 
 function App() {
 
@@ -79,6 +88,8 @@ function App() {
             <Route path="/admin/addHakim" element={<AddHakim />} />
             <Route path="/admin/addXeberler" element={<AddXeberler />} />
             <Route path="/admin/addContact" element={<AddContact />} />
+
+
           </Route>
         </Routes>
 

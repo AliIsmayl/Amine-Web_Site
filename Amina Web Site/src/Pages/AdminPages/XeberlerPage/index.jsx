@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2';
 
+
 const XeberlerAdmin = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -88,7 +89,7 @@ const XeberlerAdmin = () => {
         <div className="userpage">
           <div className="filterDD">
             <div className="addUser">
-              <button className='btn'><Link to="/admin/addXeberler">Xeberler əlavə et</Link></button>
+              <button className='btn'><Link to="/admin/addXeberler">Xəbər əlavə et</Link></button>
             </div>
             <div className="filter">
               <input type="search" placeholder='Ada gore axtar' value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -135,9 +136,9 @@ const XeberlerAdmin = () => {
                           <td><img src={item.image2} alt="" /></td>
                           <td><img src={item.image3} alt="" /></td>
                           <td><img src={item.image4} alt="" /></td>
-                          <td>{item.title}</td>
-                          <td>{item.name}</td>
-                          <td>{item.content}</td>
+                          <td><p className="content-p">{item.title}</p></td>
+                          <td><p className="content-p">{item.name}</p></td>
+                          <td> <p className="content-p">{item.content}</p></td>
                           <td>
                             <button onClick={() => openModal(item._id)} className="btn">
                               <AiOutlineDelete />
@@ -233,7 +234,7 @@ const XeberlerAdmin = () => {
                           setFieldValue("image1", event.currentTarget.files[0]);
                         }}
                       />
-                      Image 1
+                      şəkil 1
                     </label>
                     <div className="red">
                       <ErrorMessage name="image1" />
@@ -249,7 +250,7 @@ const XeberlerAdmin = () => {
                           setFieldValue("image2", event.currentTarget.files[0]);
                         }}
                       />
-                      Image 2
+                      şəkil 2
                     </label>
                     <div className="red">
                       <ErrorMessage name="image2" />
@@ -265,7 +266,7 @@ const XeberlerAdmin = () => {
                           setFieldValue("image3", event.currentTarget.files[0]);
                         }}
                       />
-                      Image 3
+                      şəkil 3
                     </label>
                     <div className="red">
                       <ErrorMessage name="image3" />
@@ -281,7 +282,7 @@ const XeberlerAdmin = () => {
                           setFieldValue("image4", event.currentTarget.files[0]);
                         }}
                       />
-                      Image 4
+                      şəkil 4
                     </label>
                     <div className="red">
                       <ErrorMessage name="image4" />

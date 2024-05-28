@@ -30,7 +30,7 @@ const AddHakim = () => {
 
   return (
     <div className="adminpage">
-        <div className="return">
+        <div className="btn btn1">
             <Link to="/admin/hakim">Hakimlər siyahısına bax</Link>
         </div>
        <div className="text-center margi">
