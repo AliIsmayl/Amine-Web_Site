@@ -3,6 +3,7 @@ import './PhotoSection.scss';
 import axios from 'axios';
 import NotMean from '../../NotMean/NotMean';
 import Modal from './Modal';
+import { Helmet } from 'react-helmet-async';
 
 function PhotoSection() {
     const [images, setImages] = useState([]);
@@ -41,6 +42,9 @@ function PhotoSection() {
 
     return (
         <>
+         <Helmet>
+        <title>Şəkillər</title>
+        </Helmet>
             <NotMean />
             <div className='photoSection'>
                 {images && images.map((item, index) => (

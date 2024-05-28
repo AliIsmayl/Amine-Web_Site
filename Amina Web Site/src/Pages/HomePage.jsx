@@ -4,10 +4,14 @@ import Medal from '../Components/HomePageComponents/MedalComponents/Medal'
 import Partner from '../Components/HomePageComponents/PartnerComponents/Partner'
 import Header from '../Components/HomePageComponents/Header/Header'
 import NotMean from '../Components/NotMean/NotMean'
+import { Helmet } from 'react-helmet-async'
 
 function HomePage() {
   return (
     <>
+    <Helmet>
+        <title>Ana səhifə</title>
+        </Helmet>
     <NotMean/>
       <Header />
       <Inform />

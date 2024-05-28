@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import NotMean from "../../../Components/NotMean/NotMean";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 const MesqciAdmin = () => {
@@ -81,6 +82,9 @@ const MesqciAdmin = () => {
 
   return (
     <>
+         <Helmet>
+        <title>Məşqçilər Admin</title>
+        </Helmet>
       <>
         <div className="adminpage">
           <div className="userpage">

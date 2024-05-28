@@ -5,6 +5,7 @@ import { HiMiniUserCircle } from "react-icons/hi2";
 import NotMean from '../../NotMean/NotMean';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 function NewsDetailPage() {
     const { name } = useParams()
@@ -22,9 +23,13 @@ function NewsDetailPage() {
 
     return (
         <>
+       
+     
             <NotMean />
             {
-                NewsDetail ?
+                NewsDetail ? 
+                <>
+               
                     <div className='newsDetailPage'>
                         <div className="upBox">
                             <div className="imageBox">
@@ -49,7 +54,7 @@ function NewsDetailPage() {
                             </div>
 
                         </div>
-                    </div>
+                    </div></>
                     : ""
             }
         </>

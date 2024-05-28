@@ -40,11 +40,15 @@ import VideoSection from './Components/MediaComponents/VideoSection/VideoSection
 import OurHakim from './Components/AboutComponents/OurHakim';
 import OurMesqci from './Components/AboutComponents/OurMesqci';
 import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
 
   return (
     <>
+    <HelmetProvider>
+
+  
       <BrowserRouter>
 
         <Routes>
@@ -93,7 +97,8 @@ function App() {
           </Route>
         </Routes>
 
-      </BrowserRouter>
+      </BrowserRouter> 
+       </HelmetProvider>
     </>
   )
 }

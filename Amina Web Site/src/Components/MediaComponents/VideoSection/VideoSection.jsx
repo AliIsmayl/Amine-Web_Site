@@ -3,6 +3,7 @@ import './VideoSection.scss';
 import axios from 'axios';
 import NotMean from '../../NotMean/NotMean';
 import { Modal } from 'bootstrap';
+import { Helmet } from 'react-helmet-async';
 
 function VideoSection() {
     const [images, setImages] = useState([]);
@@ -41,6 +42,9 @@ function VideoSection() {
 
     return (
         <>
+         <Helmet>
+        <title>Videolar</title>
+        </Helmet>
             <NotMean />
             <div className='videoSection'>
                 {images && images.map((item, index) => (
