@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { PiMapPinAreaLight } from "react-icons/pi";
 import { PiPhoneCallLight } from "react-icons/pi";  
 import { GiMailbox } from "react-icons/gi";
+import axios from "axios";
 
 const ContactWithUs = () => {
+  const [data, setData] = useState([])
+
+  async function getData() {
+    const res=await axios.get("http://localhost:5000/contact")
+    setData(res.data)
+  }
+  useEffect(() => {
+    getData()
+  }, [])
+  
   return (
     <div className="contact-us">
       <div className="container">
@@ -19,11 +30,17 @@ const ContactWithUs = () => {
               <div className="addr">
                 <div className="image">
                   <PiMapPinAreaLight />
-                </div>
-                <div className="content">
+                </div> 
+                  <div className="content">
                   <h3>Ünvanımız</h3>
-                  <p>AZ 1004, A.Abbaszadə 2-ci Y/massiv, 194</p>
-                </div>
+                {
+                  data && data.map(item=>
+                 
+                  <p>{item.location}</p>
+               
+                  )
+                }
+               </div>  
               </div>
               <div className="addr">
                 <div className="image">
@@ -31,8 +48,13 @@ const ContactWithUs = () => {
                 </div>
                 <div className="content">
                   <h3>Tel:</h3>
-                  <p>(+994 12) 564 08 09 </p>
-                  <p>(+994) 50 310 50 19</p>
+                  {
+                  data && data.map(item=>
+                 
+                  <p>{item.number}</p>
+               
+                  )
+                }
                 </div>
               </div>
               <div className="addr">
@@ -41,8 +63,13 @@ const ContactWithUs = () => {
                 </div>
                 <div className="content">
                   <h3>Email</h3>
-                  <p>info@amina-azif.az </p><p>
-office@amina-azif.az</p>
+                  {
+                  data && data.map(item=>
+                 
+                  <p>{item.email}</p>
+               
+                  )
+                }
                 </div>
               </div>
             </div>
