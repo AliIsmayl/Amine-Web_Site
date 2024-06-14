@@ -49,6 +49,14 @@ function NewsDetailPage() {
                             </div>
 
                         </div>
+                        <div className="downBox">
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image1' alt="" />
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image2' alt="" />
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image3' alt="" />
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
+                            <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
+                        </div>
                     </div>
                     : ""
             }

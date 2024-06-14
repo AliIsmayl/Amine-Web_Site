@@ -36,7 +36,7 @@ const HakimAdmin = () => {
         cancelButtonColor: "#d33",
         confirmButtonText: "sil!"
       });
-  
+
       if (result.isConfirmed) {
         await deleteHakim(id);
         Swal.fire({
@@ -49,17 +49,17 @@ const HakimAdmin = () => {
       console.log(error.message);
     }
   }
-  
+
   async function deleteHakim(id) {
     try {
       const res = await axios.delete(`http://localhost:5000/hakim/${id}`);
-      setData((prevData)=>prevData.filter((item)=>item._id !== id))
+      setData((prevData) => prevData.filter((item) => item._id !== id))
     } catch (error) {
       console.log(error.message);
       throw new Error("Failed to delete Hakim");
     }
   }
-  
+
 
   async function editHakim(id, values) {
     const res = await axios.put(`http://localhost:5000/hakim/${id}`, values);
@@ -85,16 +85,16 @@ const HakimAdmin = () => {
           <div className="userpage">
             <div className="filterDD">
               <div className="addUser">
-              <button className='btn'><Link to="/admin/addHakim">Hakim əlavə et</Link></button>
+                <button className='btn'><Link to="/admin/addHakim">Hakim əlavə et</Link></button>
+              </div>
+              <div className="filter">
+                <input type="search" placeholder='Ada gore axtar' value={search} onChange={(e) => setSearch(e.target.value)} />
+                <div onClick={() => setProperty({ name: "title", asc: true })} className="btn">a-z</div>
+                <div onClick={() => setProperty({ name: "title", asc: false })} className="btn">z-a</div>
+                <div onClick={() => setProperty({ name: "title", asc: null })} className="btn">hammisi</div>
+              </div>
             </div>
-            <div className="filter">
-    <input type="search" placeholder='Ada gore axtar' value={search} onChange={(e)=>setSearch(e.target.value)}/>
-    <div onClick={()=>setProperty({name:"title",asc:true})} className="btn">a-z</div>
-    <div onClick={()=>setProperty({name:"title",asc:false})} className="btn">z-a</div>
-     <div onClick={()=>setProperty({name:"title",asc:null})} className="btn">hammisi</div>
-</div>
-            </div>
-            
+
             <div className="usertable">
               <div className="overflow-x-auto">
                 <table className="table">
@@ -114,42 +114,42 @@ const HakimAdmin = () => {
                     ) : (
                       data &&
                       data
-                      .filter(x=>x.title.toLowerCase().includes(search.toLowerCase()))
-    .sort((a,b)=>{
-        if (property && property.asc===true) {
-            return a[property.name]<b[property.name] ? -1 : (a[property.name]<b[property.name] ? 1 : 0)
-        }
-        else if (property && property.asc===false) {
-            return a[property.name]>b[property.name] ? -1 : (a[property.name]>b[property.name] ? 1 : 0)
-        }
-        else{
-            return 0;
-        }
-    })
-                      .map((item) => (
-                        <tr key={item._id}>
-                          {/* <td>{item._id}</td> */}
-                          <td><img src={item.image} alt="" /></td>
-                          <td>{item.title}</td>
-                          <td>{item.position}</td>
+                        .filter(x => x.title.toLowerCase().includes(search.toLowerCase()))
+                        .sort((a, b) => {
+                          if (property && property.asc === true) {
+                            return a[property.name] < b[property.name] ? -1 : (a[property.name] < b[property.name] ? 1 : 0)
+                          }
+                          else if (property && property.asc === false) {
+                            return a[property.name] > b[property.name] ? -1 : (a[property.name] > b[property.name] ? 1 : 0)
+                          }
+                          else {
+                            return 0;
+                          }
+                        })
+                        .map((item) => (
+                          <tr key={item._id}>
+                            {/* <td>{item._id}</td> */}
+                            <td><img src={item.image} alt="" /></td>
+                            <td>{item.title}</td>
+                            <td>{item.position}</td>
 
-                          <td>
-                            <button
-                              // onClick={() => deleteHakim(item._id)}
-                              onClick={()=>openModal(item._id)}
-                              className="btn"
-                            >
-                              <AiOutlineDelete />
-                            </button>
-                            <button
-                              onClick={() => openEditModal(item)}
-                              className="btn"
-                            >
-                              <CiEdit />
-                            </button>
-                          </td>
-                        </tr>
-                      ))
+                            <td>
+                              <button
+                                // onClick={() => deleteHakim(item._id)}
+                                onClick={() => openModal(item._id)}
+                                className="btn"
+                              >
+                                <AiOutlineDelete />
+                              </button>
+                              <button
+                                onClick={() => openEditModal(item)}
+                                className="btn"
+                              >
+                                <CiEdit />
+                              </button>
+                            </td>
+                          </tr>
+                        ))
                     )}
                   </tbody>
                 </table>
@@ -173,7 +173,7 @@ const HakimAdmin = () => {
                 validationSchema={Yup.object({
                   title: Yup.string().required("Required"),
                   position: Yup.string().required("Required"),
-                  image: Yup.mixed().notRequired(), 
+                  image: Yup.mixed().notRequired(),
                 })}
                 onSubmit={(values) => {
                   const formData = new FormData();
@@ -201,28 +201,28 @@ const HakimAdmin = () => {
                         <ErrorMessage name="position" />
                       </div>
                     </div>
-                    
+
 
                     <div className="inpp">
                       <label className="custom-file-upload">
-                      <input
-                        type="file"
-                        onChange={(event) => {
-                          setSelectedFile(event.currentTarget.files[0]);
-                          setFieldValue("image", event.currentTarget.files[0]);
-                        }}
-                      />
+                        <input
+                          type="file"
+                          onChange={(event) => {
+                            setSelectedFile(event.currentTarget.files[0]);
+                            setFieldValue("image", event.currentTarget.files[0]);
+                          }}
+                        />
                       </label>
                       <div className="red">
                         <ErrorMessage name="image" />
                       </div>
                     </div>
-<div className="di">
- <button className="btn" type="submit">
-                      düzəliş et
-                    </button>
-</div>
-                   
+                    <div className="di">
+                      <button className="btn" type="submit">
+                        düzəliş et
+                      </button>
+                    </div>
+
                   </Form>
                 )}
               </Formik>

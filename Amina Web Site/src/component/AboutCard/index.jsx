@@ -5,9 +5,7 @@ import axios from 'axios'
 const AboutCard = (product, style) => {
 
   return (
-    <div className='about-card'
-
-    >
+    <div className='about-card'>
 
       <div className="image"
 
