@@ -2,61 +2,65 @@ import React, { useEffect, useState } from 'react';
 import './VideoSection.scss';
 import axios from 'axios';
 import NotMean from '../../NotMean/NotMean';
-import { Modal } from 'bootstrap';
+import { Helmet } from 'react-helmet-async';
+import Modal from './ModalVideo';
 
 function VideoSection() {
-    const [images, setImages] = useState([]);
-    const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+    const [videos, setVideos] = useState([]);
+    const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
 
-    async function getimageData() {
+    async function getVideoData() {
         const res = await axios.get("http://localhost:5000/video");
-        setImages(res.data);
+        setVideos(res.data);
     }
 
     useEffect(() => {
-        getimageData();
+        getVideoData();
     }, []);
 
-    const handleImageClick = (index) => {
-        setSelectedImageIndex(index);
+    const handleVideoClick = (index) => {
+        setSelectedVideoIndex(index);
     };
 
     const handleCloseModal = () => {
-        setSelectedImageIndex(null);
+        setSelectedVideoIndex(null);
     };
 
     const handlePrev = () => {
-        if (selectedImageIndex > 0) {
-            setSelectedImageIndex(selectedImageIndex - 1);
+        if (selectedVideoIndex > 0) {
+            setSelectedVideoIndex(selectedVideoIndex - 1);
         }
     };
 
     const handleNext = () => {
-        if (selectedImageIndex < images.length - 1) {
-            setSelectedImageIndex(selectedImageIndex + 1);
+        if (selectedVideoIndex < videos.length - 1) {
+            setSelectedVideoIndex(selectedVideoIndex + 1);
         }
     };
 
-    const selectedImage = selectedImageIndex !== null ? images[selectedImageIndex].image : null;
+    const selectedVideo = selectedVideoIndex !== null ? videos[selectedVideoIndex].video : null;
 
     return (
         <>
+         <Helmet>
+            <title>Videolar</title>
+        </Helmet>
             <NotMean />
-            <div className='videoSection'>
-                {images && images.map((item, index) => (
-                    <div className="imgBox" key={index} onClick={() => handleImageClick(index)}>
-                        <video src={item.video} alt="" />
+            <div className='photoSection'>
+                {videos && videos.map((item, index) => (
+                    <div className="imgBox" key={index} onClick={() => handleVideoClick(index)}>
+                        <video src={item.video} alt="" controls />
                     </div>
                 ))}
             </div>
-            {selectedImage !== null && (
+            {selectedVideo !== null && (
                 <Modal
-                    image={selectedImage}
+                    video={selectedVideo}
                     onClose={handleCloseModal}
                     onPrev={handlePrev}
                     onNext={handleNext}
-                    hasPrev={selectedImageIndex > 0}
-                    hasNext={selectedImageIndex < images.length - 1}
+                    hasPrev={selectedVideoIndex > 0}
+                    hasNext={selectedVideoIndex < videos.length - 1}
                 />
             )}
         </>

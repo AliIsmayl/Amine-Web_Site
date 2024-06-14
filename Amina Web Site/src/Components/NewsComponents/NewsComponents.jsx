@@ -4,6 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import NotMean from '../NotMean/NotMean';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 function NewsCard() {
     const [NewsCart, setNewsCart] = useState([])
@@ -17,6 +18,9 @@ function NewsCard() {
 
     return (
         <>
+         <Helmet>
+        <title>Xəbərlər</title>
+        </Helmet>
             <NotMean />
             <div className='newsPage'>
                 {

@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
 import { RiListSettingsLine } from "react-icons/ri";
+import { Helmet } from "react-helmet-async";
 
 const IdmanNovleriAdmin = () => {
   const [data, setData] = useState([]);
@@ -81,6 +82,9 @@ const IdmanNovleriAdmin = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Idman Növləri </title>
+        </Helmet>
       <div className="adminpage">
         <div className="userpage">
           <div className="filterDD">

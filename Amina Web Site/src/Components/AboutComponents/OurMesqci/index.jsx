@@ -3,6 +3,7 @@ import "./index.scss"
 import AboutCard from '../../../component/AboutCard'
 import axios from 'axios'
 import NotMean from '../../NotMean/NotMean'
+import { Helmet } from 'react-helmet-async'
 
 const OurMesqci = () => {
 
@@ -19,6 +20,9 @@ const OurMesqci = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Məşqçilər</title>
+        </Helmet>
       <NotMean />
       <div id='about-us'>
         <div className="tittle-icra">

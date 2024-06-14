@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import NotMean from "../../../Components/NotMean/NotMean";
 import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 const IdmanciAdmin = () => {
@@ -82,6 +83,9 @@ const IdmanciAdmin = () => {
 
   return (
     <>
+     <Helmet>
+        <title>İdmancilar Admin</title>
+        </Helmet>
       <>
         <div className="adminpage">
           <div className="userpage">

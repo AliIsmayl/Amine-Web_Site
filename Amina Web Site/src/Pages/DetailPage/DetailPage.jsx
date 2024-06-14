@@ -4,6 +4,7 @@ import axios from 'axios'
 import './DetailPage.scss'
 import NotMean from '../../Components/NotMean/NotMean'
 import parse from 'html-react-parser';
+import { Helmet } from 'react-helmet-async'
 
 function DetailPage() {
     const { name } = useParams()
@@ -17,6 +18,9 @@ function DetailPage() {
     }, [name])
     return (
         <>
+        <Helmet>
+        <title>{detail.tittle}</title>
+        </Helmet>
             <NotMean />
             <div className='detailPage'>
                 <div className="upBox">{detail.tittle ? parse(detail.tittle) : detail.tittle}</div>
