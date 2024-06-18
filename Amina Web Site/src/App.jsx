@@ -41,6 +41,8 @@ import OurHakim from './Components/AboutComponents/OurHakim';
 import OurMesqci from './Components/AboutComponents/OurMesqci';
 import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import AddYaris from './AdminComponents/AddYarisTime';
+import YarisAdmin from './Pages/AdminPages/YarisTime';
 
 function App() {
 
@@ -81,6 +83,7 @@ function App() {
             <Route path="/admin/xeberler" element={<XeberlerAdmin />} />
             <Route path="/admin/contact" element={<ContactAdmin />} />
             <Route path="/admin/medal" element={<MedalAdmin />} />
+            <Route path="/admin/yaris" element={<YarisAdmin />} />
             <Route path="/admin/addMedal" element={<AddMedal />} />
             <Route path="/admin/addRehberlik" element={<AddRehberlik />} />
             <Route path="/admin/addKomitet" element={<AddKomitet />} />
@@ -92,6 +95,7 @@ function App() {
             <Route path="/admin/addHakim" element={<AddHakim />} />
             <Route path="/admin/addXeberler" element={<AddXeberler />} />
             <Route path="/admin/addContact" element={<AddContact />} />
+            <Route path="/admin/addYaris" element={<AddYaris />} />
 
 
           </Route>
