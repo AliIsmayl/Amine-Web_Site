@@ -94,6 +94,7 @@ function App() {
               <Route path="/admin/addXeberler" element={<AddXeberler />} />
               <Route path="/admin/addContact" element={<AddContact />} />
               <Route path="/admin/addYaris" element={<AddYaris />} />
+              <Route path="/admin/yaris" element={<YarisAdmin />} />
             </Route>
           </Routes>
         </BrowserRouter>

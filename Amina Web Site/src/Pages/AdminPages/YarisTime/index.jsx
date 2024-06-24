@@ -12,7 +12,6 @@ import toast from "react-hot-toast";
 import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet-async";
 
-
 const YarisAdmin = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +38,7 @@ const YarisAdmin = () => {
         cancelButtonColor: "#d33",
         confirmButtonText: "sil!"
       });
-  
+
       if (result.isConfirmed) {
         await deleteYaris(id);
         Swal.fire({
@@ -52,17 +51,17 @@ const YarisAdmin = () => {
       console.log(error.message);
     }
   }
-  
+
   async function deleteYaris(id) {
     try {
       const res = await axios.delete(`http://localhost:5000/yaris/${id}`);
-      setData((prevData)=>prevData.filter((item)=>item._id !== id))
+      setData((prevData) => prevData.filter((item) => item._id !== id))
     } catch (error) {
       console.log(error.message);
       throw new Error("Failed to delete Yaris");
     }
   }
-  
+
 
   async function editYaris(id, values) {
     const res = await axios.put(`http://localhost:5000/yaris/${id}`, values);
@@ -83,24 +82,24 @@ const YarisAdmin = () => {
 
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>İdmancilar Admin</title>
-        </Helmet>
+      </Helmet>
       <>
         <div className="adminpage">
           <div className="userpage">
             <div className="filterDD">
               <div className="addUser">
-              <button className='btn'><Link to="/admin/addYaris">yaris əlavə et</Link></button>
+                <button className='btn'><Link to="/admin/addYaris">yaris əlavə et</Link></button>
+              </div>
+              <div className="filter">
+                <input type="search" placeholder='Ada gore axtar' value={search} onChange={(e) => setSearch(e.target.value)} />
+                <div onClick={() => setProperty({ name: "title", asc: true })} className="btn">a-z</div>
+                <div onClick={() => setProperty({ name: "title", asc: false })} className="btn">z-a</div>
+                <div onClick={() => setProperty({ name: "title", asc: null })} className="btn">hammisi</div>
+              </div>
             </div>
-            <div className="filter">
-    <input type="search" placeholder='Ada gore axtar' value={search} onChange={(e)=>setSearch(e.target.value)}/>
-    <div onClick={()=>setProperty({name:"title",asc:true})} className="btn">a-z</div>
-    <div onClick={()=>setProperty({name:"title",asc:false})} className="btn">z-a</div>
-     <div onClick={()=>setProperty({name:"title",asc:null})} className="btn">hammisi</div>
-</div>
-            </div>
-            
+
             <div className="usertable">
               <div className="overflow-x-auto">
                 <table className="table">
@@ -120,42 +119,42 @@ const YarisAdmin = () => {
                     ) : (
                       data &&
                       data
-                      .filter(x=>x.title.toLowerCase().includes(search.toLowerCase()))
-    .sort((a,b)=>{
-        if (property && property.asc===true) {
-            return a[property.name]<b[property.name] ? -1 : (a[property.name]<b[property.name] ? 1 : 0)
-        }
-        else if (property && property.asc===false) {
-            return a[property.name]>b[property.name] ? -1 : (a[property.name]>b[property.name] ? 1 : 0)
-        }
-        else{
-            return 0;
-        }
-    })
-                      .map((item) => (
-                        <tr key={item._id}>
-                          {/* <td>{item._id}</td> */}
-                          <td><img src={item.image} alt="" /></td>
-                          <td>{item.title}</td>
-                          <td>{item.time}</td>
+                        .filter(x => x.title.toLowerCase().includes(search.toLowerCase()))
+                        .sort((a, b) => {
+                          if (property && property.asc === true) {
+                            return a[property.name] < b[property.name] ? -1 : (a[property.name] < b[property.name] ? 1 : 0)
+                          }
+                          else if (property && property.asc === false) {
+                            return a[property.name] > b[property.name] ? -1 : (a[property.name] > b[property.name] ? 1 : 0)
+                          }
+                          else {
+                            return 0;
+                          }
+                        })
+                        .map((item) => (
+                          <tr key={item._id}>
+                            {/* <td>{item._id}</td> */}
+                            <td><img src={item.image} alt="" /></td>
+                            <td>{item.title}</td>
+                            <td>{item.time}</td>
 
-                          <td>
-                            <button
-                              // onClick={() => deleteYaris(item._id)}
-                              onClick={()=>openModal(item._id)}
-                              className="btn"
-                            >
-                              <AiOutlineDelete />
-                            </button>
-                            <button
-                              onClick={() => openEditModal(item)}
-                              className="btn"
-                            >
-                              <CiEdit />
-                            </button>
-                          </td>
-                        </tr>
-                      ))
+                            <td>
+                              <button
+                                // onClick={() => deleteYaris(item._id)}
+                                onClick={() => openModal(item._id)}
+                                className="btn"
+                              >
+                                <AiOutlineDelete />
+                              </button>
+                              <button
+                                onClick={() => openEditModal(item)}
+                                className="btn"
+                              >
+                                <CiEdit />
+                              </button>
+                            </td>
+                          </tr>
+                        ))
                     )}
                   </tbody>
                 </table>
@@ -179,7 +178,7 @@ const YarisAdmin = () => {
                 validationSchema={Yup.object({
                   title: Yup.string().required("Required"),
                   time: Yup.string().required("Required"),
-                  image: Yup.mixed().notRequired(), 
+                  image: Yup.mixed().notRequired(),
                 })}
                 onSubmit={(values) => {
                   const formData = new FormData();
@@ -207,28 +206,28 @@ const YarisAdmin = () => {
                         <ErrorMessage name="time" />
                       </div>
                     </div>
-                    
+
 
                     <div className="inpp">
                       <label className="custom-file-upload">
-                      <input
-                        type="file"
-                        onChange={(event) => {
-                          setSelectedFile(event.currentTarget.files[0]);
-                          setFieldValue("image", event.currentTarget.files[0]);
-                        }}
-                      />
+                        <input
+                          type="file"
+                          onChange={(event) => {
+                            setSelectedFile(event.currentTarget.files[0]);
+                            setFieldValue("image", event.currentTarget.files[0]);
+                          }}
+                        />
                       </label>
                       <div className="red">
                         <ErrorMessage name="image" />
                       </div>
                     </div>
-<div className="di">
- <button className="btn" type="submit">
-                      düzəliş et
-                    </button>
-</div>
-                   
+                    <div className="di">
+                      <button className="btn" type="submit">
+                        düzəliş et
+                      </button>
+                    </div>
+
                   </Form>
                 )}
               </Formik>
