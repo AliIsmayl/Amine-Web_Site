@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Calendar.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from 'swiper/modules';
 import { Pagination } from 'swiper/modules'
 import 'swiper/css/pagination';
+import axios from 'axios';
+
 function Calendar() {
+    const [calendar, setCalendar] = useState([])
+    async function getData() {
+        const res = await axios.get('http://localhost:5000/yaris')
+        setCalendar(res.data)
+
+    }
+    useEffect(() => {
+        getData()
+    }, [])
+
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -23,28 +35,22 @@ function Calendar() {
                 pagination={pagination}
                 loop={true}
             >
-                <SwiperSlide>
-                    <div className="leftBox">
-                        <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" alt="" />
-                    </div>
-                    <div className="rightBox">
-                        <div className="textBox">
-                            <p>02.20.30</p>
-                            <span>Burada bizim alimpiyada olcaq</span>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="leftBox">
-                        <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" alt="" />
-                    </div>
-                    <div className="rightBox">
-                        <div className="textBox">
-                            <p>02.20.30</p>
-                            <span>Burada bizim alimpiyada olcaq</span>
-                        </div>
-                    </div>
-                </SwiperSlide>
+                {
+                    calendar && calendar.map((item) =>
+                    (
+                        <SwiperSlide>
+                            <div className="leftBox">
+                                <img src={item.image} alt="" />
+                            </div>
+                            <div className="rightBox">
+                                <div className="textBox">
+                                    <p>{item.time}</p>
+                                    <span>{item.title}</span>
+                                </div>
+                            </div>
+                        </SwiperSlide>))
+                }
+
             </Swiper>
 
         </section>
