@@ -41,6 +41,7 @@ import OurHakim from './Components/AboutComponents/OurHakim';
 import OurMesqci from './Components/AboutComponents/OurMesqci';
 import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import AdminLogin from './Components/AdminLogin/AdminLogin';
 
 function App() {
 
@@ -70,6 +71,7 @@ function App() {
             <Route path="/video" element={<VideoSection />} />
           </Route>
           <Route path='/admin' element={<LayoutAdmin />}>
+            <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/idmancilar" element={<IdmanciAdmin />} />
             <Route path="/admin/mesqci" element={<MesqciAdmin />} />
             <Route path="/admin/idmanNovleri" element={<IdmanNovleriAdmin />} />

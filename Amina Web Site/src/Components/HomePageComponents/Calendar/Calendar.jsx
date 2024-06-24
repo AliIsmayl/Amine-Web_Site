@@ -3,15 +3,24 @@ import './Calendar.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from 'swiper/modules';
+import { Pagination } from 'swiper/modules'
+import 'swiper/css/pagination';
 function Calendar() {
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+    };
     return (
         <section id='calendar'>
             <Swiper className="mySwiper"
-                modules={[Autoplay]}
+                modules={[Autoplay, Pagination]}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
+                pagination={pagination}
                 loop={true}
             >
                 <SwiperSlide>

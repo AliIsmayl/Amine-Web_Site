@@ -67,6 +67,20 @@
 
 }
 
+.swiper-pagination-bullet {
+    width: 15px !important;
+    height: 15px !important;
+    font-size: 10px;
+    color: white !important;
+    background-color: rgba(128, 128, 128, 0.318) !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    color: white !important;
+    background: #CCB892 !important;
+}
+
 @media only screen and (max-width: 714px) {
     #calendar {
 
