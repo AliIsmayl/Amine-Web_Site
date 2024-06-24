@@ -13,6 +13,7 @@ import Foto from './src/routers/foto.js'
 import ContactRouter from './src/routers/contact.js'
 import Video from './src/routers/video.js'
 import MedalRouter from './src/routers/medal.js'
+import LoginRouter from './src/routers/login.js'
 import YarisTimeRouter from './src/routers/yarisTime.js'
 
 const app = express()
@@ -29,6 +30,7 @@ app.use("/foto",Foto)
 app.use("/video",Video)
 app.use("/contact",ContactRouter)
 app.use("/medal",MedalRouter)
+app.use("/",LoginRouter)
 app.use("/yaris",YarisTimeRouter)
 
 

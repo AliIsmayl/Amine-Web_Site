@@ -41,13 +41,18 @@ import OurHakim from './Components/AboutComponents/OurHakim';
 import OurMesqci from './Components/AboutComponents/OurMesqci';
 import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+<<<<<<< HEAD
 import AddYaris from './AdminComponents/AddYarisTime';
 import YarisAdmin from './Pages/AdminPages/YarisTime';
+=======
+import AdminLogin from './Components/AdminLogin/AdminLogin';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+>>>>>>> 33f435af618b25e0fb9435ad5399f1a4830c8723
 
 function App() {
-
   return (
     <>
+<<<<<<< HEAD
     <HelmetProvider>
 
   
@@ -96,13 +101,58 @@ function App() {
             <Route path="/admin/addXeberler" element={<AddXeberler />} />
             <Route path="/admin/addContact" element={<AddContact />} />
             <Route path="/admin/addYaris" element={<AddYaris />} />
+=======
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+              <Route path="/*" element={<ErrorPage />} />
+            <Route path='/' element={<MainLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/rehberlik" element={<AboutRehberlik />} />
+              <Route path="/tariximiz" element={<AboutHistory />} />
+              <Route path="/haqqimizda" element={<AboutPage />} />
+              <Route path="/icraiyye-comitesi" element={<AboutCommitet />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/idmancilar" element={<Ourİdmaci />} />
+              <Route path="/hakimler" element={<OurHakim />} />
+              <Route path="/mesqciler" element={<OurMesqci />} />
+              <Route path="/page/:name" element={<DetailPage />} />
+              <Route path="/news" element={<NewsCard />} />
+              <Route path="/news/:name" element={<NewsDetailPage />} />
+              <Route path="/photo" element={<PhotoSection />} />
+              <Route path="/video" element={<VideoSection />} />
+            </Route>
+            <Route path="/login" element={<AdminLogin />} />
+            <Route path='/admin' element={<LayoutAdmin />}>
+              <Route path="/admin/idmancilar" element={<IdmanciAdmin />} />
+              <Route path="/admin/mesqci" element={<MesqciAdmin />} />
+              <Route path="/admin/idmanNovleri" element={<IdmanNovleriAdmin />} />
+              <Route path="/admin/hakim" element={<HakimAdmin />} />
+              <Route path="/admin/rehberlik" element={<RehberlikAdmin />} />
+              <Route path="/admin/komitet" element={<KomitetAdmin />} />
+              <Route path="/admin/foto" element={<FotoAdmin />} />
+              <Route path="/admin/video" element={<VideoAdmin />} />
+              <Route path="/admin/xeberler" element={<XeberlerAdmin />} />
+              <Route path="/admin/contact" element={<ContactAdmin />} />
+              <Route path="/admin/medal" element={<MedalAdmin />} />
+              <Route path="/admin/addMedal" element={<AddMedal />} />
+              <Route path="/admin/addRehberlik" element={<AddRehberlik />} />
+              <Route path="/admin/addKomitet" element={<AddKomitet />} />
+              <Route path="/admin/addFoto" element={<AddFoto />} />
+              <Route path="/admin/addVideo" element={<AddVideo />} />
+              <Route path="/admin/addIdmanNovleri" element={<AddIdmanNovleri />} />
+              <Route path="/admin/addMesqci" element={<AddMesqci />} />
+              <Route path="/admin/addIdmanci" element={<AddIdmanci />} />
+              <Route path="/admin/addHakim" element={<AddHakim />} />
+              <Route path="/admin/addXeberler" element={<AddXeberler />} />
+              <Route path="/admin/addContact" element={<AddContact />} />
+>>>>>>> 33f435af618b25e0fb9435ad5399f1a4830c8723
 
 
-          </Route>
-        </Routes>
-
-      </BrowserRouter> 
-       </HelmetProvider>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </>
   )
 }

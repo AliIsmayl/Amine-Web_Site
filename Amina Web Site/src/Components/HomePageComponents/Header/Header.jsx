@@ -26,7 +26,7 @@ function Header() {
                                 <div className="leftBox">
                                     <p>{item.title}</p>
                                     <Link to={`news/${item.name}`}>
-                                        <button>Daha Ətraflı yazarsan bura</button>
+                                        <button>Daha Ətraflı </button>
                                     </Link>
                                 </div>
                                 <div className="rightBox">

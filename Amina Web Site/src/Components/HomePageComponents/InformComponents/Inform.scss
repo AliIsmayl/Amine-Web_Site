@@ -40,6 +40,7 @@
                 font-size: 25px;
                 margin-bottom: 10px;
                 color: white;
+                height: 200px;
             }
 
             .line {
@@ -51,13 +52,14 @@
 
             button {
                 padding: 7px 15px;
-                
+
                 cursor: pointer;
                 border-radius: 30px;
                 transition: all 0.7s;
                 background-color: #CCB892;
                 border: 1px solid #CCB892;
                 outline: none;
+
                 &:hover {
                     transform: translateY(-5px);
                 }

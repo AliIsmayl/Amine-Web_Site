@@ -19,17 +19,25 @@ const OurCommitet = () => {
   return (
     <div id='about-us'>
       <div className="tittle-icra">
-        <h3>ICRAİYYƏ KOMİTƏSİ</h3>
+        <h3 style={{color:"#CCB892"}}>ICRAİYYƏ KOMİTƏSİ</h3>
       </div>
       <div className="container">
         <div className="row">
-          {
-            data && data.map(item =>
-              <div className='col-lg-3 col-md-4 col-12'>
-                <AboutCard {...item} />
-              </div>
-            )
-          }
+          <div className="container">
+            <div className="normalBox">
+              {
+                data && data.map(item =>
+                  <div className='peopleBox'>
+                    <div className="frontTextBox">
+                      {/* <span>{item.title}</span> */}
+                      <p>{item.title}</p>
+                    </div>
+                    <img src={item.image} alt="" />
+                  </div>
+                )
+              }
+            </div>
+          </div>
 
 
         </div>

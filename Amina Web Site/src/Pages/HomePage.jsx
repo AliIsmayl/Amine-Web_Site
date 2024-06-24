@@ -4,6 +4,7 @@ import Medal from '../Components/HomePageComponents/MedalComponents/Medal'
 import Partner from '../Components/HomePageComponents/PartnerComponents/Partner'
 import Header from '../Components/HomePageComponents/Header/Header'
 import NotMean from '../Components/NotMean/NotMean'
+import Calendar from '../Components/HomePageComponents/Calendar/Calendar'
 import { Helmet } from 'react-helmet-async'
 
 function HomePage() {
@@ -16,6 +17,7 @@ function HomePage() {
       <Header />
       <Inform />
       <Medal />
+      <Calendar/>
       <Partner />
     </>
   )
