@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import NavAdmin from './NavAdmin'
 import { userContext } from '../context/userContext'
+import ErrorPage from '../Pages/ErrorPage/ErrorPage'
 
 const LayoutAdmin = () => {
   const { user } = useContext(userContext)
@@ -18,9 +19,7 @@ const LayoutAdmin = () => {
     )
   } else {
     return (
-      <>
-        errorrrrr page yarata
-      </>
+      <ErrorPage />
     )
   }
 

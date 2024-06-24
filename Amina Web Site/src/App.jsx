@@ -42,6 +42,7 @@ import OurMesqci from './Components/AboutComponents/OurMesqci';
 import Ourİdmaci from './Components/AboutComponents/Ourİdmanci';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
       <HelmetProvider>
         <BrowserRouter>
           <Routes>
+              <Route path="/*" element={<ErrorPage />} />
             <Route path='/' element={<MainLayout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/rehberlik" element={<AboutRehberlik />} />
@@ -65,7 +67,7 @@ function App() {
               <Route path="/photo" element={<PhotoSection />} />
               <Route path="/video" element={<VideoSection />} />
             </Route>
-            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/login" element={<AdminLogin />} />
             <Route path='/admin' element={<LayoutAdmin />}>
               <Route path="/admin/idmancilar" element={<IdmanciAdmin />} />
               <Route path="/admin/mesqci" element={<MesqciAdmin />} />
