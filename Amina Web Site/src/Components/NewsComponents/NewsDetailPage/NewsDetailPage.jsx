@@ -21,6 +21,17 @@ function NewsDetailPage() {
         getDetail()
     }, [name])
 
+    const formatDate = (dateString) => {
+        const options = {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+        };
+        const date = new Date(dateString);
+        return date.toLocaleDateString("en-GB", options);
+    };
     return (
         <>
 
@@ -44,28 +55,22 @@ function NewsDetailPage() {
                                     <div className='littleInform'>
                                         <div className="littleBox">
                                             <CgTime />
-                                            <p>March 27, 2024</p>
-                                        </div>
-                                        <div className="littleBox">
-                                            <HiMiniUserCircle />
-                                            <p>by Ali</p>
+                                            <p>{formatDate(NewsDetail.createdAt)}</p>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                             <div className="downBox">
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image1' alt="" />
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image2' alt="" />
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image3' alt="" />
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
-                                <img src="https://cdn.britannica.com/03/94403-050-03683FB0/Rio-de-Janeiro-Braz.jpg" className='image4' alt="" />
+                                <img src={NewsDetail.image1} className='image1' alt="" />
+                                <img src={NewsDetail.image2} className='image2' alt="" />
+                                <img src={NewsDetail.image3} className='image3' alt="" />
+                                <img src={NewsDetail.image4} className='image4' alt="" />
                             </div>
                         </div>
                     </>
                     : ""
-}
+            }
         </>
     )
 }

@@ -7,6 +7,7 @@ import { RiContactsBookLine } from "react-icons/ri";
 import { FaFacebookF } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { FaEarthAmericas } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -40,12 +41,16 @@ function Footer() {
                         <span></span>
                         <p>Sosial şəbəkələrimiz</p>
                     </div>
-                    <div className="socialMedia">
-                        <FaFacebookF />
-                    </div>
-                    <div className="socialMedia">
-                        <FaInstagram />
-                    </div>
+                    <Link to={"https://www.facebook.com/profile.php?id=100064944864466"}>
+                        <div className="socialMedia">
+                            <FaFacebookF />
+                        </div>
+                    </Link>
+                    <Link to={"https://www.instagram.com/aminaazif.az/"}>
+                        <div className="socialMedia">
+                            <FaInstagram />
+                        </div>
+                    </Link>
                 </div>
             </div>
             <div className="downBox">

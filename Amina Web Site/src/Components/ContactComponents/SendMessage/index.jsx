@@ -1,67 +1,75 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./index.scss"
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
+
 
 const SendMeassage = () => {
-    const initialValues = {
-        firstname: '',
-        email: '',
-        message: ''
-      };
-    
-      const validationSchema = Yup.object().shape({
-        firstname: Yup.string().required('Adınızı daxil edin!'),
-        email: Yup.string().email('düzqün email daxil edin').required('Email daxil edin!'),
-        message: Yup.string().required('Müraciətin mətni daxil edin!')
-      });
-      const handleSubmit = (values, { resetForm }) => {
-        resetForm()
-        };    
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    const serviceId = "service_kkigi8m"
+    const templateId = "template_v1mmrni"
+    const publicKey = "77IcenM7JS-vY6ZEy"
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "AMINA",
+      message: message
+
+    }
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then((response) => {
+      setName('')
+      setEmail('')
+      setMessage('')
+      alert("okey")
+    })
+      .catch((error) => {
+        alert("problem")
+      })
+
+  }
   return (
     <div className='send-message'>
-        <div className="container">
-        <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched }) => (
-          <Form>
-           <div className='form-group'>
-           <Field
+      <div className="container">
+        <form id="contactForm" onSubmit={handleSubmit}>
+          <div className='form-group'>
+            <input
               name="firstname"
               type="text"
               placeholder="Ad*"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
-           <div className="red"><ErrorMessage name="firstname"  />
-</div> 
-           </div>
-            <div className='form-group'>
-            <Field
+          </div>
+          <div className='form-group'>
+            <input
               name="email"
               type="email"
               placeholder="Email*"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-           <div className="red"><ErrorMessage name="email"  />
-</div> 
-            </div>
-          <div className='form-group'>
-          <Field
-              name="message"
-              as="textarea"
-              placeholder="Müraciətin mətni..."
-            />
-           <div className="red"><ErrorMessage name="message"  />
-</div> 
           </div>
-            <button  type="submit">Mesajınızı göndərin</button>
-          </Form>
-        )}
-      </Formik>
-        
-        </div>
-     
+          <div className='form-group'>
+            <textarea
+              name="message"
+              placeholder="Müraciətin mətni..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </div>
+          <button type="submit">Mesajınızı göndərin</button>
+        </form>
+
+      </div>
+
     </div>
   )
 }

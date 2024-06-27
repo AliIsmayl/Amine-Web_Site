@@ -26,6 +26,7 @@ function AdminLogin() {
 
             const token = res.data;
             const decoded = jwtDecode(token);
+            sessionStorage.setItem('user', JSON.stringify(decoded))
             setUser(decoded)
             navigate("/admin");
 
