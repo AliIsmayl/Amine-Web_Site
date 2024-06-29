@@ -12,19 +12,17 @@
 
 header {
     font-family: "Montserrat", sans-serif;
-    background-color: #18407C;
 
     .swiper {
         width: 100%;
-        height: 100%;
     }
 
     .swiper-slide {
+        height: 730px;
 
         .swiperBox {
             width: 100%;
             display: flex;
-            border: 1px solid white;
 
             .leftBox {
 
