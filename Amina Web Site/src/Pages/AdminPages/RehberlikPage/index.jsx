@@ -20,7 +20,7 @@ const RehberlikAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("http://localhost:5000/rehberlik");
+    const res = await axios("https://amina-back-end.onrender.com/rehberlik");
     setData(res.data);
     setLoading(false);
   }
@@ -52,7 +52,7 @@ const RehberlikAdmin = () => {
   
   async function deleteRehberlik(id) {
     try {
-      const res = await axios.delete(`http://localhost:5000/rehberlik/${id}`);
+      const res = await axios.delete(`https://amina-back-end.onrender.com/rehberlik/${id}`);
       setData((prevData)=>prevData.filter((item)=>item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -62,7 +62,7 @@ const RehberlikAdmin = () => {
   
 
   async function editRehberlik(id, values) {
-    const res = await axios.put(`http://localhost:5000/rehberlik/${id}`, values);
+    const res = await axios.put(`https://amina-back-end.onrender.com/rehberlik/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

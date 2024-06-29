@@ -9,7 +9,7 @@ const ContactWithUs = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res=await axios.get("http://localhost:5000/contact")
+    const res=await axios.get("https://amina-back-end.onrender.com/contact")
     setData(res.data)
   }
   useEffect(() => {

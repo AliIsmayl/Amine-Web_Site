@@ -10,7 +10,7 @@ const AddIdmanNovleri = () => {
   const navigate = useNavigate();
   async function AddIdmanNovleri(values) {
     try {
-      const res = await axios.post("http://localhost:5000/idmanNovleri", values);
+      const res = await axios.post("https://amina-back-end.onrender.com/idmanNovleri", values);
       toast.success('Əlavə edildi!');
       navigate("/admin/idmanNovleri");
     } catch (error) {

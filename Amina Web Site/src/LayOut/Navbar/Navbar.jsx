@@ -14,7 +14,7 @@ function Navbar() {
   const [navbarText, setnavbarText] = useState([])
 
   async function TextGetData() {
-    const res = await axios.get("http://localhost:5000/idmanNovleri")
+    const res = await axios.get("https://amina-back-end.onrender.com/idmanNovleri")
     setnavbarText(res.data)
   }
 
@@ -102,8 +102,8 @@ function Navbar() {
                       <li><span></span>{item.tittle}
                         <ul className='altText'>
                           {item.Alt.map((altItem) => (
-                            <Link className='pageLink' to={`/page/${altItem.name}`} key={altItem.name}>
-                              <li key={altItem.name}><span></span>{altItem.tittle}</li>
+                            <Link className='pageLink' to={`/page/${altItem?.name}`} key={altItem?.name}>
+                              <li key={altItem?.name}><span></span>{altItem?.tittle}</li>
                             </Link>
                           ))}
                         </ul>

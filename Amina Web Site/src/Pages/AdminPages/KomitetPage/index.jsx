@@ -20,7 +20,7 @@ const KomitetAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("http://localhost:5000/komitet");
+    const res = await axios("https://amina-back-end.onrender.com/komitet");
     setData(res.data);
     setLoading(false);
   }
@@ -52,7 +52,7 @@ const KomitetAdmin = () => {
   
   async function deleteKomitet(id) {
     try {
-      const res = await axios.delete(`http://localhost:5000/komitet/${id}`);
+      const res = await axios.delete(`https://amina-back-end.onrender.com/komitet/${id}`);
       setData((prevData)=>prevData.filter((item)=>item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -62,7 +62,7 @@ const KomitetAdmin = () => {
   
 
   async function editKomitet(id, values) {
-    const res = await axios.put(`http://localhost:5000/komitet/${id}`, values);
+    const res = await axios.put(`https://amina-back-end.onrender.com/komitet/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

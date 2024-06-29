@@ -13,7 +13,7 @@ const AddKomitet = () => {
       formData.append("position", values.position);
       formData.append("image", values.image);
 
-      const res = await axios.post("http://localhost:5000/komitet", formData, {
+      const res = await axios.post("https://amina-back-end.onrender.com/komitet", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

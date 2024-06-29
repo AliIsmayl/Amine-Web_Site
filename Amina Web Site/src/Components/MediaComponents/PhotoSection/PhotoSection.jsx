@@ -10,7 +10,7 @@ function PhotoSection() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
     async function getimageData() {
-        const res = await axios.get("http://localhost:5000/foto");
+        const res = await axios.get("https://amina-back-end.onrender.com/foto");
         setImages(res.data);
     }
 

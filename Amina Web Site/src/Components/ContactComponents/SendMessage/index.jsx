@@ -12,9 +12,9 @@ const SendMeassage = () => {
   function handleSubmit(e) {
     e.preventDefault()
 
-    const serviceId = "service_kkigi8m"
-    const templateId = "template_v1mmrni"
-    const publicKey = "77IcenM7JS-vY6ZEy"
+    const serviceId = "service_twh1kwt"
+    const templateId = "template_ms39wbr"
+    const publicKey = "wFhQhB9eGsSUH82P5"
 
     const templateParams = {
       from_name: name,

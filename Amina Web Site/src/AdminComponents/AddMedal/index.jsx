@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const AddMedal = () => {
   const navigate = useNavigate();
   async function AddMedal(values) {
-    const res = await axios.post("http://localhost:5000/medal", values);
+    const res = await axios.post("https://amina-back-end.onrender.com/medal", values);
     toast.success("Əlavə edildi!");
     navigate("/admin/medal");
   }

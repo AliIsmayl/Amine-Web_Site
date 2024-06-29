@@ -13,7 +13,7 @@ function RespNavbar() {
     const [navbarText, setnavbarText] = useState([])
 
     async function TextGetData() {
-        const res = await axios.get("http://localhost:5000/idmanNovleri")
+        const res = await axios.get("https://amina-back-end.onrender.com/idmanNovleri")
         setnavbarText(res.data)
     }
     const handleOpenAccordion = () => {

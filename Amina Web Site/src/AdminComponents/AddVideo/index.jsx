@@ -15,7 +15,7 @@ const AddVideo = () => {
       const formData = new FormData();
       formData.append("video", values.video);
 
-      const res = await axios.post("http://localhost:5000/video", formData, {
+      const res = await axios.post("https://amina-back-end.onrender.com/video", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

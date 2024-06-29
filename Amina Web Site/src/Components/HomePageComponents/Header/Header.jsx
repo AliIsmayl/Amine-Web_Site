@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function Header() {
     const [NewsCart, setNewsCart] = useState([])
     async function GetNewsData() {
-        const res = await axios.get("http://localhost:5000/xeberler")
+        const res = await axios.get("https://amina-back-end.onrender.com/xeberler")
         setNewsCart(res.data)
     }
     useEffect(() => {
