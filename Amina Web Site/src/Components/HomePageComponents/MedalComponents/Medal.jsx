@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Medal.scss'
 import axios from 'axios'
-
+import MedalSekil from '../../../Image/Medal-sekil.png'
 function Medal() {
     const [count, setCount] = useState(0);
     const containerRef = useRef(null);
@@ -49,7 +49,7 @@ function Medal() {
         <section id='medalComponent'>
             <div className="upBox">
                 <div className="leftBox">
-                    <img src="https://amina-azif.az/wp-content/uploads/2023/10/Medal.png" alt="" />
+                    <img src={MedalSekil} alt="" />
                 </div>
                 <div className="rightBox">
                     <div className="text">

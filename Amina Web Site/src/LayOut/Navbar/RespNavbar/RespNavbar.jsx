@@ -74,12 +74,12 @@ function RespNavbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/tariximiz`} >
+                            <Link className='pageLink' to={`/rehberlik`} >
                                 Rəhbərlik
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/tariximiz`} >
+                            <Link className='pageLink' to={`/icraiyye-comitesi`} >
                                 İcraiyyə Komitəsi
                             </Link>
                         </li>
@@ -97,17 +97,17 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openThirdAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/mesqciler`} >
                                 Məşqçilər
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/idmancilar`} >
                                 İdmançılar
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/hakimler`} >
                                 Hakimlər
                             </Link>
                         </li>
@@ -146,7 +146,7 @@ function RespNavbar() {
                     </ul>
                 </li>
             </Link>
-            <Link className='link' to={''}>
+            <Link className='link' to={'/news'}>
                 <li className='accordionFirstLi'>
                     <p className='text1'>Xəbər</p>
                 </li>
@@ -161,19 +161,19 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openLastAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/photo`} >
                                 Foto
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={``} >
+                            <Link className='pageLink' to={`/video`} >
                                 Video
                             </Link>
                         </li>
                     </ul>
                 </li>
             </Link>
-            <Link className='link' to={''}>
+            <Link className='link' to={'/contact'}>
                 <li className='accordionFirstLi'>
                     <p className='text1'>Əlaqə</p>
                 </li>
