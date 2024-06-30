@@ -4,7 +4,7 @@ import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import './RespNavbar.scss';
 
-function RespNavbar() {
+function RespNavbar({handleOpenNavbar}) {
     const [openAccordionIndex, setOpenAccordionIndex] = useState(false);
     const [openSecondAccordionIndex, setOpenSecondAccordionIndex] = useState(false);
     const [openThirdAccordionIndex, setOpenThirdAccordionIndex] = useState(false);
@@ -55,8 +55,8 @@ function RespNavbar() {
     return (
         <ul className='accordion1'>
             <Link className='link' to={''}>
-                <li className='accordionFirstLi'>
-                    <p className='text1'>Ana Səhifə</p>
+                <li className='accordionFirstLi' >
+                    <p className='text1' onClick={handleOpenNavbar}>Ana Səhifə</p>
                 </li>
             </Link>
             <Link className='link' to={''}>
@@ -69,17 +69,17 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openSecondAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={`/tariximiz`} >
+                            <Link className='pageLink' to={`/tariximiz`} onClick={handleOpenNavbar} >
                                 Tariximiz
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/rehberlik`} >
+                            <Link className='pageLink' to={`/rehberlik`} onClick={handleOpenNavbar} >
                                 Rəhbərlik
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/icraiyye-comitesi`} >
+                            <Link className='pageLink' to={`/icraiyye-comitesi`} onClick={handleOpenNavbar} >
                                 İcraiyyə Komitəsi
                             </Link>
                         </li>
@@ -97,17 +97,17 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openThirdAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={`/mesqciler`} >
+                            <Link className='pageLink' to={`/mesqciler`} onClick={handleOpenNavbar} >
                                 Məşqçilər
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/idmancilar`} >
+                            <Link className='pageLink' to={`/idmancilar`} onClick={handleOpenNavbar} >
                                 İdmançılar
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/hakimler`} >
+                            <Link className='pageLink' to={`/hakimler`} onClick={handleOpenNavbar} >
                                 Hakimlər
                             </Link>
                         </li>
@@ -136,7 +136,7 @@ function RespNavbar() {
                                 <ul className={`altText ${openChildAccordionIndex ? "openSecondAccordion" : ""}`}>
                                     {item.Alt.map((altItem, index) =>
                                         <li key={index}>
-                                            <Link className='pageLink' to={`/page/${altItem.name}`}>
+                                            <Link className='pageLink' to={`/page/${altItem.name}`} onClick={handleOpenNavbar}>
                                                 {altItem.tittle}
                                             </Link>
                                         </li>)}
@@ -146,13 +146,13 @@ function RespNavbar() {
                     </ul>
                 </li>
             </Link>
-            <Link className='link' to={'/news'}>
+            <Link className='link' to={'/news'} >
                 <li className='accordionFirstLi'>
-                    <p className='text1'>Xəbər</p>
+                    <p className='text1' onClick={handleOpenNavbar}>Xəbər</p>
                 </li>
             </Link>
             <Link className='link' to={''}>
-                <li className='accordionFirstLi'>
+                <li className='accordionFirstLi' >
                     <p className='text1' onClick={handleLastOpenAccordion}>Media
                         <span className='arrowBox' >
                             {
@@ -161,12 +161,12 @@ function RespNavbar() {
                         </span></p>
                     <ul className={`text2 ${openLastAccordionIndex ? 'openAccordion' : ''}`}>
                         <li>
-                            <Link className='pageLink' to={`/photo`} >
+                            <Link className='pageLink' to={`/photo`} onClick={handleOpenNavbar} >
                                 Foto
                             </Link>
                         </li>
                         <li>
-                            <Link className='pageLink' to={`/video`} >
+                            <Link className='pageLink' to={`/video`} onClick={handleOpenNavbar} >
                                 Video
                             </Link>
                         </li>
@@ -175,7 +175,7 @@ function RespNavbar() {
             </Link>
             <Link className='link' to={'/contact'}>
                 <li className='accordionFirstLi'>
-                    <p className='text1'>Əlaqə</p>
+                    <p className='text1' onClick={handleOpenNavbar}>Əlaqə</p>
                 </li>
             </Link>
         </ul>

@@ -20,6 +20,7 @@ function Navbar() {
 
   function handleOpenNavbar() {
     setopenNavbar(!openNavbar)
+    console.log("salam");
   }
 
   useEffect(() => {
@@ -139,7 +140,7 @@ function Navbar() {
         </div>
         <div className="respUpBox"><img src={Logo} alt="" /></div>
         <div className="respDownBox">
-          <RespNavbar />
+          <RespNavbar handleOpenNavbar={handleOpenNavbar} />
         </div>
       </div>
     </nav>

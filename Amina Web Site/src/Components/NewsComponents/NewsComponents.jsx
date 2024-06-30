@@ -31,7 +31,6 @@ function NewsCard() {
                                 <div className="timeBox">
                                     <div className="timeBoxHover">
                                         <p>10 <span>MAR</span></p>
-
                                     </div>
                                 </div>
                             </div>
