@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import './Calendar.scss'
+import React, { useEffect, useState } from 'react';
+import './Calendar.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from 'swiper/modules';
-import { Pagination } from 'swiper/modules'
+import { Pagination } from 'swiper/modules';
 import 'swiper/css/pagination';
 import axios from 'axios';
 
 function Calendar() {
-    const [calendar, setCalendar] = useState([])
-    async function getData() {
-        const res = await axios.get('https://amina-back-end.onrender.com/yaris')
-        setCalendar(res.data)
+    const [calendar, setCalendar] = useState([]);
 
+    async function getData() {
+        const res = await axios.get('https://amina-back-end.onrender.com/yaris');
+        setCalendar(res.data);
     }
+
     useEffect(() => {
-        getData()
-    }, [])
+        getData();
+    }, []);
 
     const pagination = {
         clickable: true,
@@ -24,6 +25,19 @@ function Calendar() {
             return '<span class="' + className + '">' + (index + 1) + '</span>';
         },
     };
+
+    // Fonksiyon: Geri sayım hesaplama
+    function countdownToEvent(eventDate) {
+        const currentDate = new Date();
+        const targetDate = new Date(eventDate);
+        const difference = targetDate.getTime() - currentDate.getTime();
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        return `${days} gün ${hours} saat `;
+    }
+
     return (
         <section id='calendar'>
             <Swiper className="mySwiper"
@@ -36,9 +50,8 @@ function Calendar() {
                 loop={true}
             >
                 {
-                    calendar && calendar.map((item) =>
-                    (
-                        <SwiperSlide>
+                    calendar && calendar.map((item) => (
+                        <SwiperSlide key={item.id}>
                             <div className="leftBox">
                                 <img src={item.image} alt="" />
                             </div>
@@ -46,15 +59,17 @@ function Calendar() {
                                 <div className="textBox">
                                     <p>{item.time}</p>
                                     <span>{item.title}</span>
+                                    <div className="countdown">
+                                        {countdownToEvent(item.time)}
+                                    </div>
                                 </div>
                             </div>
-                        </SwiperSlide>))
+                        </SwiperSlide>
+                    ))
                 }
-
             </Swiper>
-
         </section>
-    )
+    );
 }
 
-export default Calendar
+export default Calendar;
