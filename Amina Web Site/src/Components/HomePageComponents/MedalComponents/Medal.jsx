@@ -56,7 +56,7 @@ function Medal() {
                         <div className="line"></div>
                         <span>Qazanılan Medallar</span>
                     </div>
-                    <p><span>Azərbaycan yığma komandasının</span> müxtəlif yaş qrupları üzrə beynalxalq turnirlərdə qazandığı medallar sayı</p>
+                    <p><span>Azərbaycan yığma komandasının</span> müxtəlif yaş qrupları üzrə beynalxalq yarışlarda qazandığı medallar sayı</p>
                 </div>
             </div>
             {

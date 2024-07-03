@@ -29,9 +29,9 @@ function NewsCard() {
                             <div className="imageBox">
                                 <img src={item.image} alt="" />
                                 <div className="timeBox">
-                                    <div className="timeBoxHover">
+                                    {/* <div className="timeBoxHover">
                                         <p>10 <span>MAR</span></p>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="textBox">

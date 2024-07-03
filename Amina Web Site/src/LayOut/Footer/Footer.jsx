@@ -41,7 +41,8 @@ function Footer() {
                         <span></span>
                         <p>Sosial şəbəkələrimiz</p>
                     </div>
-                    <Link to={"https://www.facebook.com/profile.php?id=100064944864466"}>
+                  <div className="socialBox">
+                  <Link to={"https://www.facebook.com/profile.php?id=100064944864466"}>
                         <div className="socialMedia">
                             <FaFacebookF />
                         </div>
@@ -51,6 +52,7 @@ function Footer() {
                             <FaInstagram />
                         </div>
                     </Link>
+                  </div>
                 </div>
             </div>
             <div className="downBox">

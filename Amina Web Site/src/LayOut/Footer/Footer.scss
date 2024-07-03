@@ -15,27 +15,32 @@ footer {
 
 
     .upBox {
+        display: flex;
+        flex-wrap: wrap;
 
         .box {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            width: 320px;
 
             .infoBox {
-                @include MyFlex();
+                display: flex;
+                align-items: center;
                 gap: 5px;
                 width: 300px;
                 padding: 10px;
                 color: white;
+
             }
 
             .oneBox {
-                display: flex;
-                @include MyFlex();
                 gap: 10px;
                 width: 100px;
+                display: flex;
 
                 span {
+                    margin-top: 12px;
                     height: 2px;
                     width: 30px;
                     background: #CCB892;
@@ -44,20 +49,22 @@ footer {
         }
 
         .contactBox {
-            display: flex;
-            flex-wrap: wrap;
+            width: 320px;
 
             .oneBox {
-                display: flex;
-                @include MyFlex();
                 gap: 10px;
-                width: 180px;
+                display: flex;
 
                 span {
+                    margin-top: 12px;
                     height: 2px;
                     width: 30px;
                     background: #CCB892;
                 }
+            }
+
+            .socialBox {
+                display: flex;
             }
 
             .socialMedia {
@@ -68,9 +75,10 @@ footer {
                 font-size: 20px;
                 border-radius: 50%;
                 cursor: pointer;
-                margin-left: 20px;
+                margin-left: 10px;
                 transition: all 0.7s;
-color: #18407C;
+                color: #18407C;
+
                 &:hover {
                     background-color: #CCB892;
                 }
@@ -84,6 +92,8 @@ color: #18407C;
         justify-content: space-between;
         font-size: 15px;
         gap: 10px;
+        margin-top: 20px;
+
         .pagesBox {
             display: flex;
             gap: 5px;
@@ -96,25 +106,29 @@ color: #18407C;
         }
     }
 }
-@media only screen and (max-width: 395px) {
-    footer{
-        .upBox{
-            .box{
-                .oneBox{
-                    width: 100%;
-                }
-            }
-          .contactBox{
-            @include MyFlex();
-            gap: 10px;
-            .oneBox{
-                width: 100%;
-            }
-            .socialMedia{
-                margin-left: 10px;
-            }
-           
-          }  
-        }
-    }    
-}
+
+// @media only screen and (max-width: 395px) {
+//     footer {
+//         .upBox {
+//             .box {
+//                 .oneBox {
+//                     width: 100%;
+//                 }
+//             }
+
+//             .contactBox {
+//                 @include MyFlex();
+//                 gap: 10px;
+
+//                 .oneBox {
+//                     width: 100%;
+//                 }
+
+//                 .socialMedia {
+//                     margin-left: 10px;
+//                 }
+
+//             }
+//         }
+//     }
+// }

@@ -56,7 +56,9 @@ function Navbar() {
           <div className="menuBox" onClick={handleOpenNavbar}>
             <AiOutlineMenu />
           </div>
-          <img src={Logo} alt="" />
+         <Link to={'/'}>
+         <img src={Logo} alt="" />
+         </Link>
         </div>
       }
 

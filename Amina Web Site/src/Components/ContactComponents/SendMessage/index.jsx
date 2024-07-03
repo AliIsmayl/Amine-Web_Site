@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./index.scss"
 import emailjs from '@emailjs/browser';
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const SendMeassage = () => {
   const [name, setName] = useState('')
@@ -12,9 +12,9 @@ const SendMeassage = () => {
   function handleSubmit(e) {
     e.preventDefault()
 
-    const serviceId = "service_twh1kwt"
-    const templateId = "template_ms39wbr"
-    const publicKey = "wFhQhB9eGsSUH82P5"
+    const serviceId = "service_otauhlr"
+    const templateId = "template_ydsk9iv"
+    const publicKey = "xpRJrT1r-pIPmmBT7"
 
     const templateParams = {
       from_name: name,
@@ -28,10 +28,9 @@ const SendMeassage = () => {
       setName('')
       setEmail('')
       setMessage('')
-      alert("okey")
+      toast.success('Mesaj göndərildi...')
     })
       .catch((error) => {
-        alert("problem")
       })
 
   }

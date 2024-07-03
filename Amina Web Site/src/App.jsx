@@ -45,10 +45,12 @@ import AddYaris from './AdminComponents/AddYarisTime';
 import YarisAdmin from './Pages/AdminPages/YarisTime';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <>
+    <Toaster/>
       <HelmetProvider>
         <BrowserRouter>
           <Routes>

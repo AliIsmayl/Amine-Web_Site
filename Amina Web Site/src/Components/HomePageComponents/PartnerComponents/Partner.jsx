@@ -41,7 +41,7 @@ function Partner() {
             <div className="middleBox"><p>Tərəfdaşlarımız</p></div>
             <div className="downBox">
                 <Link to={"https://mys.gov.az/"} className="partnerBox">
-                    <img style={{maxWidth:"150px"}} src="https://mys.gov.az/assets/img/logo/logo.svg" alt="" />
+                    <img style={{ maxWidth: "150px" }} src="https://judo.az/JudoFederationfiles/partners/cgppj21s.qyz/wfmio3b3.5de.jpg" alt="" />
                 </Link>
                 <Link to={"https://www.olympic.az/"} className="partnerBox">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAT6UEzwiUTUL2PQPHt3aZQTjx9JKsOOrfYQ&s" alt="" />
