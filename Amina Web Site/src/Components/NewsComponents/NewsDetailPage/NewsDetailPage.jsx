@@ -61,11 +61,15 @@ function NewsDetailPage() {
                                 </div>
 
                             </div>
+                           
                             <div className="downBox">
                                 <img src={NewsDetail.image1} className='image1' alt="" />
                                 <img src={NewsDetail.image2} className='image2' alt="" />
                                 <img src={NewsDetail.image3} className='image3' alt="" />
                                 <img src={NewsDetail.image4} className='image4' alt="" />
+                            </div>
+                            <div className="contentBox">
+                                <p>{NewsDetail.content}</p>
                             </div>
                         </div>
                     </>

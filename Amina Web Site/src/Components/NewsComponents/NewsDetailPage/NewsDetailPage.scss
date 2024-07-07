@@ -102,6 +102,15 @@
             border-radius: 20px;
         }
     }
+    .contentBox{
+        width: 100%;
+        text-align: center;
+        @include MyFlex();
+        p{
+            width: 90%;
+            font-size: 1.5rem;
+        }
+    }
 }
 
 @media only screen and (max-width: 1096px) {
