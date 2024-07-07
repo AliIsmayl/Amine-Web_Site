@@ -8,6 +8,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { RiAdminFill } from "react-icons/ri";
+
 
 function Footer() {
     return (
@@ -54,6 +56,9 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
+                <Link className='adminHidden' to={'/login'}>
+                    <RiAdminFill />
+                </Link>
             </div>
             <div className="downBox">
                 <div className="coptRightBox">Copyright by 2023. Bütün hüquqlar qorunur.</div>

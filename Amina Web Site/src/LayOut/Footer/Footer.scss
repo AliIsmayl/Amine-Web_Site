@@ -13,7 +13,10 @@ footer {
     gap: 10px;
     color: white;
 
-
+    .adminHidden{
+        color: #18407C;
+        cursor: auto;
+    }
     .upBox {
         display: flex;
         flex-wrap: wrap;
