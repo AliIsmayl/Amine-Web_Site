@@ -20,13 +20,13 @@ const Ourİdmaci = () => {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>İdmancilar</title>
-        </Helmet>
-<NotMean/>
+      </Helmet>
+      <NotMean />
       <div id='about-us'>
         <div className="tittle-icra">
-          <h3 style={{color:"#CCB892"}}>İdmaçılar</h3>
+          <h3 style={{ color: "#CCB892" }}>İdmaçılar</h3>
         </div>
         <div className="container">
           <div className="normalBox">
@@ -34,7 +34,7 @@ const Ourİdmaci = () => {
               data && data.map(item =>
                 <div className='peopleBox'>
                   <div className="frontTextBox">
-                    <span style={{background:"#CCB892"}}>{item.position}</span>
+                    <span style={{ background: "#CCB892" }}>{item.position}</span>
                     <p>{item.title}</p>
                   </div>
                   <img src={item.image} alt="" />
