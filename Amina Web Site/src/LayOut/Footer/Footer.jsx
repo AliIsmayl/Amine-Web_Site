@@ -20,22 +20,30 @@ function Footer() {
                         <span></span>
                         <p>AMINA</p>
                     </div>
-                    <div className="infoBox">
-                        <MdOutlinePhone />
-                        <span>(+994 12) 564 08 09</span>
-                    </div>
-                    <div className="infoBox">
-                        <MdOutlinePhone />
-                        <span>(+994) 50 310 50 19</span>
-                    </div>
-                    <div className="infoBox">
-                        <MdOutlineMail />
-                        <span>office@amina-azif.az</span>
-                    </div>
-                    <div className="infoBox">
-                        <FaEarthAmericas />
-                        <span>amina-azif.az</span>
-                    </div>
+                    <Link className='link' to={'tel:012 564 08 09'}>
+                        <div className="infoBox">
+                            <MdOutlinePhone />
+                            <span>(+994 12) 564 08 09</span>
+                        </div>
+                    </Link>
+                    <Link className='link' to={'tel:050 310 50 19'}>
+                        <div className="infoBox">
+                            <MdOutlinePhone />
+                            <span>(+994) 50 310 50 19</span>
+                        </div>
+                    </Link>
+                    <Link className='link' to={'mailto:office@amina-azif.az'}>
+                        <div className="infoBox">
+                            <MdOutlineMail />
+                            <span>office@amina-azif.az</span>
+                        </div>
+                    </Link>
+                    <Link className='link' to={'https://amina-azif.az/'}>
+                        <div className="infoBox">
+                            <FaEarthAmericas />
+                            <span>amina-azif.az</span>
+                        </div>
+                    </Link>
 
                 </div>
                 <div className="contactBox">
@@ -43,18 +51,18 @@ function Footer() {
                         <span></span>
                         <p>Sosial şəbəkələrimiz</p>
                     </div>
-                  <div className="socialBox">
-                  <Link to={"https://www.facebook.com/profile.php?id=100064944864466"}>
-                        <div className="socialMedia">
-                            <FaFacebookF />
-                        </div>
-                    </Link>
-                    <Link to={"https://www.instagram.com/aminaazif.az/"}>
-                        <div className="socialMedia">
-                            <FaInstagram />
-                        </div>
-                    </Link>
-                  </div>
+                    <div className="socialBox">
+                        <Link to={"https://www.facebook.com/profile.php?id=100064944864466"}>
+                            <div className="socialMedia">
+                                <FaFacebookF />
+                            </div>
+                        </Link>
+                        <Link to={"https://www.instagram.com/aminaazif.az/"}>
+                            <div className="socialMedia">
+                                <FaInstagram />
+                            </div>
+                        </Link>
+                    </div>
                 </div>
                 <Link className='adminHidden' to={'/login'}>
                     <RiAdminFill />
