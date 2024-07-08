@@ -44,7 +44,7 @@ app.listen(PORT, () => {
 });
 
 // 10 dakikada bir request atmak için cron job oluşturun
-cron.schedule('*/10 * * * *', async () => {
+cron.schedule('*/5 * * * *', async () => {
   try {
     const response = await axios.get('https://amina-azif.az/');
     console.log('Request successful:', response.status);
