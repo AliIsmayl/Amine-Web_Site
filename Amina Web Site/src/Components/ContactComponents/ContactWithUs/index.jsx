@@ -10,6 +10,7 @@ const ContactWithUs = () => {
 
   async function getData() {
     const res=await axios.get("https://amina-back-end.onrender.com/contact")
+    
     setData(res.data)
   }
   useEffect(() => {
