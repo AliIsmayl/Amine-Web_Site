@@ -46,6 +46,9 @@ import YarisAdmin from './Pages/AdminPages/YarisTime';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import { Toaster } from 'react-hot-toast';
+import AboutAdministrative from './Pages/AboutAdministrative';
+import AdminstativeAdmin from './Pages/AdminPages/AdminstarivePage';
+import AddAdminstative from './AdminComponents/AddAdminstative';
 
 function App() {
   return (
@@ -61,6 +64,7 @@ function App() {
               <Route path="/tariximiz" element={<AboutHistory />} />
               <Route path="/haqqimizda" element={<AboutPage />} />
               <Route path="/icraiyye-comitesi" element={<AboutCommitet />} />
+              <Route path="/inzibati-isler" element={<AboutAdministrative />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/idmancilar" element={<Ourİdmaci />} />
               <Route path="/hakimler" element={<OurHakim />} />
@@ -79,6 +83,7 @@ function App() {
               <Route path="/admin/hakim" element={<HakimAdmin />} />
               <Route path="/admin/rehberlik" element={<RehberlikAdmin />} />
               <Route path="/admin/komitet" element={<KomitetAdmin />} />
+              <Route path="/admin/adminstration" element={<AdminstativeAdmin />} />
               <Route path="/admin/foto" element={<FotoAdmin />} />
               <Route path="/admin/video" element={<VideoAdmin />} />
               <Route path="/admin/xeberler" element={<XeberlerAdmin />} />
@@ -87,6 +92,7 @@ function App() {
               <Route path="/admin/addMedal" element={<AddMedal />} />
               <Route path="/admin/addRehberlik" element={<AddRehberlik />} />
               <Route path="/admin/addKomitet" element={<AddKomitet />} />
+              <Route path="/admin/addAdminstrative" element={<AddAdminstative />} />
               <Route path="/admin/addFoto" element={<AddFoto />} />
               <Route path="/admin/addVideo" element={<AddVideo />} />
               <Route path="/admin/addIdmanNovleri" element={<AddIdmanNovleri />} />

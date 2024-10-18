@@ -19,7 +19,7 @@ const OurCommitet = () => {
   return (
     <div id='about-us'>
       <div className="tittle-icra">
-        <h3 style={{color:"#CCB892"}}>ICRAİYYƏ KOMİTƏSİ</h3>
+        <h3 style={{color:"#CCB892"}}>İcraiyyə komitəsi</h3>
       </div>
       <div className="container">
         <div className="row">
@@ -29,7 +29,7 @@ const OurCommitet = () => {
                 data && data.map(item =>
                   <div className='peopleBox'>
                     <div className="frontTextBox">
-                      {/* <span>{item.title}</span> */}
+                      <span>{item.position}</span>
                       <p>{item.title}</p>
                     </div>
                     <img src={item.image} alt="" />

@@ -79,6 +79,9 @@ function Navbar() {
                 <Link className='pageLink' to={'/icraiyye-comitesi'}>
                   <li><span></span>İcraiyə Komitəsi</li>
                 </Link>
+                <Link className='pageLink' to={'/inzibati-isler'}>
+                  <li><span></span>inzibati İşlər</li>
+                </Link>
               </div>
             </NavLink></li>
           </div>

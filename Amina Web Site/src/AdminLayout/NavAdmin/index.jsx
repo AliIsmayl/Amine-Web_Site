@@ -48,6 +48,9 @@ const NavAdmin = () => {
                         <NavLink to="/admin/komitet"><TbUsers />İcraiyyə Komiteti</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/admin/adminstration"><TbUsers />İnzibati İşlər</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/admin/rehberlik"><TbUsers />Rəhbərlik</NavLink>
                     </li>
                     <li>
@@ -72,6 +75,7 @@ const NavAdmin = () => {
                     <li>
                         <NavLink to="/admin/yaris"><IoCalendarClearOutline />Calendar</NavLink>
                     </li>
+              
 
 
                 </ul>

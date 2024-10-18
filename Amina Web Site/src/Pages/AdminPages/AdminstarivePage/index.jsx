@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
-const KomitetAdmin = () => {
+const AdminstativeAdmin = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +19,7 @@ const KomitetAdmin = () => {
   const [property, setProperty] = useState(null);
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/komitet");
+    const res = await axios("http://localhost:5000/administrative");
     setData(res.data);
     setLoading(false);
   }
@@ -52,7 +52,7 @@ const KomitetAdmin = () => {
   async function deleteKomitet(id) {
     try {
       const res = await axios.delete(
-        `https://amina-back-end.onrender.com/komitet/${id}`
+        `http://localhost:5000/administrative/${id}`
       );
       setData((prevData) => prevData.filter((item) => item._id !== id));
     } catch (error) {
@@ -63,7 +63,7 @@ const KomitetAdmin = () => {
 
   async function editKomitet(id, values) {
     const res = await axios.put(
-      `https://amina-back-end.onrender.com/komitet/${id}`,
+      `http://localhost:5000/administrative/${id}`,
       values
     );
     toast.success("Successfully edited!");
@@ -89,7 +89,7 @@ const KomitetAdmin = () => {
             <div className="filterDD">
               <div className="addUser">
                 <button className="btn">
-                  <Link to="/admin/addKomitet">icraiyyə komitet əlavə et</Link>
+                  <Link to="/admin/addAdminstrative">sasaassaicraiyyə komitet əlavə et</Link>
                 </button>
               </div>
               <div className="filter">
@@ -104,7 +104,7 @@ const KomitetAdmin = () => {
                   className="btn"
                 >
                   a-z
-                </div>
+                </div>s
                 <div
                   onClick={() => setProperty({ name: "title", asc: false })}
                   className="btn"
@@ -275,4 +275,4 @@ const KomitetAdmin = () => {
   );
 };
 
-export default KomitetAdmin;
+export default AdminstativeAdmin;

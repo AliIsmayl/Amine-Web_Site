@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const KomitetSchema = new Schema(
+const AdministrativeSchema = new Schema(
   {
     image: { type: String },
     title: { type: String },
@@ -10,6 +10,9 @@ const KomitetSchema = new Schema(
   { timestamps: true }
 );
 
-const Komitet = mongoose.model("AminaKomitet", KomitetSchema);
+const Administrative = mongoose.model(
+  "AminaAdministrative",
+  AdministrativeSchema
+);
 
-export default Komitet;
+export default Administrative;

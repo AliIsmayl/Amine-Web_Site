@@ -1,18 +1,18 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import OurCommitet from "../Components/AboutComponents/OurKomitet";
 import NotMean from "../Components/NotMean/NotMean";
 import { Helmet } from "react-helmet-async";
-function AboutCommitet() {
+import OurAdministrative from "../Components/AboutComponents/OurAdministrative";
+function AboutAdministrative() {
   return (
     <>
       <Helmet>
-        <title>İcraiyyə komitəsi</title>
+        <title>İnzibati İşlər</title>
       </Helmet>
       <NotMean />
-      <OurCommitet />
+      <OurAdministrative />
     </>
   );
 }
 
-export default AboutCommitet;
+export default AboutAdministrative;
