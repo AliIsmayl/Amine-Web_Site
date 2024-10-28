@@ -10,7 +10,7 @@ const Ourİdmaci = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-back-end.onrender.com/idmanci")
+    const res = await axios.get("https://amina-azif.az/api/v1/idmanci")
     setData(res.data)
   }
   useEffect(() => {

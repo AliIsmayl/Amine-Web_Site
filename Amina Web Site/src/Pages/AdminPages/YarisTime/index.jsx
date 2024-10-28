@@ -22,7 +22,7 @@ const YarisAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/yaris");
+    const res = await axios("https://amina-azif.az/api/v1/yaris");
     setData(res.data);
     setLoading(false);
   }
@@ -54,7 +54,7 @@ const YarisAdmin = () => {
 
   async function deleteYaris(id) {
     try {
-      const res = await axios.delete(`https://amina-back-end.onrender.com/yaris/${id}`);
+      const res = await axios.delete(`https://amina-azif.az/api/v1/yaris/${id}`);
       setData((prevData) => prevData.filter((item) => item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -64,7 +64,7 @@ const YarisAdmin = () => {
 
 
   async function editYaris(id, values) {
-    const res = await axios.put(`https://amina-back-end.onrender.com/yaris/${id}`, values);
+    const res = await axios.put(`https://amina-azif.az/api/v1/yaris/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

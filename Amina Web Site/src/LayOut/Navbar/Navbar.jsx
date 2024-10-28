@@ -14,7 +14,7 @@ function Navbar() {
   const [navbarText, setnavbarText] = useState([])
 
   async function TextGetData() {
-    const res = await axios.get("https://amina-back-end.onrender.com/idmanNovleri")
+    const res = await axios.get("https://amina-azif.az/api/v1/idmanNovleri")
     setnavbarText(res.data)
   }
 
@@ -80,7 +80,7 @@ function Navbar() {
                   <li><span></span>İcraiyə Komitəsi</li>
                 </Link>
                 <Link className='pageLink' to={'/inzibati-isler'}>
-                  <li><span></span>inzibati İşlər</li>
+                  <li><span></span>İnzibati İşlər</li>
                 </Link>
               </div>
             </NavLink></li>

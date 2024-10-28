@@ -8,7 +8,7 @@ const OurCommitet = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-back-end.onrender.com/komitet")
+    const res = await axios.get("https://amina-azif.az/api/v1/komitet")
     setData(res.data)
   }
   useEffect(() => {

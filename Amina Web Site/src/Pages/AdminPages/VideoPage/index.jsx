@@ -15,7 +15,7 @@ const VideoAdmin = () => {
   const [editedVideoId, setEditedVideoId] = useState(null);
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/video");
+    const res = await axios("https://amina-azif.az/api/v1/video");
     setData(res.data);
     setLoading(false);
   }
@@ -48,7 +48,7 @@ const VideoAdmin = () => {
 
   async function deleteVideo(id) {
     try {
-      const res = await axios.delete(`https://amina-back-end.onrender.com/video/${id}`);
+      const res = await axios.delete(`https://amina-azif.az/api/v1/video/${id}`);
       setData((prevData)=>prevData.filter((item)=>item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -71,7 +71,7 @@ const VideoAdmin = () => {
       formData.append("video", video);
 
       await axios.put(
-        `https://amina-back-end.onrender.com/video/${editedVideoId}`,
+        `https://amina-azif.az/api/v1/video/${editedVideoId}`,
         formData
       );
       toast.success('Successfully edited!');

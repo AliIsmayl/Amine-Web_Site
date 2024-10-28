@@ -17,7 +17,7 @@ const MedalAdmin = () => {
  
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/medal");
+    const res = await axios("https://amina-azif.az/api/v1/medal");
     setData(res.data);
     setLoading(false)
   }
@@ -25,7 +25,7 @@ const MedalAdmin = () => {
   
 
   async function deleteMedal(id) {
-    const res = await axios.delete(`https://amina-back-end.onrender.com/medal/${id}`);
+    const res = await axios.delete(`https://amina-azif.az/api/v1/medal/${id}`);
     setData((prevData)=>prevData.filter((item)=>item._id !== id))
   }
   async function openModal(id) {
@@ -53,7 +53,7 @@ const MedalAdmin = () => {
     }
   }
   async function editMedal(id, values) {
-    const res = await axios.put(`https://amina-back-end.onrender.com/medal/${id}`, values);
+    const res = await axios.put(`https://amina-azif.az/api/v1/medal/${id}`, values);
     toast.success("Successfully edited!");
     setShowModal(false);
     getData();

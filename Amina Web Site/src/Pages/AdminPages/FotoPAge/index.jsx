@@ -18,13 +18,13 @@ const FotoAdmin = () => {
   const [editedFotoId, setEditedFotoId] = useState(null); // State to hold the ID of the Foto item being edited
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/foto");
+    const res = await axios("https://amina-azif.az/api/v1/foto");
     setData(res.data);
     setLoading(false);
   }
 
   async function deleteFoto(id) {
-    const res = await axios.delete(`https://amina-back-end.onrender.com/foto/${id}`);
+    const res = await axios.delete(`https://amina-azif.az/api/v1/foto/${id}`);
     getData();
   }
   async function openModal(id) {
@@ -69,7 +69,7 @@ const FotoAdmin = () => {
       formData.append("image", image);
 
       const response = await axios.put(
-        `https://amina-back-end.onrender.com/foto/${editedFotoId}`, // Use editedFotoId here
+        `https://amina-azif.az/api/v1/foto/${editedFotoId}`, // Use editedFotoId here
         formData
       );
       toast.success('Successfully edited!');

@@ -19,7 +19,7 @@ const KomitetAdmin = () => {
   const [property, setProperty] = useState(null);
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/komitet");
+    const res = await axios("https://amina-azif.az/api/v1/komitet");
     setData(res.data);
     setLoading(false);
   }
@@ -52,7 +52,7 @@ const KomitetAdmin = () => {
   async function deleteKomitet(id) {
     try {
       const res = await axios.delete(
-        `https://amina-back-end.onrender.com/komitet/${id}`
+        `https://amina-azif.az/api/v1/komitet/${id}`
       );
       setData((prevData) => prevData.filter((item) => item._id !== id));
     } catch (error) {
@@ -63,7 +63,7 @@ const KomitetAdmin = () => {
 
   async function editKomitet(id, values) {
     const res = await axios.put(
-      `https://amina-back-end.onrender.com/komitet/${id}`,
+      `https://amina-azif.az/api/v1/komitet/${id}`,
       values
     );
     toast.success("Successfully edited!");

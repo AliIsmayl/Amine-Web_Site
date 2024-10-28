@@ -23,7 +23,7 @@ const IdmanciAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/idmanci");
+    const res = await axios("https://amina-azif.az/api/v1/idmanci");
     setData(res.data);
     setLoading(false);
   }
@@ -55,7 +55,7 @@ const IdmanciAdmin = () => {
   
   async function deleteIdmanci(id) {
     try {
-      const res = await axios.delete(`https://amina-back-end.onrender.com/idmanci/${id}`);
+      const res = await axios.delete(`https://amina-azif.az/api/v1/idmanci/${id}`);
       setData((prevData)=>prevData.filter((item)=>item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -65,7 +65,7 @@ const IdmanciAdmin = () => {
   
 
   async function editIdmanci(id, values) {
-    const res = await axios.put(`https://amina-back-end.onrender.com/idmanci/${id}`, values);
+    const res = await axios.put(`https://amina-azif.az/api/v1/idmanci/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

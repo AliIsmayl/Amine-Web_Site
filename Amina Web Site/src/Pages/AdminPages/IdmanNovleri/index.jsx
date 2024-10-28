@@ -20,7 +20,7 @@ const IdmanNovleriAdmin = () => {
   const [expandedRows, setExpandedRows] = useState({});
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/idmanNovleri");
+    const res = await axios("https://amina-azif.az/api/v1/idmanNovleri");
     setData(res.data);
     setLoading(false);
   }
@@ -53,12 +53,12 @@ const IdmanNovleriAdmin = () => {
   
 
   async function deleteIdmanNovleri(id) {
-    await axios.delete(`https://amina-back-end.onrender.com/idmanNovleri/${id}`);
+    await axios.delete(`https://amina-azif.az/api/v1/idmanNovleri/${id}`);
     getData();
   }
 
   async function editIdmanNovleri(id, values) {
-    await axios.put(`https://amina-back-end.onrender.com/idmanNovleri/${id}`, values);
+    await axios.put(`https://amina-azif.az/api/v1/idmanNovleri/${id}`, values);
     toast.success("Dəyişildi!");
     setShowModal(false);
     getData();

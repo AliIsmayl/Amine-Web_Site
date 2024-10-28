@@ -15,7 +15,7 @@ const AddFoto = () => {
       const formData = new FormData();
       formData.append("image", values.image);
 
-      const res = await axios.post("https://amina-back-end.onrender.com/foto", formData, {
+      const res = await axios.post("https://amina-azif.az/api/v1/foto", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

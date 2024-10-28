@@ -13,7 +13,7 @@ const AddMesqci = () => {
       formData.append("position", values.position);
       formData.append("image", values.image);
 
-      const res = await axios.post("https://amina-back-end.onrender.com/mesqci", formData, {
+      const res = await axios.post("https://amina-azif.az/api/v1/mesqci", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

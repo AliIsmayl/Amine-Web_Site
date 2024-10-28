@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const AddContact = () => {
   const navigate = useNavigate();
   async function AddContact(values) {
-    const res = await axios.post("https://amina-back-end.onrender.com/contact", values);
+    const res = await axios.post("https://amina-azif.az/api/v1/contact", values);
     toast.success("Əlavə edildi!");
     navigate("/admin/contact");
   }

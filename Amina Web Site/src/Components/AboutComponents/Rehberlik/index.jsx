@@ -7,7 +7,7 @@ const OurRehberlik = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-back-end.onrender.com/rehberlik")
+    const res = await axios.get("https://amina-azif.az/api/v1/rehberlik")
     setData(res.data)
   }
   useEffect(() => {

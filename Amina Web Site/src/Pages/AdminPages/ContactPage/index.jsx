@@ -18,7 +18,7 @@ const ContactAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("https://amina-back-end.onrender.com/contact");
+    const res = await axios("https://amina-azif.az/api/v1/contact");
     setData(res.data);
     setLoading(false)
   }
@@ -26,7 +26,7 @@ const ContactAdmin = () => {
   
 
   async function deleteContact(id) {
-    const res = await axios.delete(`https://amina-back-end.onrender.com/contact/${id}`);
+    const res = await axios.delete(`https://amina-azif.az/api/v1/contact/${id}`);
     setData((prevData)=>prevData.filter((item)=>item._id !== id))
   }
   async function openModal(id) {
@@ -54,7 +54,7 @@ const ContactAdmin = () => {
     }
   }
   async function editContact(id, values) {
-    const res = await axios.put(`https://amina-back-end.onrender.com/contact/${id}`, values);
+    const res = await axios.put(`https://amina-azif.az/api/v1/contact/${id}`, values);
     toast.success("Successfully edited!");
     setShowModal(false);
     getData();

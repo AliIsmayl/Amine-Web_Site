@@ -11,7 +11,7 @@ function Calendar() {
     const [calendar, setCalendar] = useState([]);
 
     async function getData() {
-        const res = await axios.get('https://amina-back-end.onrender.com/yaris');
+        const res = await axios.get('https://amina-azif.az/api/v1/yaris');
         setCalendar(res.data);
     }
 

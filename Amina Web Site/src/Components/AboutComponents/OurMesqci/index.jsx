@@ -10,7 +10,7 @@ const OurMesqci = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-back-end.onrender.com/mesqci")
+    const res = await axios.get("https://amina-azif.az/api/v1/mesqci")
     setData(res.data)
   }
   useEffect(() => {

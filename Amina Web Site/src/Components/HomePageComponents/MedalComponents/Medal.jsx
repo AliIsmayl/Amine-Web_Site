@@ -8,7 +8,7 @@ function Medal() {
     const [medal, setmedal] = useState([])
 
     async function getMedal() {
-        const res = await axios.get("https://amina-back-end.onrender.com/medal")
+        const res = await axios.get("https://amina-azif.az/api/v1/medal")
         setmedal(res.data)
     }
 

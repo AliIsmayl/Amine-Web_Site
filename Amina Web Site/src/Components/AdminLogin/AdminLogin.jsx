@@ -18,7 +18,7 @@ function AdminLogin() {
             return
         }
         try {
-            const res = await axios.post("https://amina-back-end.onrender.com/login", {
+            const res = await axios.post("https://amina-azif.az/api/v1/login", {
                 username: userName,
                 password: password,
 

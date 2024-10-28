@@ -10,7 +10,7 @@ function DetailPage() {
     const { name } = useParams()
     const [detail, setDetail] = useState([])
     async function getDetail() {
-        const res = await axios.get(`https://amina-back-end.onrender.com/idmanNovleri/${name}`)
+        const res = await axios.get(`https://amina-azif.az/api/v1/idmanNovleri/${name}`)
         setDetail(res.data)
     }
     useEffect(() => {

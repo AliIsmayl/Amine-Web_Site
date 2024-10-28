@@ -4,7 +4,7 @@ import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import './RespNavbar.scss';
 
-function RespNavbar({handleOpenNavbar}) {
+function RespNavbar({ handleOpenNavbar }) {
     const [openAccordionIndex, setOpenAccordionIndex] = useState(false);
     const [openSecondAccordionIndex, setOpenSecondAccordionIndex] = useState(false);
     const [openThirdAccordionIndex, setOpenThirdAccordionIndex] = useState(false);
@@ -13,7 +13,7 @@ function RespNavbar({handleOpenNavbar}) {
     const [navbarText, setnavbarText] = useState([])
 
     async function TextGetData() {
-        const res = await axios.get("https://amina-back-end.onrender.com/idmanNovleri")
+        const res = await axios.get("https://amina-azif.az/api/v1/idmanNovleri")
         setnavbarText(res.data)
     }
     const handleOpenAccordion = () => {
@@ -81,6 +81,11 @@ function RespNavbar({handleOpenNavbar}) {
                         <li>
                             <Link className='pageLink' to={`/icraiyye-comitesi`} onClick={handleOpenNavbar} >
                                 İcraiyyə Komitəsi
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className='pageLink' to={`inzibati-isler`} onClick={handleOpenNavbar} >
+                                İnzibati İşlər
                             </Link>
                         </li>
                     </ul>

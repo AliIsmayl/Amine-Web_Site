@@ -10,7 +10,7 @@ function VideoSection() {
     const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
 
     async function getVideoData() {
-        const res = await axios.get("https://amina-back-end.onrender.com/video");
+        const res = await axios.get("https://amina-azif.az/api/v1/video");
         setVideos(res.data);
     }
 
