@@ -16,7 +16,7 @@ const OurAdministrative = () => {
   return (
     <div id="about-us">
       <div className="tittle-icra">
-        <h3 style={{ color: "#CCB892" }}>İnzibati İşlər</h3>
+        <h3 style={{ color: "#CCB892" }}>İnzibati işlər üzrə</h3>
       </div>
       <div className="container">
         <div className="row">

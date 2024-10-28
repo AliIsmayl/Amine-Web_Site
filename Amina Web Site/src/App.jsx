@@ -53,7 +53,7 @@ import AddAdminstative from './AdminComponents/AddAdminstative';
 function App() {
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <HelmetProvider>
         <BrowserRouter>
           <Routes>
