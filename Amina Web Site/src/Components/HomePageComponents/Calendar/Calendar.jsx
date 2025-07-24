@@ -26,7 +26,6 @@ function Calendar() {
         },
     };
 
-    // Fonksiyon: Geri sayım hesaplama
     function countdownToEvent(eventDate) {
         const currentDate = new Date();
         const targetDate = new Date(eventDate);
