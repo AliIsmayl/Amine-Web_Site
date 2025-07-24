@@ -13,7 +13,7 @@ const AddRehberlik = () => {
       formData.append("position", values.position);
       formData.append("image", values.image);
 
-      const res = await axios.post("https://amina-azif.az/api/v1/rehberlik", formData, {
+      const res = await axios.post("http://localhost:5000/rehberlik", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

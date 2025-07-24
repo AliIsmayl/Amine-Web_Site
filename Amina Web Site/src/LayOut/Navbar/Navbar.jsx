@@ -14,7 +14,7 @@ function Navbar() {
   const [navbarText, setnavbarText] = useState([])
 
   async function TextGetData() {
-    const res = await axios.get("https://amina-azif.az/api/v1/idmanNovleri")
+    const res = await axios.get("http://localhost:5000/idmanNovleri")
     setnavbarText(res.data)
   }
 

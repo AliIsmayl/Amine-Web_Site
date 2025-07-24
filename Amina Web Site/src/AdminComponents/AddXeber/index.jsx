@@ -20,7 +20,7 @@ const AddXeberler = () => {
       if (values.image3) formData.append("image3", values.image3);
       if (values.image4) formData.append("image4", values.image4);
 
-      const res = await axios.post("https://amina-azif.az/api/v1/xeberler", formData, {
+      const res = await axios.post("http://localhost:5000/xeberler", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

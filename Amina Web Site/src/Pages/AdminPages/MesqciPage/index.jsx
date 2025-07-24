@@ -22,7 +22,7 @@ const MesqciAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("https://amina-azif.az/api/v1/mesqci");
+    const res = await axios("http://localhost:5000/mesqci");
     setData(res.data);
     setLoading(false);
   }
@@ -54,7 +54,7 @@ const MesqciAdmin = () => {
   
   async function deleteMesqci(id) {
     try {
-      const res = await axios.delete(`https://amina-azif.az/api/v1/mesqci/${id}`);
+      const res = await axios.delete(`http://localhost:5000/mesqci/${id}`);
       setData((prevData)=>prevData.filter((item)=>item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -64,7 +64,7 @@ const MesqciAdmin = () => {
   
 
   async function editMesqci(id, values) {
-    const res = await axios.put(`https://amina-azif.az/api/v1/mesqci/${id}`, values);
+    const res = await axios.put(`http://localhost:5000/mesqci/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

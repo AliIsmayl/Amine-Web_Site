@@ -20,7 +20,7 @@ const HakimAdmin = () => {
   const [property, setProperty] = useState(null)
 
   async function getData() {
-    const res = await axios("https://amina-azif.az/api/v1/hakim");
+    const res = await axios("http://localhost:5000/hakim");
     setData(res.data);
     setLoading(false);
   }
@@ -52,7 +52,7 @@ const HakimAdmin = () => {
 
   async function deleteHakim(id) {
     try {
-      const res = await axios.delete(`https://amina-azif.az/api/v1/hakim/${id}`);
+      const res = await axios.delete(`http://localhost:5000/hakim/${id}`);
       setData((prevData) => prevData.filter((item) => item._id !== id))
     } catch (error) {
       console.log(error.message);
@@ -62,7 +62,7 @@ const HakimAdmin = () => {
 
 
   async function editHakim(id, values) {
-    const res = await axios.put(`https://amina-azif.az/api/v1/hakim/${id}`, values);
+    const res = await axios.put(`http://localhost:5000/hakim/${id}`, values);
     toast.success('Successfully edited!');
     getData();
 

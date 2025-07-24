@@ -10,7 +10,7 @@ const OurHakim = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-azif.az/api/v1/hakim")
+    const res = await axios.get("http://localhost:5000/hakim")
     setData(res.data)
   }
   useEffect(() => {

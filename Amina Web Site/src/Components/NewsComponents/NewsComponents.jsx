@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 function NewsCard() {
     const [NewsCart, setNewsCart] = useState([])
     async function GetNewsData() {
-        const res = await axios.get("https://amina-azif.az/api/v1/xeberler")
+        const res = await axios.get("http://localhost:5000/xeberler")
         setNewsCart(res.data)
     }
     useEffect(() => {

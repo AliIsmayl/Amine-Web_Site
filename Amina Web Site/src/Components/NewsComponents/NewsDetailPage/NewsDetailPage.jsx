@@ -13,7 +13,7 @@ function NewsDetailPage() {
     const [NewsDetail, setNewsDetail] = useState()
 
     async function getDetail() {
-        const res = await axios.get(`https://amina-azif.az/api/v1/xeberler/${name}`)
+        const res = await axios.get(`http://localhost:5000/xeberler/${name}`)
         setNewsDetail(res.data)
         console.log(res.data);
     }

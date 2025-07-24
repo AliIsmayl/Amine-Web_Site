@@ -8,7 +8,7 @@ function Inform() {
     const [NewsCart, setNewsCart] = useState([])
     // const [newState, setNewState] = useState([])
     async function GetNewsData() {
-        const res = await axios.get("https://amina-azif.az/api/v1/xeberler")
+        const res = await axios.get("http://localhost:5000/xeberler")
         setNewsCart(res.data)
     }
 
@@ -25,7 +25,7 @@ function Inform() {
                     .slice(0, 4)
                     .map((item, index) => (
                         <div className="informCardBox" key={index}>
-                            <div className="imageBox"> <img src={item.image} alt="" /></div>
+                            <div className="imageBox"> <img src={item.image1} alt="" /></div>
                             <div className="textBox">
                                 <p>{item.title}</p>
                                 <div className="line"></div>

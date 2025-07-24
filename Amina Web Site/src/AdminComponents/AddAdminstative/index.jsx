@@ -15,7 +15,7 @@ const AddAdminstative = () => {
       formData.append("image", values.image);
 
       const res = await axios.post(
-        "https://amina-azif.az/api/v1/komitet",
+        "http://localhost:5000/komitet",
         formData,
         {
           headers: {

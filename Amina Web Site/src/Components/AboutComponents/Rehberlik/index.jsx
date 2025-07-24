@@ -7,7 +7,7 @@ const OurRehberlik = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res = await axios.get("https://amina-azif.az/api/v1/rehberlik")
+    const res = await axios.get("http://localhost:5000/rehberlik")
     setData(res.data)
   }
   useEffect(() => {

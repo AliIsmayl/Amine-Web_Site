@@ -9,7 +9,7 @@ const ContactWithUs = () => {
   const [data, setData] = useState([])
 
   async function getData() {
-    const res=await axios.get("https://amina-azif.az/api/v1/contact")
+    const res=await axios.get("http://localhost:5000/contact")
     
     setData(res.data)
   }
