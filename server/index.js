@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 
 // Mongo bağlantısı
 const url = process.env.CONNECTION_URL.replace("<password>", process.env.PASSWORD);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 
 mongoose
   .connect(url)
