@@ -3,7 +3,8 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import cron from "node-cron";
-import axios from "axios"; // Axios'u ekleyin
+import axios from "axios";
+
 import idmanNovleri from "./src/routers/idmanNovleri.js";
 import Rehberlik from "./src/routers/rehberlik.js";
 import Mesqci from "./src/routers/mesqci.js";
@@ -20,8 +21,12 @@ import YarisTimeRouter from "./src/routers/yarisTime.js";
 import Administrative from "./src/routers/administrative.js";
 
 const app = express();
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Routers
 app.use("/idmanNovleri", idmanNovleri);
 app.use("/rehberlik", Rehberlik);
 app.use("/mesqci", Mesqci);
@@ -33,30 +38,35 @@ app.use("/foto", Foto);
 app.use("/video", Video);
 app.use("/contact", ContactRouter);
 app.use("/medal", MedalRouter);
-app.use("/", LoginRouter);
+app.use("/login", LoginRouter); // "/" deyil "/login" daha düzgündür
 app.use("/yaris", YarisTimeRouter);
 app.use("/administrative", Administrative);
 
-const url = process.env.CONNECTION_URL.replace(
-  "<password>",
-  process.env.PASSWORD
-);
+// Sağlamlıq yoxlaması üçün sadə route (Vacibdir!)
+app.get("/", (req, res) => {
+  res.send("Backend işləyir! ✅");
+});
+
+// Mongo bağlantısı
+const url = process.env.CONNECTION_URL.replace("<password>", process.env.PASSWORD);
 const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(url)
-  .then(() => console.log("connected"))
-  .catch((error) => console.log({ message: error }));
+  .then(() => console.log("🟢 MongoDB bağlantısı uğurludur"))
+  .catch((error) => console.error("🔴 MongoDB bağlantı xətası:", error));
+
+// Serveri işə sal
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`🚀 Server ${PORT} portunda işləyir`);
 });
 
-// 10 dakikada bir request atmak için cron job oluşturun
+// Cron job — server yatmasın deyə özünü yoxlayır
 cron.schedule("*/5 * * * *", async () => {
   try {
     const response = await axios.get("https://amina-azif.az/");
-    console.log("Request successful:", response.status);
+    console.log("🕒 Cron GET uğurlu:", response.status);
   } catch (error) {
-    console.error("Error in cron job:", error.message);
+    console.error("🚫 Cron error:", error.message);
   }
 });
