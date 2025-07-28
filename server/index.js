@@ -41,7 +41,7 @@ const url = process.env.CONNECTION_URL.replace(
   "<password>",
   process.env.PASSWORD
 );
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(url)
